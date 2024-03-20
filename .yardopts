@@ -1,0 +1,10 @@
+--output-dir docs/ruby
+--markup markdown
+--markup-provider commonmarker
+--plugin coderay
+lib-ruby/**/*.rb
+-
+--main README.md
+docs/pages/*.md
+docs/CHANGELOG.md
+LICENSE

@@ -1,0 +1,16 @@
+inherit_mode:
+  merge:
+    - Exclude
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+  SuggestExtensions: false
+# ~~~ Metrics ~~~
+Metrics/AbcSize:
+  Exclude:
+    - lib-ruby/aspisec/config.rb
+Metrics/ClassLength:
+  Enabled: false
+Metrics/MethodLength:
+  Exclude:
+    - lib-ruby/aspisec/config.rb
