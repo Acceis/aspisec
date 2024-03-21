@@ -53,7 +53,11 @@ module Aspisec
     # only strings (location names).
     # @return [Array<Location>]
     def locations
-      @locations_list.map { |loc| Location.new(@conf, loc) }
+      # Re-compute what's already cumputed and stored in properties
+      # @locations_list.map { |loc| Location.new(@conf, loc) }
+      # Access properties rather than re-computing
+      # Using send() is safe here because the input is a hadrcaoded whitelist
+      @locations_list.map { |loc| send(loc) }
     end
 
     # Object easing the manipulation of locations.
