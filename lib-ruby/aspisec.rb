@@ -3,5 +3,5 @@
 require 'aspisec/version'
 
 require 'aspisec/config'
-# modules
-Dir['aspisec/modules/*.rb'].each { |f| require(f) }
+# require all modules
+Dir[File.join(__dir__, 'aspisec', 'modules', '*.rb')].each { |f| require(f) }

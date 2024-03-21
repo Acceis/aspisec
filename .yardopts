@@ -5,6 +5,7 @@
 lib-ruby/**/*.rb
 -
 --main README.md
+README.fr.md
 docs/pages/*.md
 docs/CHANGELOG.md
 LICENSE

@@ -36,11 +36,11 @@ module Aspisec
     #   sqlmap.history.path.children # => [#<Pathname:/home/noraj/.local/share/sqlmap/history/os.hst>, #<Pathname:…>]
     #   sqlmap.history.path.children.first.size # => 10
     class Sqlmap < Aspisec::Module
-      # see {Aspisec::Config::DEFAULT_CONFIG}
+      # see {Aspisec::Config::DEFAULT_CONFIG} or call {Aspisec::Module::Location#description}.
       # @return [Location]
       attr_reader :history
 
-      # see {Aspisec::Config::DEFAULT_CONFIG}
+      # see {Aspisec::Config::DEFAULT_CONFIG} or call {Aspisec::Module::Location#description}.
       # @return [Location]
       attr_reader :logs
 

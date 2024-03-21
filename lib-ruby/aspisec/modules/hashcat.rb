@@ -4,39 +4,39 @@ require 'aspisec/module'
 
 module Aspisec
   module Modules
-    # CrackMapExec module.
+    # HashCat module.
     # Inherits {Aspisec::Module}.
     # For more examples of methods, see {Aspisec::Modules::Sqlmap}.
-    # @see https://github.com/byt3bl33d3r/CrackMapExec
+    # @see https://github.com/hashcat/hashcat
     # @example
     #   # Get the global config
     #   conf = Aspisec::Config.new.conf
-    #   # Create a Crackmapexec module instance
-    #   cme = Aspisec::Modules::Crackmapexec.new(conf)
+    #   # Create a Hashcat module instance
+    #   hc = Aspisec::Modules::Hashcat.new(conf)
     #   # Locations available
-    #   cme.locations_list # => ["logs", "screenshots", "workspaces"]
-    class Crackmapexec < Aspisec::Module
+    #   hc.locations_list # => ["sessions", "potfile", "dict_cache"]
+    class Hashcat < Aspisec::Module
       # see {Aspisec::Config::DEFAULT_CONFIG} or call {Aspisec::Module::Location#description}.
       # @return [Location]
-      attr_reader :logs
+      attr_reader :sessions
 
       # see {Aspisec::Config::DEFAULT_CONFIG} or call {Aspisec::Module::Location#description}.
       # @return [Location]
-      attr_reader :screenshots
+      attr_reader :potfile
 
       # see {Aspisec::Config::DEFAULT_CONFIG} or call {Aspisec::Module::Location#description}.
       # @return [Location]
-      attr_reader :workspaces
+      attr_reader :dict_cache
 
       # Inherits from {Aspisec::Module} but has only the `conf` argument,
       # `tool_name` is hardcoded for each module.
       # @param conf [Aspisec::Config] an instance of the global configuration
       def initialize(conf)
-        super(conf, 'crackmapexec')
-        @logs = Location.new(@conf, 'logs')
-        @screenshots = Location.new(@conf, 'screenshots')
-        @workspaces = Location.new(@conf, 'workspaces')
-        @locations_list = %w[logs screenshots workspaces]
+        super(conf, 'hashcat')
+        @sessions = Location.new(@conf, 'sessions')
+        @potfile = Location.new(@conf, 'potfile')
+        @dict_cache = Location.new(@conf, 'dict_cache')
+        @locations_list = %w[sessions potfile dict_cache]
       end
     end
   end

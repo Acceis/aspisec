@@ -4,39 +4,34 @@ require 'aspisec/module'
 
 module Aspisec
   module Modules
-    # CrackMapExec module.
+    # John (the Ripper) module.
     # Inherits {Aspisec::Module}.
     # For more examples of methods, see {Aspisec::Modules::Sqlmap}.
-    # @see https://github.com/byt3bl33d3r/CrackMapExec
+    # @see https://github.com/openwall/john
     # @example
     #   # Get the global config
     #   conf = Aspisec::Config.new.conf
-    #   # Create a Crackmapexec module instance
-    #   cme = Aspisec::Modules::Crackmapexec.new(conf)
+    #   # Create a John module instance
+    #   john = Aspisec::Modules::John.new(conf)
     #   # Locations available
-    #   cme.locations_list # => ["logs", "screenshots", "workspaces"]
-    class Crackmapexec < Aspisec::Module
+    #   john.locations_list # => ["logs", "potfile"]
+    class John < Aspisec::Module
       # see {Aspisec::Config::DEFAULT_CONFIG} or call {Aspisec::Module::Location#description}.
       # @return [Location]
       attr_reader :logs
 
       # see {Aspisec::Config::DEFAULT_CONFIG} or call {Aspisec::Module::Location#description}.
       # @return [Location]
-      attr_reader :screenshots
-
-      # see {Aspisec::Config::DEFAULT_CONFIG} or call {Aspisec::Module::Location#description}.
-      # @return [Location]
-      attr_reader :workspaces
+      attr_reader :potfile
 
       # Inherits from {Aspisec::Module} but has only the `conf` argument,
       # `tool_name` is hardcoded for each module.
       # @param conf [Aspisec::Config] an instance of the global configuration
       def initialize(conf)
-        super(conf, 'crackmapexec')
+        super(conf, 'john')
         @logs = Location.new(@conf, 'logs')
-        @screenshots = Location.new(@conf, 'screenshots')
-        @workspaces = Location.new(@conf, 'workspaces')
-        @locations_list = %w[logs screenshots workspaces]
+        @potfile = Location.new(@conf, 'potfile')
+        @locations_list = %w[logs potfile]
       end
     end
   end

@@ -4,18 +4,18 @@ require 'aspisec/module'
 
 module Aspisec
   module Modules
-    # CrackMapExec module.
+    # NetExec module.
     # Inherits {Aspisec::Module}.
     # For more examples of methods, see {Aspisec::Modules::Sqlmap}.
-    # @see https://github.com/byt3bl33d3r/CrackMapExec
+    # @see https://github.com/Pennyw0rth/NetExec
     # @example
     #   # Get the global config
     #   conf = Aspisec::Config.new.conf
-    #   # Create a Crackmapexec module instance
-    #   cme = Aspisec::Modules::Crackmapexec.new(conf)
+    #   # Create a Netexec module instance
+    #   nxc = Aspisec::Modules::Netexec.new(conf)
     #   # Locations available
-    #   cme.locations_list # => ["logs", "screenshots", "workspaces"]
-    class Crackmapexec < Aspisec::Module
+    #   nxc.locations_list # => ["logs", "screenshots", "workspaces"]
+    class Netexec < Aspisec::Module
       # see {Aspisec::Config::DEFAULT_CONFIG} or call {Aspisec::Module::Location#description}.
       # @return [Location]
       attr_reader :logs
@@ -32,7 +32,7 @@ module Aspisec
       # `tool_name` is hardcoded for each module.
       # @param conf [Aspisec::Config] an instance of the global configuration
       def initialize(conf)
-        super(conf, 'crackmapexec')
+        super(conf, 'netexec')
         @logs = Location.new(@conf, 'logs')
         @screenshots = Location.new(@conf, 'screenshots')
         @workspaces = Location.new(@conf, 'workspaces')
