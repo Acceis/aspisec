@@ -28,11 +28,11 @@ module Aspisec
       # @return [Location]
       attr_reader :workspaces
 
-      # Inherits from {Aspisec::Module} but has only the `conf` argument,
-      # `tool_name` is hardcoded for each module.
+      # Inherits from {Aspisec::Module} but without the `tool_name` argument
+      # because it is hardcoded for each module.
       # @param conf [Aspisec::Config] an instance of the global configuration
-      def initialize(conf)
-        super(conf, 'crackmapexec')
+      def initialize(conf, logger: nil)
+        super(conf, 'crackmapexec', logger:)
         @logs = Location.new(@conf, 'logs')
         @screenshots = Location.new(@conf, 'screenshots')
         @workspaces = Location.new(@conf, 'workspaces')

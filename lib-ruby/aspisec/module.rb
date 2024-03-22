@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
+# stdlib
 require 'pathname'
+# third-party
+require 'tty-logger'
 
 module Aspisec
   # Generic module class that will be inherited in all modules instances
@@ -28,14 +31,19 @@ module Aspisec
     # Not meant to be used directly but to be inherited in modules instead
     # @param conf [Aspisec::Config] an instance of the global configuration
     # @param tool_name [String] The name of the tool. It must match the configuration key.
+    # @param logger [TTY::Logger] logger instance. See {Aspisec::Logger}.
+    #   If none is provided, a default logger with log level 2 is created.
+    #   See {Aspisec::Logger::LOG_LEVEL}.
     # @example
     #   conf = Aspisec::Config.new.conf
     #   # you should never do that as you'll get incomplete data and features
     #   sqlmap = Aspisec::Module.new(conf, 'sqlmap')
     #   # rather call the sqlmap module that will inherit this class
     #   sqlmap = Aspisec::Modules::Sqlmap.new(conf)
-    def initialize(conf, tool_name)
+    def initialize(conf, tool_name, logger: nil)
+      @logger = logger || Aspisec::Logger.new.logger
       @name = tool_name
+      @logger.debug("Module #{@name} was loaded", app: @name)
       @conf = conf['tools'][tool_name]
       @base = Pathname.new(@conf.dig('location', 'base'))
       @enabled = @conf.fetch('enabled', true)

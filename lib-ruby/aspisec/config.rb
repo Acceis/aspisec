@@ -4,6 +4,7 @@
 require 'yaml'
 # third-party
 require 'xdg'
+require 'tty-logger'
 
 module Aspisec
   # Managing the configuration file (location, creation, parsing)
@@ -14,6 +15,11 @@ module Aspisec
         # Auto clean, remove files without asking confirmation
         'autoclean' => {
           'enabled' => false
+        },
+        # Display the description of each location to explain what the file /
+        # folder is storing
+        'describe' => {
+          'enabled' => true
         }
       },
       'tools' => {
@@ -193,25 +199,31 @@ module Aspisec
       }
     }.freeze
 
-    # @todo To remove for release
-    def test
-      xdg = XDG.new
-      p xdg.data_home.to_s
-      p Dir.home
-    end
-
-    # The parsed configuration
-    # @return [Hash] the configuration object
+    # The parsed Aspisec configuration
+    # @return [Hash] the Aspisec configuration object
     attr_reader :conf
 
     # Load config. or create a default config. file if not existing.
     # Also parse and interprete custom values.
+    # @param logger [TTY::Logger] logger instance. See {Aspisec::Logger}.
+    #   If none is provided, a default logger with log level 2 is created.
+    #   See {Aspisec::Logger::LOG_LEVEL}.
     # @example
+    #   # With default logger
     #   cnf = Aspisec::Config.new
     #   cnf.conf
-    def initialize
+    #   # With custom logger
+    #   logger = Aspisec::Logger.new(0).logger
+    #   cnf = Aspisec::Config.new(logger)
+    #   cnf.conf
+    def initialize(logger = nil)
+      # Set log level
+      @logger = logger || Aspisec::Logger.new.logger
+      # Create the configuration file if it doesn't exist
       create_config unless config_exist?
+      # Else load it
       @conf = load_config
+      # Replace the path variables / plaholders with real values
       expand_path_conf!
     end
 
@@ -219,7 +231,13 @@ module Aspisec
     # @return [Hash|nil] the corresponding Ruby object parsed from the YAML file
     #   or `nil` if the configuration file doesn't exist
     def load_config
-      config_exist? ? YAML.load_file(config_filepath, symbolize_names: false) : nil
+      if config_exist?
+        @logger.debug("Loading configuration from #{config_filepath}")
+        YAML.load_file(config_filepath, symbolize_names: false)
+      else
+        @logger.warn('Configuration not loaded')
+        nil
+      end
     end
 
     # Create the configuration file with default value at default location if it doesn't already exist
@@ -229,6 +247,7 @@ module Aspisec
       parent_dir = File.dirname(config_filepath)
       # create parent folder recursively if it doesn't already exist
       FileUtils.mkpath(parent_dir)
+      @logger.info("Creating configuration file: #{config_filepath}")
       File.write(config_filepath, YAML.dump(DEFAULT_CONFIG))
     end
 
@@ -236,6 +255,10 @@ module Aspisec
     # @return [String] absolute file path
     def config_filepath
       xdg = XDG.new
+      # Logging this floods debug info and is not meaningful
+      # path = xdg.config_home + 'aspisec' + CONFIG_FILENAME
+      # @logger.debug("The default configuration file path should be: #{path}")
+      # path
       # https://github.com/rubocop/rubocop/issues/11757
       # rubocop:disable Style/StringConcatenation
       xdg.config_home + 'aspisec' + CONFIG_FILENAME # /home/noraj/.config/aspisec/aspisec.config.yaml
@@ -245,6 +268,11 @@ module Aspisec
     # Check if the Aspisec configuration file exists or not
     # @return [true|false]
     def config_exist?
+      # Logging this floods debug info and is not meaningful
+      # exist = File.exist?(config_filepath)
+      # neg = exist ? '' : 'does not'
+      # @logger.debug("The configuration file #{config_filepath} #{neg} exist")
+      # exist
       File.exist?(config_filepath)
     end
 

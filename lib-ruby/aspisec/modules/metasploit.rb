@@ -35,8 +35,8 @@ module Aspisec
       # Inherits from {Aspisec::Module} but has only the `conf` argument,
       # `tool_name` is hardcoded for each module.
       # @param conf [Aspisec::Config] an instance of the global configuration
-      def initialize(conf)
-        super(conf, 'metasploit')
+      def initialize(conf, logger: nil)
+        super(conf, 'metasploit', logger:)
         @history = Location.new(@conf, 'history')
         @logs = Location.new(@conf, 'logs')
         @loot = Location.new(@conf, 'loot')

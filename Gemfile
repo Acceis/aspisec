@@ -5,9 +5,12 @@ source 'https://rubygems.org'
 gemspec
 
 group :runtime, :cli do
+  gem 'activesupport', '~> 7.1', '>= 7.1.3.2' # for human-reabdle formater helper
   gem 'docopt', '~> 0.6' # for argument parsing
-  gem 'paint', '~> 2.3' # for colorized ouput
-  gem 'xdg', '~> 8.0'
+  gem 'pastel', '~> 0.8' # for colorized ouput
+  gem 'tty-logger', '~> 0.6' # for CLI event logging
+  gem 'tty-prompt', '~> 0.23' # for input handling
+  gem 'xdg', '~> 8.0' # for XDG path handling
 end
 
 group :development, :install do

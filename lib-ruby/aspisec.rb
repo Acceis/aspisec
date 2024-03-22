@@ -2,6 +2,7 @@
 
 require 'aspisec/version'
 
+require 'aspisec/clean'
 require 'aspisec/config'
-# require all modules
-Dir[File.join(__dir__, 'aspisec', 'modules', '*.rb')].each { |f| require(f) }
+require 'aspisec/logger'
+require 'aspisec/modules'
