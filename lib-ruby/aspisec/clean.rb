@@ -70,17 +70,20 @@ module Aspisec
       @modules.each do |mod|
         next unless mod.enabled?
 
-        puts "━━━━━━ #{@painter.decorate(mod.name, :blue, :bold)} ━━━━━━━"
+        puts "━━━━━━━━━━━━ #{@painter.decorate(mod.name, :white, :bold, :on_blue)} ━━━━━━━━━━━━"
         mod.locations.each do |loc|
           if loc.enabled?
             if @autoclean
-              puts "rm #{loc.path}"
+              @logger.info("#{loc.path} was removed")
+              puts "TODO rm #{loc.path}"
             else
               remove = prompt_removal(location: loc)
               if remove
-                puts "rm #{loc.path}"
+                @logger.info("#{loc.path} was removed")
+                puts "TODO rm #{loc.path}"
               else
-                puts 'Okayyyyyyyy'
+                @logger.debug("#{loc.path} was left untouched")
+                puts 'TODO Okayyyyyyyy'
               end
             end
           end
