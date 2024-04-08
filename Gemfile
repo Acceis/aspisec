@@ -10,7 +10,11 @@ group :runtime, :cli do
   gem 'pastel', '~> 0.8' # for colorized ouput
   gem 'tty-logger', '~> 0.6' # for CLI event logging
   gem 'tty-prompt', '~> 0.23' # for input handling
-  gem 'xdg', '~> 8.0' # for XDG path handling
+  # for XDG path handling
+  # conditionnal requirement to workaround https://github.com/bkuhlmann/xdg/issues/8
+  gem 'xdg', '~> 8.0' if Gem::Dependency.new('', ['>= 3.3', '< 3.4']).match?('', RUBY_VERSION)
+  gem 'xdg', ['>= 7.0', '< 7.1.3'] if Gem::Dependency.new('', ['>= 3.2', '< 3.3']).match?('', RUBY_VERSION)
+  gem 'xdg', ['>= 6.0', '< 6.6.2'] if Gem::Dependency.new('', ['>= 3.1', '< 3.2']).match?('', RUBY_VERSION)
 end
 
 group :development, :install do

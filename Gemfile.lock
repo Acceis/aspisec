@@ -7,7 +7,7 @@ PATH
       pastel (~> 0.8)
       tty-logger (~> 0.6)
       tty-prompt (~> 0.23)
-      xdg (~> 8.0)
+      xdg (>= 6.0)
 
 GEM
   remote: https://rubygems.org/

@@ -37,5 +37,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency('pastel', '~> 0.8') # for colorized output
   s.add_runtime_dependency('tty-logger', '~> 0.6') # for CLI event logging
   s.add_runtime_dependency('tty-prompt', '~> 0.23') # for input handling
-  s.add_runtime_dependency('xdg', '~> 8.0') # for XDG Base Directory resolution
+  s.add_runtime_dependency('xdg', '>= 6.0') # for XDG Base Directory resolution
 end
