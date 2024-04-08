@@ -1,0 +1,51 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Ruby internal
+# Project internal
+require 'aspisec'
+# External
+require 'docopt'
+require 'pastel'
+
+paint = Pastel.new(eachline: "\n")
+
+doc = <<~DOCOPT
+  #{paint.decorate('AspiSec', :red)} v#{paint.decorate(Aspisec::VERSION, :bold)}
+
+  #{paint.decorate('Usage:', :red)}
+    aspisec [options] clean
+    aspisec -h | --help
+    aspisec --version
+
+  #{paint.decorate('Commands:', :red)}
+    clean                   Removes the traces left by offensive security tools
+
+  #{paint.decorate('Options:', :red)}
+    --debug                 Display arguments
+    -v, --verbose <level>   Set verbosity level (see documentation) [default: 2]
+    -h, --help              Show this screen
+    --version               Show version
+
+  #{paint.decorate('Examples:', :red)}
+    aspisec clean
+
+  #{paint.decorate('Project:', :red)}
+    #{paint.decorate('source', :underline)} (https://github.com/acceis/aspisec)
+    #{paint.decorate('documentation', :underline)} (https://acceis.github.io/aspisec)
+DOCOPT
+
+begin
+  args = Docopt.docopt(doc, version: Aspisec::VERSION)
+  puts args if args['--debug']
+  if args['clean']
+    log_level = 2
+    log_level = args['--verbose'].to_i if args['--verbose']
+    logger = Aspisec::Logger.new(log_level).logger
+    conf = Aspisec::Config.new(logger).conf
+    cl = Aspisec::Clean.new(conf:, logger:)
+    cl.clean
+  end
+rescue Docopt::Exit => e
+  puts e.message
+end
