@@ -11,3 +11,9 @@ updates:
       interval: "daily"
     labels:
       - "dependency::update"
+  - package-ecosystem: "npm"
+    directory: "/docs-tools"
+    schedule:
+      interval: "daily"
+    labels:
+      - "dependency::update"

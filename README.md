@@ -8,7 +8,7 @@
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/acceis/aspisec/ruby.yml?branch=master)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/acceis/aspisec)
 
-![AspiSec logo](assets/logo-aspisec.jpg)
+![AspiSec logo](docs/_media/logo-aspisec.jpg)
 
 > Vacuuming out the remnants of offensive tools. AspiSec is responsible for removing the traces and confidential information left by offensive security tools on an auditor's computer in various cache and log files.
 

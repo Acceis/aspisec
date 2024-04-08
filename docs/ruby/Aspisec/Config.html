@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Aspisec::Config
+  
+    &mdash; Documentation by YARD 0.9.36
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Aspisec::Config";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Aspisec.html" title="Aspisec (module)">Aspisec</a></span></span>
+     &raquo; 
+    <span class="title">Config</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Aspisec::Config
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Aspisec::Config</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib-ruby/aspisec/config.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Managing the configuration file (location, creation, parsing)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="CONFIG_FILENAME-constant" class="">CONFIG_FILENAME =
+          
+        </dt>
+        <dd><pre class="code"><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">aspisec.config.yaml</span><span style="color:#710">'</span></span></pre></dd>
+      
+        <dt id="DEFAULT_CONFIG-constant" class="">DEFAULT_CONFIG =
+          
+        </dt>
+        <dd><pre class="code">{
+  <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">aspisec</span><span style="color:#710">'</span></span> =&gt; {
+    <span style="color:#777"># Auto clean, remove files without asking confirmation</span>
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">autoclean</span><span style="color:#710">'</span></span> =&gt; {
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">false</span>
+    },
+    <span style="color:#777"># Display the description of each location to explain what the file /</span>
+    <span style="color:#777"># directory is storing</span>
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">describe</span><span style="color:#710">'</span></span> =&gt; {
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>
+    }
+  },
+  <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">tools</span><span style="color:#710">'</span></span> =&gt; {
+    <span style="color:#777"># Example of a tool configuration</span>
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">example</span><span style="color:#710">'</span></span> =&gt; {
+      <span style="color:#777"># Putting this value to false allow to disable the check for this module only</span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">false</span>,
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
+        <span style="color:#777"># The base location where the tool stores the confidential stuff to clean</span>
+        <span style="color:#777"># $XDG_DATA_HOME is evaluated with a XDG library so even if the environment</span>
+        <span style="color:#777"># variable doesn't exist it will be replaced with the default standard value</span>
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$XDG_DATA_HOME/tools/ex</span><span style="color:#710">'</span></span>,
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">logs</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="color:#777"># Path to the confidential file n°1</span>
+          <span style="color:#777"># &lt;base&gt; will be replaced by location.base value</span>
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/output</span><span style="color:#710">'</span></span>,
+          <span style="color:#777"># Each file check can be individually turned off rather than disabling the whole module</span>
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enaled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">false</span>,
+          <span style="color:#777"># The description explain which client-related data is stored there and how it is sensitive.</span>
+          <span style="color:#777"># It generally says if it's a file or directory.</span>
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">The directory containing log files. Logs contain IP addresses and hostnames.</span><span style="color:#710">'</span></span>
+        }
+      }
+    },
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">sqlmap</span><span style="color:#710">'</span></span> =&gt; {
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$XDG_DATA_HOME/sqlmap</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.local/share/sqlmap</span>
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">history</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/history</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Directory containing history files.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">os.hst stores system commands entered when using --os-pwn option.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">sql.hst stores SQL quries entered when using --os-shell option.</span><span style="color:#710">'</span></span>
+        },
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">logs</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/output</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Directory containing a folder per target.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">&lt;target&gt;/log contains all successful injection vectors.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">&lt;target&gt;/session.sqlite contains retrieved data.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;target&gt;/target.txt contains target URL + command used.</span><span style="color:#710">'</span></span>
+        }
+      }
+    },
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">crackmapexec</span><span style="color:#710">'</span></span> =&gt; {
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$HOME/.cme</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.cme</span>
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">logs</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/logs</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Directory containing log files, secrets, hashes, cleartext passwords etc.</span><span style="color:#710">'</span></span>
+        },
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">screenshots</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/screenshots</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Directory where are stored all screenshots taken with the --screenshot option.</span><span style="color:#710">'</span></span>
+        },
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">workspaces</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/workspaces</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Directory containing workspaces.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Workspaces contain SQLite databases including users (domain, usernames, password), </span><span style="color:#710">'</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">shares, hosts, dpapi secrets, etc.</span><span style="color:#710">'</span></span>
+        }
+      }
+    },
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">netexec</span><span style="color:#710">'</span></span> =&gt; {
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$HOME/.nxc</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.nxc</span>
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">logs</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/logs</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Directory containing log files, secrets, hashes, cleartext password etc.</span><span style="color:#710">'</span></span>
+        },
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">screenshots</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/screenshots</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Directory where are stored all screenshots taken with the --screenshot option.</span><span style="color:#710">'</span></span>
+        },
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">workspaces</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/workspaces</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Directory containing workspaces.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Workspaces contain SQLite databases including users (domain, usernames, password), </span><span style="color:#710">'</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">shares, hosts, dpapi secrets, etc.</span><span style="color:#710">'</span></span>
+        }
+      }
+    },
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">hashcat</span><span style="color:#710">'</span></span> =&gt; {
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$XDG_DATA_HOME/hashcat</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.local/share/hashcat</span>
+        <span style="color:#777">#</span>
+        <span style="color:#777">#</span>
+        <span style="color:#777">#</span>
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">sessions</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/sessions</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enaled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">false</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Directory containing session related data.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">hashcat.log should not contain any sensible data unless the file name </span><span style="color:#710">'</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">of a target file is sensible.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">show.log should not contain any sensible data unless the folder name is sensible.</span><span style="color:#710">'</span></span>
+        },
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">potfile</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/hashcat.potfile</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">File containing all cracked hashes.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Passwords may include enterprize related content or may be easily recognizable.</span><span style="color:#710">'</span></span>
+        },
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">dict_cache</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/hashcat.dictstat2</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">false</span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">File is a cache for dictionaries.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">It should not be sensible unless dict. contain confidential data.</span><span style="color:#710">'</span></span>
+        }
+      }
+    },
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">theharvester</span><span style="color:#710">'</span></span> =&gt; {
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$XDG_DATA_HOME/theHarvester</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.local/share/theHarvester</span>
+        <span style="color:#777">#</span>
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">stash</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/stash.sqlite</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">File (SQLite DB) containing all the harvested addresses.</span><span style="color:#710">'</span></span>
+        }
+      }
+    },
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">john</span><span style="color:#710">'</span></span> =&gt; {
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$HOME/.john</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.john</span>
+        <span style="color:#777">#</span>
+        <span style="color:#777">#</span>
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">logs</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/john.log</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">File containing the logs of the commands launched.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Does not contain hashes or passwords but usernames and whole command lines.</span><span style="color:#710">'</span></span>
+        },
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">potfile</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/john.pot</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">File containing all cracked hashes.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Passwords may include enterprize related content or may be easily recognizable.</span><span style="color:#710">'</span></span>
+        }
+      }
+    },
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">metasploit</span><span style="color:#710">'</span></span> =&gt; {
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$HOME/.msf4</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.msf4</span>
+        <span style="color:#777">#</span>
+        <span style="color:#777">#</span>
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">history</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/history</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">File containing the history of commands used in msf shell.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">It certainly contains username, passwords, hostnames, etc.</span><span style="color:#710">'</span></span>
+        },
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">logs</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/logs</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Directory containing log files.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">framework.log may contain stacktraces that contain payloads.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">production.log and sessions/ ? (I don't know, empty for me)</span><span style="color:#710">&quot;</span></span>
+        },
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">loot</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/loot</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Directory containing looted files.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Those are retrieved clients files.</span><span style="color:#710">'</span></span>
+        },
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">meterpreter</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/meterpreter_history</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">File containing the history of commands used in meterpreter sessions.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Less sensible than msf shell history but could still contains some file paths, </span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">for example.</span><span style="color:#710">'</span></span>
+        }
+      }
+    }
+  },
+  <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">audit</span><span style="color:#710">'</span></span> =&gt; {
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">false</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$HOME/Projets</span><span style="color:#710">'</span></span>
+    }
+  }
+}.freeze</pre></dd>
+      
+    </dl>
+  
+
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#conf-instance_method" title="#conf (instance method)">#<strong>conf</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>The parsed Aspisec configuration.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#expand_path_variables-class_method" title="expand_path_variables (class method)">.<strong>expand_path_variables</strong>(path)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Evaluate XDG variables and $HOME in file path.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#config_exist%3F-instance_method" title="#config_exist? (instance method)">#<strong>config_exist?</strong>  &#x21d2; true|false </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Check if the Aspisec configuration file exists or not.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#config_filepath-instance_method" title="#config_filepath (instance method)">#<strong>config_filepath</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Get the Aspisec configuration file path.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_config-instance_method" title="#create_config (instance method)">#<strong>create_config</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Create the configuration file with default value at default location if it doesn't already exist.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#expand_path_conf!-instance_method" title="#expand_path_conf! (instance method)">#<strong>expand_path_conf!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Expand all base location with <span class='object_link'><a href="#expand_path_variables-class_method" title="Aspisec::Config.expand_path_variables (method)">Config.expand_path_variables</a></span> in the configuration + expand the custom <code>&lt;base&gt;</code> tags.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#expand_path_variables-instance_method" title="#expand_path_variables (instance method)">#<strong>expand_path_variables</strong>(path)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(logger = nil)  &#x21d2; Config </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Load config.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#load_config-instance_method" title="#load_config (instance method)">#<strong>load_config</strong>  &#x21d2; Hash|nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Read and parse (YAML ➡️ Ruby Hash) the config.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(logger = nil)  &#x21d2; <tt><span class='object_link'><a href="" title="Aspisec::Config (class)">Config</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Load config. or create a default config. file if not existing.
+Also parse and interprete custom values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span style="color:#777"># With default logger</span>
+cnf = <span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">Config</span>.new
+cnf.conf
+<span style="color:#777"># With custom logger</span>
+logger = <span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">Logger</span>.new(<span style="color:#00D">0</span>).logger
+cnf = <span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">Config</span>.new(logger)
+cnf.conf</code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>logger</span>
+      
+      
+        <span class='type'>(<tt>TTY::Logger</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>logger instance. See <span class='object_link'><a href="Logger.html" title="Aspisec::Logger (class)">Logger</a></span>.
+If none is provided, a default logger with log level 2 is created.
+See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="Aspisec::Logger::LOG_LEVEL (constant)">Logger::LOG_LEVEL</a></span>.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 219</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(logger = <span style="color:#069">nil</span>)
+  <span style="color:#777"># Set log level</span>
+  <span style="color:#33B">@logger</span> = logger || <span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">Logger</span>.new.logger
+  <span style="color:#777"># Create the configuration file if it doesn't exist</span>
+  create_config <span style="color:#080;font-weight:bold">unless</span> config_exist?
+  <span style="color:#777"># Else load it</span>
+  <span style="color:#33B">@conf</span> = load_config
+  <span style="color:#777"># Replace the path variables / plaholders with real values</span>
+  expand_path_conf!
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="conf-instance_method">
+  
+    #<strong>conf</strong>  &#x21d2; <tt>Hash</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>The parsed Aspisec configuration</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the Aspisec configuration object</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+204
+205
+206</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 204</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">conf</span>
+  <span style="color:#33B">@conf</span>
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="expand_path_variables-class_method">
+  
+    .<strong>expand_path_variables</strong>(path)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'><p>Arguments other than Strings are returned untouched, useful to iterate over configuration values</p>
+</div>
+  </div>
+
+<p>Evaluate XDG variables and $HOME in file path</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code>conf.expand_path_variables(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$XDG_DATA_HOME/sqlmap</span><span style="color:#710">'</span></span>)
+<span style="color:#777"># =&gt; &quot;/home/noraj/.local/share/sqlmap&quot;</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>path with variables</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'><p>the absolute version of the evaluated path</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 291</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">expand_path_variables</span>(path)
+  <span style="color:#080;font-weight:bold">return</span> path <span style="color:#080;font-weight:bold">unless</span> path.is_a?(<span style="color:#036;font-weight:bold">String</span>) <span style="color:#777"># not a path, let untouched</span>
+
+  xdg = <span style="color:#036;font-weight:bold">XDG</span>.new
+  <span style="color:#080;font-weight:bold">case</span> path
+  <span style="color:#080;font-weight:bold">when</span> <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#D20">\$</span><span style="color:#808">XDG_CONFIG_HOME</span><span style="color:#404">/</span></span>
+    path.sub!(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$XDG_CONFIG_HOME</span><span style="color:#710">'</span></span>, xdg.config_home.to_s)
+  <span style="color:#080;font-weight:bold">when</span> <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#D20">\$</span><span style="color:#808">XDG_DATA_HOME</span><span style="color:#404">/</span></span>
+    path.sub!(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$XDG_DATA_HOME</span><span style="color:#710">'</span></span>, xdg.data_home.to_s)
+  <span style="color:#080;font-weight:bold">when</span> <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#D20">\$</span><span style="color:#808">HOME</span><span style="color:#404">/</span></span>
+    path.sub!(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$HOME</span><span style="color:#710">'</span></span>, <span style="color:#036;font-weight:bold">Dir</span>.home)
+  <span style="color:#080;font-weight:bold">end</span>
+  <span style="color:#036;font-weight:bold">File</span>.expand_path(path)
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="config_exist?-instance_method">
+  
+    #<strong>config_exist?</strong>  &#x21d2; <tt>true|false</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Check if the Aspisec configuration file exists or not</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true|false</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+270
+271
+272
+273
+274
+275
+276
+277</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 270</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">config_exist?</span>
+  <span style="color:#777"># Logging this floods debug info and is not meaningful</span>
+  <span style="color:#777"># exist = File.exist?(config_filepath)</span>
+  <span style="color:#777"># neg = exist ? '' : 'does not'</span>
+  <span style="color:#777"># @logger.debug(&quot;The configuration file #{config_filepath} #{neg} exist&quot;)</span>
+  <span style="color:#777"># exist</span>
+  <span style="color:#036;font-weight:bold">File</span>.exist?(config_filepath)
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="config_filepath-instance_method">
+  
+    #<strong>config_filepath</strong>  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Get the Aspisec configuration file path</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>absolute file path</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 256</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">config_filepath</span>
+  xdg = <span style="color:#036;font-weight:bold">XDG</span>.new
+  <span style="color:#777"># Logging this floods debug info and is not meaningful</span>
+  <span style="color:#777"># path = xdg.config_home + 'aspisec' + CONFIG_FILENAME</span>
+  <span style="color:#777"># @logger.debug(&quot;The default configuration file path should be: #{path}&quot;)</span>
+  <span style="color:#777"># path</span>
+  <span style="color:#777"># https://github.com/rubocop/rubocop/issues/11757</span>
+  <span style="color:#777"># rubocop:disable Style/StringConcatenation</span>
+  xdg.config_home + <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">aspisec</span><span style="color:#710">'</span></span> + <span style="color:#036;font-weight:bold">CONFIG_FILENAME</span> <span style="color:#777"># /home/noraj/.config/aspisec/aspisec.config.yaml</span>
+  <span style="color:#777"># rubocop:enable Style/StringConcatenation</span>
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_config-instance_method">
+  
+    #<strong>create_config</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Create the configuration file with default value at default location if it doesn't already exist</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+244
+245
+246
+247
+248
+249
+250
+251
+252</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 244</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">create_config</span>
+  <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">if</span> config_exist?
+
+  parent_dir = <span style="color:#036;font-weight:bold">File</span>.dirname(config_filepath)
+  <span style="color:#777"># create parent folder recursively if it doesn't already exist</span>
+  <span style="color:#036;font-weight:bold">FileUtils</span>.mkpath(parent_dir)
+  <span style="color:#33B">@logger</span>.info(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Creating configuration file: </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>config_filepath<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>)
+  <span style="color:#036;font-weight:bold">File</span>.write(config_filepath, <span style="color:#036;font-weight:bold">YAML</span>.dump(<span style="color:#036;font-weight:bold">DEFAULT_CONFIG</span>))
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="expand_path_conf!-instance_method">
+  
+    #<strong>expand_path_conf!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Expand all base location with <span class='object_link'><a href="#expand_path_variables-class_method" title="Aspisec::Config.expand_path_variables (method)">expand_path_variables</a></span> in the configuration</p>
+<ul>
+<li>expand the custom <code>&lt;base&gt;</code> tags</li>
+</ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 308</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">expand_path_conf!</span>
+  <span style="color:#33B">@conf</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">tools</span><span style="color:#710">'</span></span>].each_key <span style="color:#080;font-weight:bold">do</span> |tool|
+    base_path = <span style="color:#33B">@conf</span>.dig(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">tools</span><span style="color:#710">'</span></span>, tool, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span>)
+    <span style="color:#33B">@conf</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">tools</span><span style="color:#710">'</span></span>][tool][<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span>][<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span>] = expand_path_variables(base_path)
+    <span style="color:#33B">@conf</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">tools</span><span style="color:#710">'</span></span>][tool][<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span>].each_key <span style="color:#080;font-weight:bold">do</span> |k|
+      <span style="color:#080;font-weight:bold">unless</span> k == <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span>
+        feature_path = <span style="color:#33B">@conf</span>.dig(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">tools</span><span style="color:#710">'</span></span>, tool, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span>, k, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span>)
+        <span style="color:#33B">@conf</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">tools</span><span style="color:#710">'</span></span>][tool][<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span>][k][<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span>] = feature_path.sub(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;</span><span style="color:#710">'</span></span>, base_path) <span style="color:#080;font-weight:bold">if</span> feature_path
+      <span style="color:#080;font-weight:bold">end</span>
+    <span style="color:#080;font-weight:bold">end</span>
+  <span style="color:#080;font-weight:bold">end</span>
+  <span style="color:#33B">@conf</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">audit</span><span style="color:#710">'</span></span>][<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span>][<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span>] = expand_path_variables(<span style="color:#33B">@conf</span>.dig(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">audit</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span>))
+  <span style="color:#33B">@conf</span>
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="expand_path_variables-instance_method">
+  
+    #<strong>expand_path_variables</strong>(path)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'><p>see <span class='object_link'><a href="#expand_path_variables-class_method" title="Aspisec::Config.expand_path_variables (method)">expand_path_variables</a></span></p>
+</div>
+  </div>
+
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+280
+281
+282</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 280</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">expand_path_variables</span>(path)
+  <span style="color:#036;font-weight:bold">Config</span>.expand_path_variables(path)
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="load_config-instance_method">
+  
+    #<strong>load_config</strong>  &#x21d2; <tt>Hash|nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Read and parse (YAML ➡️ Ruby Hash) the config. file</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash|nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the corresponding Ruby object parsed from the YAML file
+or <code>nil</code> if the configuration file doesn't exist</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+233
+234
+235
+236
+237
+238
+239
+240
+241</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 233</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">load_config</span>
+  <span style="color:#080;font-weight:bold">if</span> config_exist?
+    <span style="color:#33B">@logger</span>.debug(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Loading configuration from </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>config_filepath<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>)
+    <span style="color:#036;font-weight:bold">YAML</span>.load_file(config_filepath, <span style="color:#606">symbolize_names</span>: <span style="color:#069">false</span>)
+  <span style="color:#080;font-weight:bold">else</span>
+    <span style="color:#33B">@logger</span>.warn(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Configuration not loaded</span><span style="color:#710">'</span></span>)
+    <span style="color:#069">nil</span>
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Mon Apr  8 17:21:49 2024 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.36 (ruby-3.3.0).
+</div>
+
+    </div>
+  </body>
+</html>

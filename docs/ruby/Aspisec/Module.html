@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Aspisec::Module
+  
+    &mdash; Documentation by YARD 0.9.36
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Aspisec::Module";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (M)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Aspisec.html" title="Aspisec (module)">Aspisec</a></span></span>
+     &raquo; 
+    <span class="title">Module</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Aspisec::Module
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Aspisec::Module</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib-ruby/aspisec/module.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Generic module class that will be inherited in all modules instances</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="Modules/Crackmapexec.html" title="Aspisec::Modules::Crackmapexec (class)">Aspisec::Modules::Crackmapexec</a></span>, <span class='object_link'><a href="Modules/Hashcat.html" title="Aspisec::Modules::Hashcat (class)">Aspisec::Modules::Hashcat</a></span>, <span class='object_link'><a href="Modules/John.html" title="Aspisec::Modules::John (class)">Aspisec::Modules::John</a></span>, <span class='object_link'><a href="Modules/Metasploit.html" title="Aspisec::Modules::Metasploit (class)">Aspisec::Modules::Metasploit</a></span>, <span class='object_link'><a href="Modules/Netexec.html" title="Aspisec::Modules::Netexec (class)">Aspisec::Modules::Netexec</a></span>, <span class='object_link'><a href="Modules/Sqlmap.html" title="Aspisec::Modules::Sqlmap (class)">Aspisec::Modules::Sqlmap</a></span>, <span class='object_link'><a href="Modules/Theharvester.html" title="Aspisec::Modules::Theharvester (class)">Aspisec::Modules::Theharvester</a></span></p>
+</div>
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Module/Location.html" title="Aspisec::Module::Location (class)">Location</a></span>
+    
+  
+</p>
+
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#base-instance_method" title="#base (instance method)">#<strong>base</strong>  &#x21d2; Pathname </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>The base location (directory) where the tool data is stored.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#conf-instance_method" title="#conf (instance method)">#<strong>conf</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>The configuration for the tool.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#locations_list-instance_method" title="#locations_list (instance method)">#<strong>locations_list</strong>  &#x21d2; Array&lt;String&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>List of locations (name).</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#name-instance_method" title="#name (instance method)">#<strong>name</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>The name of the tool.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#enabled%3F-instance_method" title="#enabled? (instance method)">#<strong>enabled?</strong>  &#x21d2; true|false </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Is this module enabled?.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(conf, tool_name, logger: nil)  &#x21d2; Module </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Not meant to be used directly but to be inherited in modules instead.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#locations-instance_method" title="#locations (instance method)">#<strong>locations</strong>  &#x21d2; Array&lt;Location&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns all locations available for the tool.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(conf, tool_name, logger: nil)  &#x21d2; <tt><span class='object_link'><a href="" title="Aspisec::Module (class)">Module</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Not meant to be used directly but to be inherited in modules instead</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code>conf = <span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">Config</span>.new.conf
+<span style="color:#777"># you should never do that as you'll get incomplete data and features</span>
+sqlmap = <span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">Module</span>.new(conf, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">sqlmap</span><span style="color:#710">'</span></span>)
+<span style="color:#777"># rather call the sqlmap module that will inherit this class</span>
+sqlmap = <span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">Modules</span>::<span style="color:#036;font-weight:bold">Sqlmap</span>.new(conf)</code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>conf</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Config.html" title="Aspisec::Config (class)">Aspisec::Config</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>an instance of the global configuration</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>tool_name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The name of the tool. It must match the configuration key.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>logger</span>
+      
+      
+        <span class='type'>(<tt>TTY::Logger</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>logger instance. See <span class='object_link'><a href="Logger.html" title="Aspisec::Logger (class)">Logger</a></span>.
+If none is provided, a default logger with log level 2 is created.
+See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="Aspisec::Logger::LOG_LEVEL (constant)">Logger::LOG_LEVEL</a></span>.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45
+46
+47
+48
+49
+50
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/module.rb', line 43</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(conf, tool_name, <span style="color:#606">logger</span>: <span style="color:#069">nil</span>)
+  <span style="color:#33B">@logger</span> = logger || <span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">Logger</span>.new.logger
+  <span style="color:#33B">@name</span> = tool_name
+  <span style="color:#33B">@logger</span>.debug(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Module </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span><span style="color:#33B">@name</span><span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> was loaded</span><span style="color:#710">&quot;</span></span>, <span style="color:#606">app</span>: <span style="color:#33B">@name</span>)
+  <span style="color:#33B">@conf</span> = conf[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">tools</span><span style="color:#710">'</span></span>][tool_name]
+  <span style="color:#33B">@base</span> = <span style="color:#036;font-weight:bold">Pathname</span>.new(<span style="color:#33B">@conf</span>.dig(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span>))
+  <span style="color:#33B">@enabled</span> = <span style="color:#33B">@conf</span>.fetch(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span>, <span style="color:#069">true</span>)
+  <span style="color:#33B">@locations_list</span> = []
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="base-instance_method">
+  
+    #<strong>base</strong>  &#x21d2; <tt>Pathname</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>The base location (directory) where the tool data is stored.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Pathname</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>file path</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/module.rb', line 29</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">base</span>
+  <span style="color:#33B">@base</span>
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="conf-instance_method">
+  
+    #<strong>conf</strong>  &#x21d2; <tt>Hash</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>The configuration for the tool.
+Sub-tree under <code>tools &gt; tool_name</code> of <span class='object_link'><a href="Config.html#conf-instance_method" title="Aspisec::Config#conf (method)">Config#conf</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+14
+15
+16</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/module.rb', line 14</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">conf</span>
+  <span style="color:#33B">@conf</span>
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="locations_list-instance_method">
+  
+    #<strong>locations_list</strong>  &#x21d2; <tt>Array&lt;String&gt;</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>List of locations (name).
+Returns something only on module instances like <span class='object_link'><a href="Modules/Sqlmap.html" title="Aspisec::Modules::Sqlmap (class)">Aspisec::Modules::Sqlmap</a></span>.
+Will be empty for <span class='object_link'><a href="" title="Aspisec::Module (class)">Aspisec::Module</a></span>.
+For a list of objects, rather use <span class='object_link'><a href="#locations-instance_method" title="Aspisec::Module#locations (method)">#locations</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/module.rb', line 25</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">locations_list</span>
+  <span style="color:#33B">@locations_list</span>
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="name-instance_method">
+  
+    #<strong>name</strong>  &#x21d2; <tt>String</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>The name of the tool.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>tool name</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/module.rb', line 18</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">name</span>
+  <span style="color:#33B">@name</span>
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="enabled?-instance_method">
+  
+    #<strong>enabled?</strong>  &#x21d2; <tt>true|false</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Is this module enabled?</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true|false</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/module.rb', line 55</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">enabled?</span>
+  <span style="color:#33B">@enabled</span>
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="locations-instance_method">
+  
+    #<strong>locations</strong>  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Module/Location.html" title="Aspisec::Module::Location (class)">Location</a></span>&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns all locations available for the tool.
+It returns a list <span class='object_link'><a href="Module/Location.html" title="Aspisec::Module::Location (class)">Location</a></span> objects unline <span class='object_link'><a href="#locations_list-instance_method" title="Aspisec::Module#locations_list (method)">#locations_list</a></span> that returns
+only strings (location names).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="Module/Location.html" title="Aspisec::Module::Location (class)">Location</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+63
+64
+65
+66
+67
+68
+69</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/module.rb', line 63</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">locations</span>
+  <span style="color:#777"># Re-compute what's already cumputed and stored in properties</span>
+  <span style="color:#777"># @locations_list.map { |loc| Location.new(@conf, loc) }</span>
+  <span style="color:#777"># Access properties rather than re-computing</span>
+  <span style="color:#777"># Using send() is safe here because the input is a hadrcaoded whitelist</span>
+  <span style="color:#33B">@locations_list</span>.map { |loc| send(loc) }
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Mon Apr  8 17:21:49 2024 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.36 (ruby-3.3.0).
+</div>
+
+    </div>
+  </body>
+</html>

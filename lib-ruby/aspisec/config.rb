@@ -17,7 +17,7 @@ module Aspisec
           'enabled' => false
         },
         # Display the description of each location to explain what the file /
-        # folder is storing
+        # directory is storing
         'describe' => {
           'enabled' => true
         }
@@ -39,8 +39,8 @@ module Aspisec
               # Each file check can be individually turned off rather than disabling the whole module
               'enaled' => false,
               # The description explain which client-related data is stored there and how it is sensitive.
-              # It generally says if it's a file or folder.
-              'description' => 'The folder containing log files. Logs contain IP addresses and hostnames.'
+              # It generally says if it's a file or directory.
+              'description' => 'The directory containing log files. Logs contain IP addresses and hostnames.'
             }
           }
         },

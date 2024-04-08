@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: usage
+  
+    &mdash; Documentation by YARD 0.9.36
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "usage";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="file_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: usage</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'><h1>Usage</h1>
+<h2>CLI</h2>
+<h3>General help</h3>
+<pre class="code ruby"><code class="ruby"><span style="color:#F00;background-color:#FAA">$</span> aspisec -h
+<span style="color:#036;font-weight:bold">AspiSec</span> v0.<span style="color:#F00;background-color:#FAA">0.1</span>
+
+<span style="color:#606">Usage</span>:
+  aspisec [options] clean
+  aspisec -h | --help
+  aspisec --version
+
+<span style="color:#606">Commands</span>:
+  clean                   <span style="color:#036;font-weight:bold">Removes</span> the traces left by offensive security tools
+
+<span style="color:#606">Options</span>:
+  --debug                 <span style="color:#036;font-weight:bold">Display</span> arguments
+  -v, --verbose &lt;level&gt;   <span style="color:#036;font-weight:bold">Set</span> verbosity level (see documentation) [<span style="color:#606">default</span>: <span style="color:#00D">2</span>]
+  -h, --help              <span style="color:#036;font-weight:bold">Show</span> this screen
+  --version               <span style="color:#036;font-weight:bold">Show</span> version
+
+<span style="color:#606">Examples</span>:
+  aspisec clean
+
+<span style="color:#606">Project</span>:
+  source (<span style="color:#606">https</span>:<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#404">/</span></span>github.com/acceis/aspisec)
+  documentation (<span style="color:#606">https</span>:<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#404">/</span></span>acceis.github.io/aspisec)
+</code></pre>
+<p>?&gt; <strong>Note</strong>: You can check log / verbosity levels <a href="https://acceis.github.io/ruby/Aspisec/Logger#LOG_LEVEL-constant">here</a>.</p>
+<h3>Cleaning</h3>
+<p>Starting the cleaning is as easy as that:</p>
+<pre class="code ruby"><code class="ruby"><span style="color:#F00;background-color:#FAA">$</span> aspisec clean
+</code></pre>
+<p>By default, it will be interactive, the description of each file / directory will be displayed, etc. If you want to change the default behavior, see <a href="pages/config.md">config</a>.</p>
+<h2>Library</h2>
+<p>The main class that <strong>does the job</strong> is <a href="https://acceis.github.io/ruby/Aspisec/Clean">Aspisec::Clean</a>.</p>
+<p>Of course, <a href="https://acceis.github.io/ruby/Aspisec/Config">Aspisec::Config</a> manages the configuration and <a href="https://acceis.github.io/ruby/Aspisec/Logger">Aspisec::Logger</a> the logger (level of additional information displayed).</p>
+<p><a href="https://acceis.github.io/ruby/Aspisec/Module">Aspisec::Module</a> is a generic module class with core methods and properties. <a href="https://acceis.github.io/ruby/Aspisec/Module/Location">Aspisec::Module::Location</a> is a generic location subclass. A <em>location</em> is either a file or directory handled by modules.</p>
+<p>Then <a href="https://acceis.github.io/ruby/Aspisec/Modules">Aspisec::Modules</a> is just a Ruby module (namespace) to store all Aspisec modules. Each Aspisec module matches a tool. E.g. for Netexec, the module is <a href="https://acceis.github.io/ruby/Aspisec/Modules/Netexec">Aspisec::Modules::Netexec</a>.</p>
+</div></div>
+
+      <div id="footer">
+  Generated on Mon Apr  8 17:21:48 2024 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.36 (ruby-3.3.0).
+</div>
+
+    </div>
+  </body>
+</html>

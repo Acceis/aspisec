@@ -69,13 +69,13 @@ module Aspisec
     end
 
     # Object easing the manipulation of locations.
-    # Helpers to get the path, check if this feature/file/folder is enabled, etc.
+    # Helpers to get the path, check if this feature/file/directory is enabled, etc.
     class Location
-      # Name of the feature, file or folder of the tool.
+      # Name of the feature, file or directory of the tool.
       # @return [String]
       attr_reader :name
 
-      # File path of the file or folder location to clean.
+      # File path of the file or directory location to clean.
       # @return [Pathname] absolute path
       attr_reader :path
 
@@ -84,7 +84,7 @@ module Aspisec
       attr_reader :description
 
       # @param tool_conf [Hash] Tool configuration as returned by {Aspisec::Module#conf}.
-      # @param feature_name [String] Name of the fature/file/folder to clean. Must be equal to the configuration key.
+      # @param feature_name [String] Name of the feature/file/directory to clean. Must be equal to the configuration key.
       def initialize(tool_conf, feature_name)
         @name = feature_name
         @path = Pathname.new(tool_conf.dig('location', @name, 'path'))

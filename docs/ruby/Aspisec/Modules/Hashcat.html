@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Aspisec::Modules::Hashcat
+  
+    &mdash; Documentation by YARD 0.9.36
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Aspisec::Modules::Hashcat";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (H)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Aspisec.html" title="Aspisec (module)">Aspisec</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Modules.html" title="Aspisec::Modules (module)">Modules</a></span></span>
+     &raquo; 
+    <span class="title">Hashcat</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Aspisec::Modules::Hashcat
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName"><span class='object_link'><a href="../Module.html" title="Aspisec::Module (class)">Aspisec::Module</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="../Module.html" title="Aspisec::Module (class)">Aspisec::Module</a></span></li>
+          
+            <li class="next">Aspisec::Modules::Hashcat</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib-ruby/aspisec/modules/hashcat.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>HashCat module.
+Inherits <span class='object_link'><a href="../Module.html" title="Aspisec::Module (class)">Aspisec::Module</a></span>.
+For more examples of methods, see <span class='object_link'><a href="Sqlmap.html" title="Aspisec::Modules::Sqlmap (class)">Sqlmap</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span style="color:#777"># Get the global config</span>
+conf = <span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">Config</span>.new.conf
+<span style="color:#777"># Create a Hashcat module instance</span>
+hc = <span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">Modules</span>::<span style="color:#036;font-weight:bold">Hashcat</span>.new(conf)
+<span style="color:#777"># Locations available</span>
+hc.locations_list <span style="color:#777"># =&gt; [&quot;sessions&quot;, &quot;potfile&quot;, &quot;dict_cache&quot;]</span></code></pre>
+    
+  </div>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="https://github.com/hashcat/hashcat" target="_parent" title="https://github.com/hashcat/hashcat">https://github.com/hashcat/hashcat</a></li>
+    
+  </ul>
+
+</div>
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#dict_cache-instance_method" title="#dict_cache (instance method)">#<strong>dict_cache</strong>  &#x21d2; Location </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>see <span class='object_link'><a href="../Config.html#DEFAULT_CONFIG-constant" title="Aspisec::Config::DEFAULT_CONFIG (constant)">Config::DEFAULT_CONFIG</a></span> or call <span class='object_link'><a href="../Module/Location.html#description-instance_method" title="Aspisec::Module::Location#description (method)">Aspisec::Module::Location#description</a></span>.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#potfile-instance_method" title="#potfile (instance method)">#<strong>potfile</strong>  &#x21d2; Location </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>see <span class='object_link'><a href="../Config.html#DEFAULT_CONFIG-constant" title="Aspisec::Config::DEFAULT_CONFIG (constant)">Config::DEFAULT_CONFIG</a></span> or call <span class='object_link'><a href="../Module/Location.html#description-instance_method" title="Aspisec::Module::Location#description (method)">Aspisec::Module::Location#description</a></span>.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sessions-instance_method" title="#sessions (instance method)">#<strong>sessions</strong>  &#x21d2; Location </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>see <span class='object_link'><a href="../Config.html#DEFAULT_CONFIG-constant" title="Aspisec::Config::DEFAULT_CONFIG (constant)">Config::DEFAULT_CONFIG</a></span> or call <span class='object_link'><a href="../Module/Location.html#description-instance_method" title="Aspisec::Module::Location#description (method)">Aspisec::Module::Location#description</a></span>.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+  
+  
+  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="../Module.html" title="Aspisec::Module (class)">Aspisec::Module</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../Module.html#base-instance_method" title="Aspisec::Module#base (method)">#base</a></span>, <span class='object_link'><a href="../Module.html#conf-instance_method" title="Aspisec::Module#conf (method)">#conf</a></span>, <span class='object_link'><a href="../Module.html#locations_list-instance_method" title="Aspisec::Module#locations_list (method)">#locations_list</a></span>, <span class='object_link'><a href="../Module.html#name-instance_method" title="Aspisec::Module#name (method)">#name</a></span></p>
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(conf, logger: nil)  &#x21d2; Hashcat </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Inherits from <span class='object_link'><a href="../Module.html" title="Aspisec::Module (class)">Aspisec::Module</a></span> but has only the <code>conf</code> argument, <code>tool_name</code> is hardcoded for each module.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../Module.html" title="Aspisec::Module (class)">Aspisec::Module</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../Module.html#enabled%3F-instance_method" title="Aspisec::Module#enabled? (method)">#enabled?</a></span>, <span class='object_link'><a href="../Module.html#locations-instance_method" title="Aspisec::Module#locations (method)">#locations</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(conf, logger: nil)  &#x21d2; <tt><span class='object_link'><a href="" title="Aspisec::Modules::Hashcat (class)">Hashcat</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Inherits from <span class='object_link'><a href="../Module.html" title="Aspisec::Module (class)">Aspisec::Module</a></span> but has only the <code>conf</code> argument,
+<code>tool_name</code> is hardcoded for each module.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>conf</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Config.html" title="Aspisec::Config (class)">Aspisec::Config</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>an instance of the global configuration</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+34
+35
+36
+37
+38
+39
+40</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/modules/hashcat.rb', line 34</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(conf, <span style="color:#606">logger</span>: <span style="color:#069">nil</span>)
+  <span style="color:#080;font-weight:bold">super</span>(conf, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">hashcat</span><span style="color:#710">'</span></span>, <span style="color:#606">logger</span>:)
+  <span style="color:#33B">@sessions</span> = <span style="color:#036;font-weight:bold">Location</span>.new(<span style="color:#33B">@conf</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">sessions</span><span style="color:#710">'</span></span>)
+  <span style="color:#33B">@potfile</span> = <span style="color:#036;font-weight:bold">Location</span>.new(<span style="color:#33B">@conf</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">potfile</span><span style="color:#710">'</span></span>)
+  <span style="color:#33B">@dict_cache</span> = <span style="color:#036;font-weight:bold">Location</span>.new(<span style="color:#33B">@conf</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">dict_cache</span><span style="color:#710">'</span></span>)
+  <span style="color:#33B">@locations_list</span> = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">%w[</span><span style="color:#D20">sessions potfile dict_cache</span><span style="color:#710">]</span></span>
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="dict_cache-instance_method">
+  
+    #<strong>dict_cache</strong>  &#x21d2; <tt><span class='object_link'><a href="../Module/Location.html" title="Aspisec::Module::Location (class)">Location</a></span></tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>see <span class='object_link'><a href="../Config.html#DEFAULT_CONFIG-constant" title="Aspisec::Config::DEFAULT_CONFIG (constant)">Config::DEFAULT_CONFIG</a></span> or call <span class='object_link'><a href="../Module/Location.html#description-instance_method" title="Aspisec::Module::Location#description (method)">Aspisec::Module::Location#description</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Module/Location.html" title="Aspisec::Module::Location (class)">Location</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/modules/hashcat.rb', line 29</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">dict_cache</span>
+  <span style="color:#33B">@dict_cache</span>
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="potfile-instance_method">
+  
+    #<strong>potfile</strong>  &#x21d2; <tt><span class='object_link'><a href="../Module/Location.html" title="Aspisec::Module::Location (class)">Location</a></span></tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>see <span class='object_link'><a href="../Config.html#DEFAULT_CONFIG-constant" title="Aspisec::Config::DEFAULT_CONFIG (constant)">Config::DEFAULT_CONFIG</a></span> or call <span class='object_link'><a href="../Module/Location.html#description-instance_method" title="Aspisec::Module::Location#description (method)">Aspisec::Module::Location#description</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Module/Location.html" title="Aspisec::Module::Location (class)">Location</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/modules/hashcat.rb', line 25</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">potfile</span>
+  <span style="color:#33B">@potfile</span>
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="sessions-instance_method">
+  
+    #<strong>sessions</strong>  &#x21d2; <tt><span class='object_link'><a href="../Module/Location.html" title="Aspisec::Module::Location (class)">Location</a></span></tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>see <span class='object_link'><a href="../Config.html#DEFAULT_CONFIG-constant" title="Aspisec::Config::DEFAULT_CONFIG (constant)">Config::DEFAULT_CONFIG</a></span> or call <span class='object_link'><a href="../Module/Location.html#description-instance_method" title="Aspisec::Module::Location#description (method)">Aspisec::Module::Location#description</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Module/Location.html" title="Aspisec::Module::Location (class)">Location</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/modules/hashcat.rb', line 21</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">sessions</span>
+  <span style="color:#33B">@sessions</span>
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+</div>
+
+      <div id="footer">
+  Generated on Mon Apr  8 17:21:49 2024 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.36 (ruby-3.3.0).
+</div>
+
+    </div>
+  </body>
+</html>

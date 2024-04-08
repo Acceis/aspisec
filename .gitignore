@@ -4,10 +4,8 @@
 /doc
 /vendor
 .bundle/
-/node_modules
+node_modules
 .git
-package-lock.json
 *.deb
 *.rpm
-# yard output
-docs/ruby
+.vscode

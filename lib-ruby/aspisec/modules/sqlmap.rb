@@ -19,7 +19,7 @@ module Aspisec
     #   sqlmap.base # => #<Pathname:/home/noraj/.local/share/sqlmap>
     #   sqlmap.locations_list # => ["history", "logs"]
     #   sqlmap.locations # => [#<Aspisec::Module::Location …>, … ]
-    #   # Custom methods for the feature/file/folder location of Sqlmap to clean
+    #   # Custom methods for the feature/file/directory location of Sqlmap to clean
     #   sqlmap.history # => #<Aspisec::Module::Location …>
     #   sqlmap.logs # => #<Aspisec::Module::Location …>
     #   # But those custom locations benefits of generic methods

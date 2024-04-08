@@ -8,7 +8,7 @@
 ![Statut du flux de travail GitHub](https://img.shields.io/github/actions/workflow/status/acceis/aspisec/ruby.yml?branch=master)
 ![activité des transactions GitHub](https://img.shields.io/github/commit-activity/y/acceis/aspisec)
 
-![logo AspiSec](assets/logo-aspisec.jpg)
+![logo AspiSec](docs/_media/logo-aspisec.jpg)
 
 > Nettoyage à l'aspirateur des restes d'outils offensifs. AspiSec est chargé de supprimer les traces et informations confidentielles laissées par les outils de sécurité offensive sur l'ordinateur d'un auditeur dans divers fichiers de cache et de journalisation.
 
