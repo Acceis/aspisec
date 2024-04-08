@@ -113,7 +113,7 @@ module Aspisec
     # Handles the deletion mode. It could be automatic or manual cleaning.
     # @param loc [Aspisec::Module::Location]
     def delete_mode(loc)
-      return unless loc.enabled?
+      return unless loc.enabled? && loc.path.exist?
 
       if @autoclean
         delete_location(loc.path)
