@@ -5,6 +5,9 @@ AllCops:
   TargetRubyVersion: 3.1
   NewCops: enable
   SuggestExtensions: false
+# ~~~ Bundler ~~~
+Bundler/DuplicatedGem:
+  Enabled: false
 # ~~~ Metrics ~~~
 Metrics/AbcSize:
   Exclude:
