@@ -15,11 +15,13 @@ doc = <<~DOCOPT
 
   #{paint.decorate('Usage:', :red)}
     aspisec [options] clean
+    aspisec [options] list
     aspisec -h | --help
     aspisec --version
 
   #{paint.decorate('Commands:', :red)}
     clean                   Removes the traces left by offensive security tools
+    list                    List available modules, locations and their status
 
   #{paint.decorate('Options:', :red)}
     --debug                 Display arguments
@@ -38,13 +40,24 @@ DOCOPT
 begin
   args = Docopt.docopt(doc, version: Aspisec::VERSION)
   puts args if args['--debug']
+  log_level = 2
+  log_level = args['--verbose'].to_i if args['--verbose']
   if args['clean']
-    log_level = 2
-    log_level = args['--verbose'].to_i if args['--verbose']
     logger = Aspisec::Logger.new(log_level).logger
     conf = Aspisec::Config.new(logger).conf
     cl = Aspisec::Clean.new(conf:, logger:)
     cl.clean
+  elsif args['list']
+    Aspisec::Modules.modules.each do |mod|
+      enabled = mod.enabled? ? '✅' : '❌'
+      print "#{enabled} "
+      puts paint.decorate(mod.name, :red, :on_black)
+      mod.locations.each do |loc|
+        enabled = loc.enabled? ? '✅' : '❌'
+        print "  #{enabled} "
+        puts paint.decorate(loc.name, :white, :on_black)
+      end
+    end
   end
 rescue Docopt::Exit => e
   puts e.message

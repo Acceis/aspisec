@@ -84,7 +84,8 @@ module Aspisec
       attr_reader :description
 
       # @param tool_conf [Hash] Tool configuration as returned by {Aspisec::Module#conf}.
-      # @param feature_name [String] Name of the feature/file/directory to clean. Must be equal to the configuration key.
+      # @param feature_name [String] Name of the feature/file/directory to clean.
+      #   Must be equal to the configuration key.
       def initialize(tool_conf, feature_name)
         @name = feature_name
         @path = Pathname.new(tool_conf.dig('location', @name, 'path'))

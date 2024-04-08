@@ -10,11 +10,13 @@ AspiSec v0.0.1
 
 Usage:
   aspisec [options] clean
+  aspisec [options] list
   aspisec -h | --help
   aspisec --version
 
 Commands:
   clean                   Removes the traces left by offensive security tools
+  list                    List available modules, locations and their status
 
 Options:
   --debug                 Display arguments
@@ -41,6 +43,37 @@ $ aspisec clean
 ```
 
 By default, it will be interactive, the description of each file / directory will be displayed, etc. If you want to change the default behavior, see [config](pages/config.md).
+
+### List
+
+```
+$ aspisec list
+✅ netexec
+  ✅ logs
+  ✅ screenshots
+  ✅ workspaces
+✅ sqlmap
+  ✅ history
+  ✅ logs
+✅ hashcat
+  ✅ sessions
+  ✅ potfile
+  ❌ dict_cache
+✅ theharvester
+  ✅ stash
+✅ crackmapexec
+  ✅ logs
+  ✅ screenshots
+  ✅ workspaces
+✅ john
+  ✅ logs
+  ✅ potfile
+✅ metasploit
+  ✅ history
+  ✅ logs
+  ✅ loot
+  ✅ meterpreter
+```
 
 ## Library
 
