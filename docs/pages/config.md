@@ -2,7 +2,7 @@
 
 When no configuration file exists, Aspisec will automatically create a default one under `$XDG_CONFIG_HOME/aspisec/aspisec.config.yaml` (which will typically be `~/.config/aspisec/aspisec.config.yaml`).
 
-The default values are documented in [the library documentation (DEFAULT_CONFIG)](https://acceis.github.io/ruby/Aspisec/Config#DEFAULT_CONFIG-constant) but anything should be self-explanatory enough so you don't need to read it.
+The default values are documented in [the library documentation (DEFAULT_CONFIG)](https://acceis.github.io/aspisec/ruby/Aspisec/Config#DEFAULT_CONFIG-constant) but anything should be self-explanatory enough so you don't need to read it.
 
 ## Autoclean
 

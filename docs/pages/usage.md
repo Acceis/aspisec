@@ -32,7 +32,7 @@ Project:
   documentation (https://acceis.github.io/aspisec)
 ```
 
-?> **Note**: You can check log / verbosity levels [here](https://acceis.github.io/ruby/Aspisec/Logger#LOG_LEVEL-constant).
+?> **Note**: You can check log / verbosity levels [here](https://acceis.github.io/aspisec/ruby/Aspisec/Logger#LOG_LEVEL-constant).
 
 ### Cleaning
 
@@ -77,10 +77,10 @@ $ aspisec list
 
 ## Library
 
-The main class that **does the job** is [Aspisec::Clean](https://acceis.github.io/ruby/Aspisec/Clean).
+The main class that **does the job** is [Aspisec::Clean](https://acceis.github.io/aspisec/ruby/Aspisec/Clean).
 
-Of course, [Aspisec::Config](https://acceis.github.io/ruby/Aspisec/Config) manages the configuration and [Aspisec::Logger](https://acceis.github.io/ruby/Aspisec/Logger) the logger (level of additional information displayed).
+Of course, [Aspisec::Config](https://acceis.github.io/aspisec/ruby/Aspisec/Config) manages the configuration and [Aspisec::Logger](https://acceis.github.io/aspisec/ruby/Aspisec/Logger) the logger (level of additional information displayed).
 
-[Aspisec::Module](https://acceis.github.io/ruby/Aspisec/Module) is a generic module class with core methods and properties. [Aspisec::Module::Location](https://acceis.github.io/ruby/Aspisec/Module/Location) is a generic location subclass. A _location_ is either a file or directory handled by modules.
+[Aspisec::Module](https://acceis.github.io/aspisec/ruby/Aspisec/Module) is a generic module class with core methods and properties. [Aspisec::Module::Location](https://acceis.github.io/aspisec/ruby/Aspisec/Module/Location) is a generic location subclass. A _location_ is either a file or directory handled by modules.
 
-Then [Aspisec::Modules](https://acceis.github.io/ruby/Aspisec/Modules) is just a Ruby module (namespace) to store all Aspisec modules. Each Aspisec module matches a tool. E.g. for Netexec, the module is [Aspisec::Modules::Netexec](https://acceis.github.io/ruby/Aspisec/Modules/Netexec).
+Then [Aspisec::Modules](https://acceis.github.io/aspisec/ruby/Aspisec/Modules) is just a Ruby module (namespace) to store all Aspisec modules. Each Aspisec module matches a tool. E.g. for Netexec, the module is [Aspisec::Modules::Netexec](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Netexec).

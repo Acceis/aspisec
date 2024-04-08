@@ -1,3 +1,3 @@
 - [Home](/)
-- [Library documentation](https://acceis.github.io/ruby/Aspisec)
+- [Library documentation](https://acceis.github.io/aspisec/ruby/Aspisec)
 - [Source](https://github.com/Acceis/aspisec)
