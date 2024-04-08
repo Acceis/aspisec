@@ -3,7 +3,6 @@
 /pkg
 /doc
 /vendor
-.bundle/
 node_modules
 .git
 *.deb
