@@ -65,11 +65,13 @@
 
 <span style="color:#606">Usage</span>:
   aspisec [options] clean
+  aspisec [options] list
   aspisec -h | --help
   aspisec --version
 
 <span style="color:#606">Commands</span>:
   clean                   <span style="color:#036;font-weight:bold">Removes</span> the traces left by offensive security tools
+  list                    <span style="color:#036;font-weight:bold">List</span> available modules, locations <span style="color:#080;font-weight:bold">and</span> their status
 
 <span style="color:#606">Options</span>:
   --debug                 <span style="color:#036;font-weight:bold">Display</span> arguments
@@ -90,6 +92,34 @@
 <pre class="code ruby"><code class="ruby"><span style="color:#F00;background-color:#FAA">$</span> aspisec clean
 </code></pre>
 <p>By default, it will be interactive, the description of each file / directory will be displayed, etc. If you want to change the default behavior, see <a href="pages/config.md">config</a>.</p>
+<h3>List</h3>
+<pre class="code ruby"><code class="ruby"><span style="color:#F00;background-color:#FAA">$</span> aspisec list
+✅ netexec
+  ✅ logs
+  ✅ screenshots
+  ✅ workspaces
+✅ sqlmap
+  ✅ history
+  ✅ logs
+✅ hashcat
+  ✅ sessions
+  ✅ potfile
+  ❌ dict_cache
+✅ theharvester
+  ✅ stash
+✅ crackmapexec
+  ✅ logs
+  ✅ screenshots
+  ✅ workspaces
+✅ john
+  ✅ logs
+  ✅ potfile
+✅ metasploit
+  ✅ history
+  ✅ logs
+  ✅ loot
+  ✅ meterpreter
+</code></pre>
 <h2>Library</h2>
 <p>The main class that <strong>does the job</strong> is <a href="https://acceis.github.io/ruby/Aspisec/Clean">Aspisec::Clean</a>.</p>
 <p>Of course, <a href="https://acceis.github.io/ruby/Aspisec/Config">Aspisec::Config</a> manages the configuration and <a href="https://acceis.github.io/ruby/Aspisec/Logger">Aspisec::Logger</a> the logger (level of additional information displayed).</p>
@@ -98,7 +128,7 @@
 </div></div>
 
       <div id="footer">
-  Generated on Mon Apr  8 17:21:48 2024 by
+  Generated on Mon Apr  8 18:00:57 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.36 (ruby-3.3.0).
 </div>
