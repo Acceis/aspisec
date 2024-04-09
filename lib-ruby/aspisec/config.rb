@@ -3,7 +3,7 @@
 # stdlib
 require 'yaml'
 # third-party
-require 'xdg'
+require 'sxdg'
 require 'tty-logger'
 
 module Aspisec
@@ -254,15 +254,7 @@ module Aspisec
     # Get the Aspisec configuration file path
     # @return [String] absolute file path
     def config_filepath
-      xdg = XDG.new
-      # Logging this floods debug info and is not meaningful
-      # path = xdg.config_home + 'aspisec' + CONFIG_FILENAME
-      # @logger.debug("The default configuration file path should be: #{path}")
-      # path
-      # https://github.com/rubocop/rubocop/issues/11757
-      # rubocop:disable Style/StringConcatenation
-      xdg.config_home + 'aspisec' + CONFIG_FILENAME # /home/noraj/.config/aspisec/aspisec.config.yaml
-      # rubocop:enable Style/StringConcatenation
+      File.join(SXDG::XDG_CONFIG_HOME, 'aspisec', CONFIG_FILENAME) # /home/noraj/.config/aspisec/aspisec.config.yaml
     end
 
     # Check if the Aspisec configuration file exists or not
@@ -283,7 +275,7 @@ module Aspisec
 
     # Evaluate XDG variables and $HOME in file path
     # @param path [String] path with variables
-    # @return the absolute version of the evaluated path
+    # @return [String] the absolute version of the evaluated path
     # @note Arguments other than Strings are returned untouched, useful to iterate over configuration values
     # @example
     #   conf.expand_path_variables('$XDG_DATA_HOME/sqlmap')
@@ -291,12 +283,11 @@ module Aspisec
     def self.expand_path_variables(path)
       return path unless path.is_a?(String) # not a path, let untouched
 
-      xdg = XDG.new
       case path
       when /\$XDG_CONFIG_HOME/
-        path.sub!('$XDG_CONFIG_HOME', xdg.config_home.to_s)
+        path.sub!('$XDG_CONFIG_HOME', SXDG::XDG_CONFIG_HOME)
       when /\$XDG_DATA_HOME/
-        path.sub!('$XDG_DATA_HOME', xdg.data_home.to_s)
+        path.sub!('$XDG_DATA_HOME', SXDG::XDG_DATA_HOME)
       when /\$HOME/
         path.sub!('$HOME', Dir.home)
       end
