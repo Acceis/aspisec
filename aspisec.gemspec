@@ -35,7 +35,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency('activesupport', '~> 7.1', '>= 7.1.3.2') # for human-reabdle formater helper
   s.add_runtime_dependency('docopt', '~> 0.6') # for argument parsing
   s.add_runtime_dependency('pastel', '~> 0.8') # for colorized output
+  s.add_runtime_dependency('sxdg', '~> 1.0') # for XDG Base Directory resolution
   s.add_runtime_dependency('tty-logger', '~> 0.6') # for CLI event logging
   s.add_runtime_dependency('tty-prompt', '~> 0.23') # for input handling
-  s.add_runtime_dependency('xdg', '~> 8.0') # for XDG Base Directory resolution
 end
