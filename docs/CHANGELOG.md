@@ -1,4 +1,7 @@
-## [unreleased]
+## [0.1.0 - unreleased]
+
+- **New modules**
+  - jwt_tool
 
 ## [0.0.2]
 
