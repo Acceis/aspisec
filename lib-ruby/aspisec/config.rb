@@ -107,9 +107,6 @@ module Aspisec
           'enabled' => true,
           'location' => {
             'base' => '$XDG_DATA_HOME/hashcat', # ~/.local/share/hashcat
-            #
-            #
-            #
             'sessions' => {
               'path' => '<base>/sessions',
               'enaled' => false,
@@ -187,6 +184,17 @@ module Aspisec
               'description' => "File containing the history of commands used in meterpreter sessions.\n" \
                                "Less sensible than msf shell history but could still contains some file paths, \n" \
                                'for example.'
+            }
+          }
+        },
+        'jwt_tool' => {
+          'enabled' => true,
+          'location' => {
+            'base' => '$HOME/.jwt_tool', # ~/.jwt_tool
+            'logs' => {
+              'path' => '<base>/logs.txt',
+              'description' => "File containing the logs of the commands launched.\n" \
+                               'Contains the JWT for all injections and tamper attemps.'
             }
           }
         }

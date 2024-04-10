@@ -2,7 +2,6 @@
 
 More modules:
 
-- [ ] 🟥 ~/.jwt_tool
 - [ ] 🟥 ~/.manspider
 - [ ] 🟥 ~/.ncrack
 - [ ] 🟥 ~/.retirejs
@@ -24,7 +23,7 @@ Features:
   - 🟦 old projects
   - 🟨 clean history
 - Client
-  - 🟨 Crystal client
+  - 🟦 Crystal client
 
 Legend:
 
