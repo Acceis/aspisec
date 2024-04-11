@@ -8,6 +8,7 @@ The tools handled by Aspisec are (in alphabetical order):
 - [jwt_tool](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/JwtTool)
 - [MANSPIDER](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Manspider)
 - [Metasploit](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Metasploit)
+- [ncrack](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Ncrack)
 - [Netexec](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Netexec)
 - [Sqlmap](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Sqlmap)
 - [Theharvester](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Theharvester)
