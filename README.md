@@ -14,7 +14,7 @@
 
 ## Features
 
-- [8 tools](https://acceis.github.io/aspisec/#/pages/tools) supported
+- [9 tools](https://acceis.github.io/aspisec/#/pages/tools) supported
 - Modularity: the comprehensive configuration file let you fine tune the behavior for every module
 - Extensible: the framework design makes it easy to add a new module
 - Nice by default: default values have been carefully chosen to reflect the most expected and common behavior

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Class: Aspisec::Modules::Crackmapexec
+  Class: Aspisec::Modules::Manspider
   
     &mdash; Documentation by YARD 0.9.36
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../../css/common.css" type="text/css" />
 
 <script type="text/javascript">
-  pathId = "Aspisec::Modules::Crackmapexec";
+  pathId = "Aspisec::Modules::Manspider";
   relpath = '../../';
 </script>
 
@@ -36,10 +36,10 @@
       <div id="header">
         <div id="menu">
   
-    <a href="../../_index.html">Index (C)</a> &raquo;
+    <a href="../../_index.html">Index (M)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../../Aspisec.html" title="Aspisec (module)">Aspisec</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Modules.html" title="Aspisec::Modules (module)">Modules</a></span></span>
      &raquo; 
-    <span class="title">Crackmapexec</span>
+    <span class="title">Manspider</span>
   
 </div>
 
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: Aspisec::Modules::Crackmapexec
+      <div id="content"><h1>Class: Aspisec::Modules::Manspider
   
   
   
@@ -76,7 +76,7 @@
           
             <li class="next"><span class='object_link'><a href="../Module.html" title="Aspisec::Module (class)">Aspisec::Module</a></span></li>
           
-            <li class="next">Aspisec::Modules::Crackmapexec</li>
+            <li class="next">Aspisec::Modules::Manspider</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -96,14 +96,14 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib-ruby/aspisec/modules/crackmapexec.rb</dd>
+    <dd>lib-ruby/aspisec/modules/manspider.rb</dd>
   </dl>
   
 </div>
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    <p>CrackMapExec module.
+    <p>MANSPIDER module.
 Inherits <span class='object_link'><a href="../Module.html" title="Aspisec::Module (class)">Aspisec::Module</a></span>.
 For more examples of methods, see <span class='object_link'><a href="Sqlmap.html" title="Aspisec::Modules::Sqlmap (class)">Sqlmap</a></span>.</p>
 
@@ -118,10 +118,10 @@ For more examples of methods, see <span class='object_link'><a href="Sqlmap.html
       
       <pre class="example code"><code><span style="color:#777"># Get the global config</span>
 conf = <span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">Config</span>.new.conf
-<span style="color:#777"># Create a Crackmapexec module instance</span>
-cme = <span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">Modules</span>::<span style="color:#036;font-weight:bold">Crackmapexec</span>.new(conf)
+<span style="color:#777"># Create a Manspider module instance</span>
+ms = <span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">Modules</span>::<span style="color:#036;font-weight:bold">Manspider</span>.new(conf)
 <span style="color:#777"># Locations available</span>
-cme.locations_list <span style="color:#777"># =&gt; [&quot;logs&quot;, &quot;screenshots&quot;, &quot;workspaces&quot;]</span></code></pre>
+ms.locations_list <span style="color:#777"># =&gt; [&quot;logs&quot;]</span></code></pre>
     
   </div>
 
@@ -129,7 +129,7 @@ cme.locations_list <span style="color:#777"># =&gt; [&quot;logs&quot;, &quot;scr
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
-      <li><a href="https://github.com/byt3bl33d3r/CrackMapExec" target="_parent" title="https://github.com/byt3bl33d3r/CrackMapExec">https://github.com/byt3bl33d3r/CrackMapExec</a></li>
+      <li><a href="https://github.com/blacklanternsecurity/MANSPIDER" target="_parent" title="https://github.com/blacklanternsecurity/MANSPIDER">https://github.com/blacklanternsecurity/MANSPIDER</a></li>
     
   </ul>
 
@@ -171,35 +171,7 @@ cme.locations_list <span style="color:#777"># =&gt; [&quot;logs&quot;, &quot;scr
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#screenshots-instance_method" title="#screenshots (instance method)">#<strong>screenshots</strong>  &#x21d2; Location </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'><p>see <span class='object_link'><a href="../Config.html#DEFAULT_CONFIG-constant" title="Aspisec::Config::DEFAULT_CONFIG (constant)">Config::DEFAULT_CONFIG</a></span> or call <span class='object_link'><a href="../Module/Location.html#description-instance_method" title="Aspisec::Module::Location#description (method)">Aspisec::Module::Location#description</a></span>.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#workspaces-instance_method" title="#workspaces (instance method)">#<strong>workspaces</strong>  &#x21d2; Location </a>
+      <a href="#loot-instance_method" title="#loot (instance method)">#<strong>loot</strong>  &#x21d2; Location </a>
     
 
     
@@ -245,7 +217,7 @@ cme.locations_list <span style="color:#777"># =&gt; [&quot;logs&quot;, &quot;scr
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(conf, logger: nil)  &#x21d2; Crackmapexec </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(conf, logger: nil)  &#x21d2; Manspider </a>
     
 
     
@@ -261,7 +233,7 @@ cme.locations_list <span style="color:#777"># =&gt; [&quot;logs&quot;, &quot;scr
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Inherits from <span class='object_link'><a href="../Module.html" title="Aspisec::Module (class)">Aspisec::Module</a></span> but without the <code>tool_name</code> argument because it is hardcoded for each module.</p>
+    <span class="summary_desc"><div class='inline'><p>Inherits from <span class='object_link'><a href="../Module.html" title="Aspisec::Module (class)">Aspisec::Module</a></span> but has only the <code>conf</code> argument, <code>tool_name</code> is hardcoded for each module.</p>
 </div></span>
   
 </li>
@@ -287,7 +259,7 @@ cme.locations_list <span style="color:#777"># =&gt; [&quot;logs&quot;, &quot;scr
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    #<strong>initialize</strong>(conf, logger: nil)  &#x21d2; <tt><span class='object_link'><a href="" title="Aspisec::Modules::Crackmapexec (class)">Crackmapexec</a></span></tt> 
+    #<strong>initialize</strong>(conf, logger: nil)  &#x21d2; <tt><span class='object_link'><a href="" title="Aspisec::Modules::Manspider (class)">Manspider</a></span></tt> 
   
 
   
@@ -295,8 +267,8 @@ cme.locations_list <span style="color:#777"># =&gt; [&quot;logs&quot;, &quot;scr
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>Inherits from <span class='object_link'><a href="../Module.html" title="Aspisec::Module (class)">Aspisec::Module</a></span> but without the <code>tool_name</code> argument
-because it is hardcoded for each module.</p>
+    <p>Inherits from <span class='object_link'><a href="../Module.html" title="Aspisec::Module (class)">Aspisec::Module</a></span> but has only the <code>conf</code> argument,
+<code>tool_name</code> is hardcoded for each module.</p>
 
 
   </div>
@@ -329,23 +301,21 @@ because it is hardcoded for each module.</p>
       <pre class="lines">
 
 
+30
+31
+32
+33
 34
-35
-36
-37
-38
-39
-40</pre>
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/modules/crackmapexec.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/modules/manspider.rb', line 30</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(conf, <span style="color:#606">logger</span>: <span style="color:#069">nil</span>)
-  <span style="color:#080;font-weight:bold">super</span>(conf, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">crackmapexec</span><span style="color:#710">'</span></span>, <span style="color:#606">logger</span>:)
+  <span style="color:#080;font-weight:bold">super</span>(conf, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">manspider</span><span style="color:#710">'</span></span>, <span style="color:#606">logger</span>:)
   <span style="color:#33B">@logs</span> = <span style="color:#036;font-weight:bold">Location</span>.new(<span style="color:#33B">@conf</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">logs</span><span style="color:#710">'</span></span>)
-  <span style="color:#33B">@screenshots</span> = <span style="color:#036;font-weight:bold">Location</span>.new(<span style="color:#33B">@conf</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">screenshots</span><span style="color:#710">'</span></span>)
-  <span style="color:#33B">@workspaces</span> = <span style="color:#036;font-weight:bold">Location</span>.new(<span style="color:#33B">@conf</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">workspaces</span><span style="color:#710">'</span></span>)
-  <span style="color:#33B">@locations_list</span> = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">%w[</span><span style="color:#D20">logs screenshots workspaces</span><span style="color:#710">]</span></span>
+  <span style="color:#33B">@loot</span> = <span style="color:#036;font-weight:bold">Location</span>.new(<span style="color:#33B">@conf</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">loot</span><span style="color:#710">'</span></span>)
+  <span style="color:#33B">@locations_list</span> = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">%w[</span><span style="color:#D20">logs loot</span><span style="color:#710">]</span></span>
 <span style="color:#080;font-weight:bold">end</span></pre>
     </td>
   </tr>
@@ -402,7 +372,7 @@ because it is hardcoded for each module.</p>
 23</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/modules/crackmapexec.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/modules/manspider.rb', line 21</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">logs</span>
   <span style="color:#33B">@logs</span>
@@ -415,9 +385,9 @@ because it is hardcoded for each module.</p>
       
       <span id=""></span>
       <div class="method_details ">
-  <h3 class="signature " id="screenshots-instance_method">
+  <h3 class="signature " id="loot-instance_method">
   
-    #<strong>screenshots</strong>  &#x21d2; <tt><span class='object_link'><a href="../Module/Location.html" title="Aspisec::Module::Location (class)">Location</a></span></tt>  <span class="extras">(readonly)</span>
+    #<strong>loot</strong>  &#x21d2; <tt><span class='object_link'><a href="../Module/Location.html" title="Aspisec::Module::Location (class)">Location</a></span></tt>  <span class="extras">(readonly)</span>
   
 
   
@@ -457,65 +427,10 @@ because it is hardcoded for each module.</p>
 27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/modules/crackmapexec.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/modules/manspider.rb', line 25</span>
 
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">screenshots</span>
-  <span style="color:#33B">@screenshots</span>
-<span style="color:#080;font-weight:bold">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id=""></span>
-      <div class="method_details ">
-  <h3 class="signature " id="workspaces-instance_method">
-  
-    #<strong>workspaces</strong>  &#x21d2; <tt><span class='object_link'><a href="../Module/Location.html" title="Aspisec::Module::Location (class)">Location</a></span></tt>  <span class="extras">(readonly)</span>
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>see <span class='object_link'><a href="../Config.html#DEFAULT_CONFIG-constant" title="Aspisec::Config::DEFAULT_CONFIG (constant)">Config::DEFAULT_CONFIG</a></span> or call <span class='object_link'><a href="../Module/Location.html#description-instance_method" title="Aspisec::Module::Location#description (method)">Aspisec::Module::Location#description</a></span>.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Module/Location.html" title="Aspisec::Module::Location (class)">Location</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-29
-30
-31</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/modules/crackmapexec.rb', line 29</span>
-
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">workspaces</span>
-  <span style="color:#33B">@workspaces</span>
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">loot</span>
+  <span style="color:#33B">@loot</span>
 <span style="color:#080;font-weight:bold">end</span></pre>
     </td>
   </tr>

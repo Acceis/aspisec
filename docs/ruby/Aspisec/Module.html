@@ -111,7 +111,7 @@
 
 </div><div id="subclasses">
   <h2>Direct Known Subclasses</h2>
-  <p class="children"><span class='object_link'><a href="Modules/Crackmapexec.html" title="Aspisec::Modules::Crackmapexec (class)">Aspisec::Modules::Crackmapexec</a></span>, <span class='object_link'><a href="Modules/Hashcat.html" title="Aspisec::Modules::Hashcat (class)">Aspisec::Modules::Hashcat</a></span>, <span class='object_link'><a href="Modules/John.html" title="Aspisec::Modules::John (class)">Aspisec::Modules::John</a></span>, <span class='object_link'><a href="Modules/Metasploit.html" title="Aspisec::Modules::Metasploit (class)">Aspisec::Modules::Metasploit</a></span>, <span class='object_link'><a href="Modules/Netexec.html" title="Aspisec::Modules::Netexec (class)">Aspisec::Modules::Netexec</a></span>, <span class='object_link'><a href="Modules/Sqlmap.html" title="Aspisec::Modules::Sqlmap (class)">Aspisec::Modules::Sqlmap</a></span>, <span class='object_link'><a href="Modules/Theharvester.html" title="Aspisec::Modules::Theharvester (class)">Aspisec::Modules::Theharvester</a></span></p>
+  <p class="children"><span class='object_link'><a href="Modules/Crackmapexec.html" title="Aspisec::Modules::Crackmapexec (class)">Aspisec::Modules::Crackmapexec</a></span>, <span class='object_link'><a href="Modules/Hashcat.html" title="Aspisec::Modules::Hashcat (class)">Aspisec::Modules::Hashcat</a></span>, <span class='object_link'><a href="Modules/John.html" title="Aspisec::Modules::John (class)">Aspisec::Modules::John</a></span>, <span class='object_link'><a href="Modules/JwtTool.html" title="Aspisec::Modules::JwtTool (class)">Aspisec::Modules::JwtTool</a></span>, <span class='object_link'><a href="Modules/Manspider.html" title="Aspisec::Modules::Manspider (class)">Aspisec::Modules::Manspider</a></span>, <span class='object_link'><a href="Modules/Metasploit.html" title="Aspisec::Modules::Metasploit (class)">Aspisec::Modules::Metasploit</a></span>, <span class='object_link'><a href="Modules/Netexec.html" title="Aspisec::Modules::Netexec (class)">Aspisec::Modules::Netexec</a></span>, <span class='object_link'><a href="Modules/Sqlmap.html" title="Aspisec::Modules::Sqlmap (class)">Aspisec::Modules::Sqlmap</a></span>, <span class='object_link'><a href="Modules/Theharvester.html" title="Aspisec::Modules::Theharvester (class)">Aspisec::Modules::Theharvester</a></span></p>
 </div>
 <h2>Defined Under Namespace</h2>
 <p class="children">
@@ -254,6 +254,29 @@
     </h2>
 
     <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#check_config-instance_method" title="#check_config (instance method)">#<strong>check_config</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Raise an issue if the module configuration is missing.</p>
+</div></span>
+  
+</li>
+
       
         <li class="public ">
   <span class="summary_signature">
@@ -430,7 +453,8 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
 48
 49
 50
-51</pre>
+51
+52</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/module.rb', line 43</span>
@@ -440,6 +464,7 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
   <span style="color:#33B">@name</span> = tool_name
   <span style="color:#33B">@logger</span>.debug(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Module </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span><span style="color:#33B">@name</span><span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> was loaded</span><span style="color:#710">&quot;</span></span>, <span style="color:#606">app</span>: <span style="color:#33B">@name</span>)
   <span style="color:#33B">@conf</span> = conf[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">tools</span><span style="color:#710">'</span></span>][tool_name]
+  check_config
   <span style="color:#33B">@base</span> = <span style="color:#036;font-weight:bold">Pathname</span>.new(<span style="color:#33B">@conf</span>.dig(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span>))
   <span style="color:#33B">@enabled</span> = <span style="color:#33B">@conf</span>.fetch(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span>, <span style="color:#069">true</span>)
   <span style="color:#33B">@locations_list</span> = []
@@ -694,7 +719,57 @@ For a list of objects, rather use <span class='object_link'><a href="#locations-
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="enabled?-instance_method">
+  <h3 class="signature first" id="check_config-instance_method">
+  
+    #<strong>check_config</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Raise an issue if the module configuration is missing</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57
+58
+59
+60
+61
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/module.rb', line 55</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">check_config</span>
+  <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">unless</span> <span style="color:#33B">@conf</span>.nil?
+
+  message = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Configuration for module </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span><span style="color:#33B">@name</span><span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> is missing.</span><span style="color:#710">&quot;</span></span> \
+            <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">You may use an old version of the configuration file.</span><span style="color:#710">'</span></span>
+  <span style="color:#33B">@logger</span>.error(message, <span style="color:#606">app</span>: <span style="color:#33B">@name</span>)
+  raise <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Missing configuration for the current module.</span><span style="color:#710">'</span></span>
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="enabled?-instance_method">
   
     #<strong>enabled?</strong>  &#x21d2; <tt>true|false</tt> 
   
@@ -731,12 +806,12 @@ For a list of objects, rather use <span class='object_link'><a href="#locations-
       <pre class="lines">
 
 
-55
-56
-57</pre>
+66
+67
+68</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/module.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/module.rb', line 66</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">enabled?</span>
   <span style="color:#33B">@enabled</span>
@@ -786,16 +861,16 @@ only strings (location names).</p>
       <pre class="lines">
 
 
-63
-64
-65
-66
-67
-68
-69</pre>
+74
+75
+76
+77
+78
+79
+80</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/module.rb', line 63</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/module.rb', line 74</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">locations</span>
   <span style="color:#777"># Re-compute what's already cumputed and stored in properties</span>
@@ -814,7 +889,7 @@ only strings (location names).</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Apr  9 11:56:15 2024 by
+  Generated on Thu Apr 11 16:52:11 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.36 (ruby-3.3.0).
 </div>

@@ -128,6 +128,7 @@
         </dt>
         <dd><pre class="code">{
   <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">aspisec</span><span style="color:#710">'</span></span> =&gt; {
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">version</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">VERSION</span>,
     <span style="color:#777"># Auto clean, remove files without asking confirmation</span>
     <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">autoclean</span><span style="color:#710">'</span></span> =&gt; {
       <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">false</span>
@@ -223,9 +224,6 @@
       <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
       <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
         <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$XDG_DATA_HOME/hashcat</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.local/share/hashcat</span>
-        <span style="color:#777">#</span>
-        <span style="color:#777">#</span>
-        <span style="color:#777">#</span>
         <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">sessions</span><span style="color:#710">'</span></span> =&gt; {
           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/sessions</span><span style="color:#710">'</span></span>,
           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enaled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">false</span>,
@@ -303,6 +301,34 @@
           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">File containing the history of commands used in meterpreter sessions.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
                            <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Less sensible than msf shell history but could still contains some file paths, </span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
                            <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">for example.</span><span style="color:#710">'</span></span>
+        }
+      }
+    },
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">jwt_tool</span><span style="color:#710">'</span></span> =&gt; {
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$HOME/.jwt_tool</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.jwt_tool</span>
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">logs</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/logs.txt</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">File containing the logs of the commands launched.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Contains the JWT for all injections and tamper attemps.</span><span style="color:#710">'</span></span>
+        }
+      }
+    },
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">manspider</span><span style="color:#710">'</span></span> =&gt; {
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$HOME/.manspider</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.manspider</span>
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">logs</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/logs</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Directory containing log files.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Log files contains commands with the password not redacted and the path of all </span><span style="color:#710">'</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">extracted files.</span><span style="color:#710">'</span></span>
+        },
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">loot</span><span style="color:#710">'</span></span> =&gt; {
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/loot</span><span style="color:#710">'</span></span>,
+          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Directory containing looted files.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
+                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Those are retrieved clients files.</span><span style="color:#710">'</span></span>
         }
       }
     }
@@ -396,6 +422,29 @@
     </h2>
 
     <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#check_version-instance_method" title="#check_version (instance method)">#<strong>check_version</strong>  &#x21d2; true|false </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Comparison between Aspisec tool version and Aspisec configuration version.</p>
+</div></span>
+  
+</li>
+
       
         <li class="public ">
   <span class="summary_signature">
@@ -628,19 +677,21 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
       <pre class="lines">
 
 
-219
-220
-221
-222
-223
-224
-225
-226
-227
-228</pre>
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 219</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 245</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(logger = <span style="color:#069">nil</span>)
   <span style="color:#777"># Set log level</span>
@@ -649,6 +700,8 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
   create_config <span style="color:#080;font-weight:bold">unless</span> config_exist?
   <span style="color:#777"># Else load it</span>
   <span style="color:#33B">@conf</span> = load_config
+  <span style="color:#777"># Check the version of the configuration</span>
+  check_version
   <span style="color:#777"># Replace the path variables / plaholders with real values</span>
   expand_path_conf!
 <span style="color:#080;font-weight:bold">end</span></pre>
@@ -706,12 +759,12 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
       <pre class="lines">
 
 
-204
-205
-206</pre>
+230
+231
+232</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 204</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 230</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">conf</span>
   <span style="color:#33B">@conf</span>
@@ -805,22 +858,22 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
       <pre class="lines">
 
 
-283
-284
-285
-286
-287
-288
-289
-290
-291
-292
-293
-294
-295</pre>
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 283</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 336</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">expand_path_variables</span>(path)
   <span style="color:#080;font-weight:bold">return</span> path <span style="color:#080;font-weight:bold">unless</span> path.is_a?(<span style="color:#036;font-weight:bold">String</span>) <span style="color:#777"># not a path, let untouched</span>
@@ -847,7 +900,102 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="config_exist?-instance_method">
+  <h3 class="signature first" id="check_version-instance_method">
+  
+    #<strong>check_version</strong>  &#x21d2; <tt>true|false</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Comparison between Aspisec tool version and Aspisec configuration version</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true|false</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>true when the tool and configuration version match</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 260</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">check_version</span>
+  version = <span style="color:#33B">@conf</span>.dig(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">aspisec</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">version</span><span style="color:#710">'</span></span>)
+  matching = <span style="color:#069">true</span>
+  <span style="color:#080;font-weight:bold">if</span> version.nil?
+    <span style="color:#33B">@logger</span>.warn(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">No version found in the configuration (old version).</span><span style="color:#710">'</span></span>)
+    matching = <span style="color:#069">false</span>
+  <span style="color:#080;font-weight:bold">elsif</span> <span style="color:#036;font-weight:bold">Gem</span>::<span style="color:#036;font-weight:bold">Version</span>.new(<span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">VERSION</span>) &gt; <span style="color:#036;font-weight:bold">Gem</span>::<span style="color:#036;font-weight:bold">Version</span>.new(version)
+    message = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">The configuration is older (</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>version<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">) than the tool (</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span><span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">VERSION</span><span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">).</span><span style="color:#710">&quot;</span></span> \
+              <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Some module or features may be missing.</span><span style="color:#710">'</span></span>
+    <span style="color:#33B">@logger</span>.warn(message)
+    matching = <span style="color:#069">false</span>
+  <span style="color:#080;font-weight:bold">elsif</span> <span style="color:#036;font-weight:bold">Gem</span>::<span style="color:#036;font-weight:bold">Version</span>.new(<span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">VERSION</span>) &lt; <span style="color:#036;font-weight:bold">Gem</span>::<span style="color:#036;font-weight:bold">Version</span>.new(version)
+    message = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">The configuration is newer (</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>version<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">) than the tool (</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span><span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">VERSION</span><span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">).</span><span style="color:#710">&quot;</span></span> \
+              <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">You may experience issues.</span><span style="color:#710">'</span></span>
+    <span style="color:#33B">@logger</span>.warn(message)
+    matching = <span style="color:#069">false</span>
+  <span style="color:#080;font-weight:bold">end</span>
+  <span style="color:#080;font-weight:bold">unless</span> matching
+    <span style="color:#33B">@logger</span>.warn(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#b0b">\&quot;</span><span style="color:#D20">rm </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>config_filepath<span style="font-weight:bold;color:#666">}</span></span><span style="color:#b0b">\&quot;</span><span style="color:#D20"> if you want Aspisec to recreate a default configuration file</span><span style="color:#710">&quot;</span></span>)
+  <span style="color:#080;font-weight:bold">end</span>
+  matching
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="config_exist?-instance_method">
   
     #<strong>config_exist?</strong>  &#x21d2; <tt>true|false</tt> 
   
@@ -884,17 +1032,17 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
       <pre class="lines">
 
 
-262
-263
-264
-265
-266
-267
-268
-269</pre>
+315
+316
+317
+318
+319
+320
+321
+322</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 262</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 315</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">config_exist?</span>
   <span style="color:#777"># Logging this floods debug info and is not meaningful</span>
@@ -951,12 +1099,12 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
       <pre class="lines">
 
 
-256
-257
-258</pre>
+309
+310
+311</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 256</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 309</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">config_filepath</span>
   <span style="color:#036;font-weight:bold">File</span>.join(<span style="color:#036;font-weight:bold">SXDG</span>::<span style="color:#036;font-weight:bold">XDG_CONFIG_HOME</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">aspisec</span><span style="color:#710">'</span></span>, <span style="color:#036;font-weight:bold">CONFIG_FILENAME</span>) <span style="color:#777"># /home/noraj/.config/aspisec/aspisec.config.yaml</span>
@@ -991,18 +1139,18 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
       <pre class="lines">
 
 
-244
-245
-246
-247
-248
-249
-250
-251
-252</pre>
+297
+298
+299
+300
+301
+302
+303
+304
+305</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 244</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 297</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">create_config</span>
   <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">if</span> config_exist?
@@ -1046,23 +1194,23 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
       <pre class="lines">
 
 
-299
-300
-301
-302
-303
-304
-305
-306
-307
-308
-309
-310
-311
-312</pre>
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 299</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 352</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">expand_path_conf!</span>
   <span style="color:#33B">@conf</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">tools</span><span style="color:#710">'</span></span>].each_key <span style="color:#080;font-weight:bold">do</span> |tool|
@@ -1114,12 +1262,12 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
       <pre class="lines">
 
 
-272
-273
-274</pre>
+325
+326
+327</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 272</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 325</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">expand_path_variables</span>(path)
   <span style="color:#036;font-weight:bold">Config</span>.expand_path_variables(path)
@@ -1172,18 +1320,18 @@ or <code>nil</code> if the configuration file doesn't exist</p>
       <pre class="lines">
 
 
-233
-234
-235
-236
-237
-238
-239
-240
-241</pre>
+286
+287
+288
+289
+290
+291
+292
+293
+294</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 233</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 286</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">load_config</span>
   <span style="color:#080;font-weight:bold">if</span> config_exist?
@@ -1204,7 +1352,7 @@ or <code>nil</code> if the configuration file doesn't exist</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Apr  9 11:56:14 2024 by
+  Generated on Thu Apr 11 16:52:11 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.36 (ruby-3.3.0).
 </div>

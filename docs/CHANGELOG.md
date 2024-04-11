@@ -2,6 +2,7 @@
 
 - **New modules**
   - jwt_tool
+  - MANSPIDER
 
 - **Quality**
   - The configuration now has a version and there are several checks to detected mismatch between the configuration version and the tool version. This prevents the user performing complex debugging after an update.

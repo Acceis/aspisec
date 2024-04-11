@@ -2,7 +2,6 @@
 
 More modules:
 
-- [ ] 🟥 ~/.manspider
 - [ ] 🟥 ~/.ncrack
 - [ ] 🟥 ~/.retirejs
 - [ ] 🟥 ~/.ronin
