@@ -45,9 +45,20 @@ module Aspisec
       @name = tool_name
       @logger.debug("Module #{@name} was loaded", app: @name)
       @conf = conf['tools'][tool_name]
+      check_config
       @base = Pathname.new(@conf.dig('location', 'base'))
       @enabled = @conf.fetch('enabled', true)
       @locations_list = []
+    end
+
+    # Raise an issue if the module configuration is missing
+    def check_config
+      return unless @conf.nil?
+
+      message = "Configuration for module #{@name} is missing." \
+                'You may use an old version of the configuration file.'
+      @logger.error(message, app: @name)
+      raise 'Missing configuration for the current module.'
     end
 
     # Is this module enabled?

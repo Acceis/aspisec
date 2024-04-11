@@ -12,6 +12,7 @@ module Aspisec
     CONFIG_FILENAME = 'aspisec.config.yaml'
     DEFAULT_CONFIG = {
       'aspisec' => {
+        'version' => Aspisec::VERSION,
         # Auto clean, remove files without asking confirmation
         'autoclean' => {
           'enabled' => false
@@ -197,6 +198,23 @@ module Aspisec
                                'Contains the JWT for all injections and tamper attemps.'
             }
           }
+        },
+        'manspider' => {
+          'enabled' => true,
+          'location' => {
+            'base' => '$HOME/.manspider', # ~/.manspider
+            'logs' => {
+              'path' => '<base>/logs',
+              'description' => "Directory containing log files.\n" \
+                               'Log files contains commands with the password not redacted and the path of all ' \
+                               'extracted files.'
+            },
+            'loot' => {
+              'path' => '<base>/loot',
+              'description' => "Directory containing looted files.\n" \
+                               'Those are retrieved clients files.'
+            }
+          }
         }
       },
       'audit' => {
@@ -231,8 +249,35 @@ module Aspisec
       create_config unless config_exist?
       # Else load it
       @conf = load_config
+      # Check the version of the configuration
+      check_version
       # Replace the path variables / plaholders with real values
       expand_path_conf!
+    end
+
+    # Comparison between Aspisec tool version and Aspisec configuration version
+    # @return [true|false] true when the tool and configuration version match
+    def check_version
+      version = @conf.dig('aspisec', 'version')
+      matching = true
+      if version.nil?
+        @logger.warn('No version found in the configuration (old version).')
+        matching = false
+      elsif Gem::Version.new(Aspisec::VERSION) > Gem::Version.new(version)
+        message = "The configuration is older (#{version}) than the tool (#{Aspisec::VERSION})." \
+                  'Some module or features may be missing.'
+        @logger.warn(message)
+        matching = false
+      elsif Gem::Version.new(Aspisec::VERSION) < Gem::Version.new(version)
+        message = "The configuration is newer (#{version}) than the tool (#{Aspisec::VERSION})." \
+                  'You may experience issues.'
+        @logger.warn(message)
+        matching = false
+      end
+      unless matching
+        @logger.warn("\"rm #{config_filepath}\" if you want Aspisec to recreate a default configuration file")
+      end
+      matching
     end
 
     # Read and parse (YAML ➡️ Ruby Hash) the config. file
