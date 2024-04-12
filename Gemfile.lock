@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/ParadoxV5/yard.git
+  revision: 9e869c940859570b07b81c5eadd6070e76f6291e
+  ref: 9e869c940859570b07b81c5eadd6070e76f6291e
+  branch: commonmarker-1.0
+  specs:
+    yard (0.9.36)
+
 PATH
   remote: .
   specs:
@@ -118,7 +126,6 @@ GEM
     unicode-display_width (2.5.0)
     webrick (1.8.1)
     wisper (2.0.1)
-    yard (0.9.36)
     yard-coderay (0.1.0)
       coderay
       yard
@@ -140,7 +147,7 @@ DEPENDENCIES
   tty-logger (~> 0.6)
   tty-prompt (~> 0.23)
   webrick (~> 1.8)
-  yard (>= 0.9.27, < 0.10)
+  yard!
   yard-coderay (~> 0.1)
 
 BUNDLED WITH
