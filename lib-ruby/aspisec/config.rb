@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# internal require all configs
+Dir[File.join(__dir__, 'configs', '*.rb')].each { |f| require(f) }
 # stdlib
 require 'yaml'
 # third-party
@@ -45,211 +47,17 @@ module Aspisec
             }
           }
         },
-        'sqlmap' => {
-          'enabled' => true,
-          'location' => {
-            'base' => '$XDG_DATA_HOME/sqlmap', # ~/.local/share/sqlmap
-            'history' => {
-              'path' => '<base>/history',
-              'description' => "Directory containing history files.\n" \
-                               "os.hst stores system commands entered when using --os-pwn option.\n" \
-                               'sql.hst stores SQL quries entered when using --os-shell option.'
-            },
-            'logs' => {
-              'path' => '<base>/output',
-              'description' => "Directory containing a folder per target.\n" \
-                               "<target>/log contains all successful injection vectors.\n" \
-                               "<target>/session.sqlite contains retrieved data.\n" \
-                               '<target>/target.txt contains target URL + command used.'
-            }
-          }
-        },
-        'crackmapexec' => {
-          'enabled' => true,
-          'location' => {
-            'base' => '$HOME/.cme', # ~/.cme
-            'logs' => {
-              'path' => '<base>/logs',
-              'description' => 'Directory containing log files, secrets, hashes, cleartext passwords etc.'
-            },
-            'screenshots' => {
-              'path' => '<base>/screenshots',
-              'description' => 'Directory where are stored all screenshots taken with the --screenshot option.'
-            },
-            'workspaces' => {
-              'path' => '<base>/workspaces',
-              'description' => "Directory containing workspaces.\n" \
-                               'Workspaces contain SQLite databases including users (domain, usernames, password), ' \
-                               'shares, hosts, dpapi secrets, etc.'
-            }
-          }
-        },
-        'netexec' => {
-          'enabled' => true,
-          'location' => {
-            'base' => '$HOME/.nxc', # ~/.nxc
-            'logs' => {
-              'path' => '<base>/logs',
-              'description' => 'Directory containing log files, secrets, hashes, cleartext password etc.'
-            },
-            'screenshots' => {
-              'path' => '<base>/screenshots',
-              'description' => 'Directory where are stored all screenshots taken with the --screenshot option.'
-            },
-            'workspaces' => {
-              'path' => '<base>/workspaces',
-              'description' => "Directory containing workspaces.\n" \
-                               'Workspaces contain SQLite databases including users (domain, usernames, password), ' \
-                               'shares, hosts, dpapi secrets, etc.'
-            }
-          }
-        },
-        'hashcat' => {
-          'enabled' => true,
-          'location' => {
-            'base' => '$XDG_DATA_HOME/hashcat', # ~/.local/share/hashcat
-            'sessions' => {
-              'path' => '<base>/sessions',
-              'enaled' => false,
-              'description' => "Directory containing session related data.\n" \
-                               'hashcat.log should not contain any sensible data unless the file name ' \
-                               "of a target file is sensible.\n" \
-                               'show.log should not contain any sensible data unless the folder name is sensible.'
-            },
-            'potfile' => {
-              'path' => '<base>/hashcat.potfile',
-              'description' => "File containing all cracked hashes.\n" \
-                               'Passwords may include enterprize related content or may be easily recognizable.'
-            },
-            'dict_cache' => {
-              'path' => '<base>/hashcat.dictstat2',
-              'enabled' => false,
-              'description' => "File is a cache for dictionaries.\n" \
-                               'It should not be sensible unless dict. contain confidential data.'
-            }
-          }
-        },
-        'theharvester' => {
-          'enabled' => true,
-          'location' => {
-            'base' => '$XDG_DATA_HOME/theHarvester', # ~/.local/share/theHarvester
-            #
-            'stash' => {
-              'path' => '<base>/stash.sqlite',
-              'description' => 'File (SQLite DB) containing all the harvested addresses.'
-            }
-          }
-        },
-        'john' => {
-          'enabled' => true,
-          'location' => {
-            'base' => '$HOME/.john', # ~/.john
-            #
-            #
-            'logs' => {
-              'path' => '<base>/john.log',
-              'description' => "File containing the logs of the commands launched.\n" \
-                               'Does not contain hashes or passwords but usernames and whole command lines.'
-            },
-            'potfile' => {
-              'path' => '<base>/john.pot',
-              'description' => "File containing all cracked hashes.\n" \
-                               'Passwords may include enterprize related content or may be easily recognizable.'
-            }
-          }
-        },
-        'metasploit' => {
-          'enabled' => true,
-          'location' => {
-            'base' => '$HOME/.msf4', # ~/.msf4
-            #
-            #
-            'history' => {
-              'path' => '<base>/history',
-              'description' => "File containing the history of commands used in msf shell.\n" \
-                               'It certainly contains username, passwords, hostnames, etc.'
-            },
-            'logs' => {
-              'path' => '<base>/logs',
-              'description' => "Directory containing log files.\n" \
-                               "framework.log may contain stacktraces that contain payloads.\n" \
-                               "production.log and sessions/ ? (I don't know, empty for me)"
-            },
-            'loot' => {
-              'path' => '<base>/loot',
-              'description' => "Directory containing looted files.\n" \
-                               'Those are retrieved clients files.'
-            },
-            'meterpreter' => {
-              'path' => '<base>/meterpreter_history',
-              'description' => "File containing the history of commands used in meterpreter sessions.\n" \
-                               "Less sensible than msf shell history but could still contains some file paths, \n" \
-                               'for example.'
-            }
-          }
-        },
-        'jwt_tool' => {
-          'enabled' => true,
-          'location' => {
-            'base' => '$HOME/.jwt_tool', # ~/.jwt_tool
-            'logs' => {
-              'path' => '<base>/logs.txt',
-              'description' => "File containing the logs of the commands launched.\n" \
-                               'Contains the JWT for all injections and tamper attemps.'
-            }
-          }
-        },
-        'manspider' => {
-          'enabled' => true,
-          'location' => {
-            'base' => '$HOME/.manspider', # ~/.manspider
-            'logs' => {
-              'path' => '<base>/logs',
-              'description' => "Directory containing log files.\n" \
-                               'Log files contains commands with the password not redacted and the path of all ' \
-                               'extracted files.'
-            },
-            'loot' => {
-              'path' => '<base>/loot',
-              'description' => "Directory containing looted files.\n" \
-                               'Those are retrieved clients files.'
-            }
-          }
-        },
-        'ncrack' => {
-          'enabled' => true,
-          'location' => {
-            'base' => '$HOME/.ncrack', # ~/.ncrack
-            'restore' => {
-              'path' => '<base>',
-              'description' => "Directory containing retore files to resume a cracking session.\n" \
-                               'Restore files contain the command launch including the username or wordlist used.'
-            }
-          }
-        },
-        'weevely' => {
-          'enabled' => true,
-          'location' => {
-            'base' => '$HOME/.weevely', # ~/.weevely
-            'history' => {
-              'path' => '<base>/history',
-              'description' => 'File containing the history of the commands typed on webshells.'
-            },
-            'sessions' => {
-              'path' => '<base>/sessions',
-              'description' => "Directory containing session files.\n" \
-                               'Session files contain URL to webshell, webshell password, extension results, etc.'
-            },
-            'logs' => {
-              'path' => '<base>/weevely.log*',
-              'description' => "Files containing the logs.\n" \
-                               "A log file contains the response to commands executed on the remote machine.\n" \
-                               'As there is a rotation, mutiple log files may exist. The last will be weevely.log ' \
-                               'then the older ones will follow the pattern weevely.log.<number> e.g. weevely.log.1 ' \
-                               'etc.'
-            }
-          }
-        }
+        'sqlmap' => Configs::SQLMAP,
+        'crackmapexec' => Configs::CRACKMAPEXEC,
+        'netexec' => Configs::NETEXEC,
+        'hashcat' => Configs::HASHCAT,
+        'theharvester' => Configs::THEHARVESTER,
+        'john' => Configs::JOHN,
+        'metasploit' => Configs::METASPLOIT,
+        'jwt_tool' => Configs::JWT_TOOL,
+        'manspider' => Configs::MANSPIDER,
+        'ncrack' => Configs::NCRACK,
+        'weevely' => Configs::WEEVELY
       },
       'audit' => {
         'enabled' => false,
