@@ -57,7 +57,8 @@ module Aspisec
         'jwt_tool' => Configs::JWT_TOOL,
         'manspider' => Configs::MANSPIDER,
         'ncrack' => Configs::NCRACK,
-        'weevely' => Configs::WEEVELY
+        'weevely' => Configs::WEEVELY,
+        'spiderfoot' => Configs::SPIDERFOOT
       },
       'audit' => {
         'enabled' => false,

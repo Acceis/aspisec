@@ -2,10 +2,6 @@
 
 More modules:
 
-- [ ] 🟥 ~/.spiderfoot
-  - https://github.com/smicallef/spiderfoot
-  - spiderfoot.db, target domains in logs and results
-  - logs/, IP addresses of targets in log files
 - [ ] 🟥 ~/.local/share/remmina/
   - false by default
   - could contain usernames, passwords, IP addresses, target name
