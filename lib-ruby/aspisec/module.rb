@@ -111,7 +111,9 @@ module Aspisec
       end
 
       # Check if the location exist (weither it's a file, directory or a path contaning globbing so
-      # multiple files / directories)
+      # multiple files / directories).
+      # loc.path.exist? will return false when a path contains globbing as it's not expended,
+      # that's the main reason for creating the loc.exist? helper.
       # @return [true|false]
       def exist?
         return true if path.exist?
