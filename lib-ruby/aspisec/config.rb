@@ -59,7 +59,8 @@ module Aspisec
         'ncrack' => Configs::NCRACK,
         'weevely' => Configs::WEEVELY,
         'spiderfoot' => Configs::SPIDERFOOT,
-        'remmina' => Configs::REMMINA
+        'remmina' => Configs::REMMINA,
+        'mobsf' => Configs::MOBSF
       },
       'audit' => {
         'enabled' => false,

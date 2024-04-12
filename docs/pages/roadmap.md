@@ -5,11 +5,6 @@ More modules:
 - [ ] 🟥 ~/.dbgate
   - false by default
   - connections.jsonl, target domain or IP
-- [ ] 🟥 ~/.MobSF
-  - debug.log, at least APK name
-  - downloads/, files extracted from APK or screenshots of the app running
-  - uploads/, decompressed apk
-  - db.sqlite3, at least APK name
 - [ ] 🟥 MongoDB Compass
   - ~/.mongodb/compass/
     - directory containing log files
@@ -46,7 +41,7 @@ Features:
   - 🟦 old projects
   - 🟨 clean history (filter by keywork)
 - Client
-  - 🟦 Crystal client
+  - ⬛ Crystal client
 
 Legend:
 
