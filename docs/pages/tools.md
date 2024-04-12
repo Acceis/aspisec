@@ -1,4 +1,4 @@
-# Tools
+# Supported tools
 
 The tools handled by Aspisec are (in alphabetical order):
 

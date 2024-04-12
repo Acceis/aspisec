@@ -4,7 +4,7 @@
   - [Installation](pages/install.md)
   - [Configuration](pages/config.md)
   - [Usage](pages/usage.md)
-  - [Tools](pages/tools.md)
+  - [Supported Tools](pages/tools.md)
 
 - Development
 
