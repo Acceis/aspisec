@@ -5,12 +5,6 @@ More modules:
 - [ ] 🟥 ~/.dbgate
   - false by default
   - connections.jsonl, target domain or IP
-- [ ] 🟥 MongoDB mongosh
-  - ~/.mongodb/mongosh
-    - 64a5690e15d6daaef79c470c_log, at least target (IP port)
-    - mongosh_repl_history, history of commands
-    - warning removing root folder will remove "config" file too
-  - false by default on the root folder, true by default for mongosh_repl_history only
 - [ ] 🟥 ~/.python_history
 - [ ] 🟥 ~/.psql_history
 - [ ] 🟥 ~/.irb_history
@@ -35,7 +29,7 @@ Features:
   - 🟨 separator configurable
 - Features
   - 🟦 old projects
-  - 🟨 clean history (filter by keywork)
+  - 🟨 clean history (filter by keyword)
 - Client
   - ⬛ Crystal client
 

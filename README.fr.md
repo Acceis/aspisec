@@ -14,7 +14,7 @@
 
 ## Fonctionnalités
 
-- [15 outils](https://acceis.github.io/aspisec/#/pages/tools) pris en charge
+- [16 outils](https://acceis.github.io/aspisec/#/pages/tools) pris en charge
 - Modularité : le fichier de configuration complet vous permet d'affiner le comportement de chaque module
 - Extensible : la conception du cadriciel facilite l'ajout d'un nouveau module
 - Correct par défaut : les valeurs par défaut ont été soigneusement choisies pour refléter le comportement le plus attendu et le plus courant.

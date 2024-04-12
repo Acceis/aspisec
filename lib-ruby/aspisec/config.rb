@@ -61,7 +61,8 @@ module Aspisec
         'spiderfoot' => Configs::SPIDERFOOT,
         'remmina' => Configs::REMMINA,
         'mobsf' => Configs::MOBSF,
-        'mongodb-compass' => Configs::MONGODB_COMPASS
+        'mongodb-compass' => Configs::MONGODB_COMPASS,
+        'mongodb-mongosh' => Configs::MONGODB_MONGOSH
       },
       'audit' => {
         'enabled' => false,
