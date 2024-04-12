@@ -17,11 +17,11 @@ module Aspisec
           },
           'uploads' => {
             'path' => '<base>/uploads',
-            'description' => "Directory containing decompressed APKs."
+            'description' => 'Directory containing decompressed APKs.'
           },
           'database' => {
             'path' => '<base>/db.sqlite3',
-            'description' => "Database file containing at least APK name."
+            'description' => 'Database file containing at least APK name.'
           }
         }
       }.freeze

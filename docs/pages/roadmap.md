@@ -5,10 +5,6 @@ More modules:
 - [ ] 🟥 ~/.dbgate
   - false by default
   - connections.jsonl, target domain or IP
-- [ ] 🟥 MongoDB Compass
-  - ~/.mongodb/compass/
-    - directory containing log files
-    - credentials are redacted but still contains IP and port
 - [ ] 🟥 MongoDB mongosh
   - ~/.mongodb/mongosh
     - 64a5690e15d6daaef79c470c_log, at least target (IP port)
@@ -24,7 +20,7 @@ More modules:
   - last.log, contains project path
   - semgrep.log, contains project path
 - [ ] 🟥 ~/.whatwaf
-  - whatwaf.sqlite, contaisn cached payloads and URLs
+  - whatwaf.sqlite, contains cached payloads and URLs
 - [ ] 🟥 ~/.bash_history
 - [ ] 🟥 ~/.zsh_history
 

@@ -60,7 +60,8 @@ module Aspisec
         'weevely' => Configs::WEEVELY,
         'spiderfoot' => Configs::SPIDERFOOT,
         'remmina' => Configs::REMMINA,
-        'mobsf' => Configs::MOBSF
+        'mobsf' => Configs::MOBSF,
+        'mongodb-compass' => Configs::MONGODB_COMPASS
       },
       'audit' => {
         'enabled' => false,

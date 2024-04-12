@@ -9,6 +9,7 @@ The tools handled by Aspisec are (in alphabetical order):
 - [MANSPIDER](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Manspider)
 - [Metasploit](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Metasploit)
 - [MobSF](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Mobsf)
+- [MongoDB Compass](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/MongodbCompass)
 - [ncrack](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Ncrack)
 - [Netexec](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Netexec)
 - [Remmina](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Remmina)
