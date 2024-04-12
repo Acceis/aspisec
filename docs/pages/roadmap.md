@@ -2,9 +2,6 @@
 
 More modules:
 
-- [ ] 🟥 ~/.local/share/remmina/
-  - false by default
-  - could contain usernames, passwords, IP addresses, target name
 - [ ] 🟥 ~/.dbgate
   - false by default
   - connections.jsonl, target domain or IP

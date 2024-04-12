@@ -58,7 +58,8 @@ module Aspisec
         'manspider' => Configs::MANSPIDER,
         'ncrack' => Configs::NCRACK,
         'weevely' => Configs::WEEVELY,
-        'spiderfoot' => Configs::SPIDERFOOT
+        'spiderfoot' => Configs::SPIDERFOOT,
+        'remmina' => Configs::REMMINA
       },
       'audit' => {
         'enabled' => false,
