@@ -12,5 +12,6 @@ The tools handled by Aspisec are (in alphabetical order):
 - [Netexec](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Netexec)
 - [Sqlmap](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Sqlmap)
 - [Theharvester](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Theharvester)
+- [Weevely](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Weevely)
 
 More will be added in the future, some are already planning in the [Roadmap](pages/roadmap.md).

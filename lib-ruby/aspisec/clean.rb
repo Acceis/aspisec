@@ -33,7 +33,7 @@ module Aspisec
       puts "——— #{@painter.decorate(location.name, :cyan, :bold)} ———"
       puts_decorated('Path', location.path.to_s)
       puts_decorated('Type', file_type(location.path))
-      puts_decorated('Size', type_size(location.path))
+      puts_decorated('Size', type_size_human(location.path))
       puts_decorated('Description', location.description) if @describe
       @prompt.yes?("Do you want to remove #{location.name}?")
     end
@@ -77,16 +77,33 @@ module Aspisec
       Dir[File.join(path, '**', '*')].select { |f| File.file?(f) }.sum { |f| File.size(f) }
     end
 
+    # Displays the size regardless of whether it is a file or a directory or path containing globbing.
+    # @param path [Pathname]
+    # @return [Integer] size in bytes or -1 if it's a path with globbing
+    def type_size(path)
+      if path.directory?
+        directory_size(path)
+      elsif path.file?
+        path.size
+      else # for example when the location contains glogging representing multiple files
+        -1
+      end
+    end
+
     # Displays the size (in human-friendly format with {human_size}) regardless of whether it is a file or a directory.
     # @param path [Pathname]
-    # @return [String] human-friendly size with the most suitable unit, or `empty` is the size is zero
-    def type_size(path)
-      size = if path.directory?
-               directory_size(path)
-             else
-               path.size
-             end
-      size.zero? ? 'empty' : human_size(size)
+    # @return [String] human-friendly size with the most suitable unit, `empty` is the size is zero or `unknown`
+    #   for any other cases
+    def type_size_human(path)
+      size = type_size(path)
+      case size
+      when 0
+        'empty'
+      when -1
+        'unknown'
+      else
+        human_size(size)
+      end
     end
 
     # Delete the location regardless of whether it is a file or a directory.
@@ -95,8 +112,10 @@ module Aspisec
     def type_delete(path)
       if path.directory?
         path.rmtree
-      else
+      elsif path.file?
         path.delete
+      else # for example when the location contains glogging representing multiple files
+        Dir[path].map { |path| Pathname.new(path).delete }
       end
       nil
     end
@@ -113,7 +132,7 @@ module Aspisec
     # Handles the deletion mode. It could be automatic or manual cleaning.
     # @param loc [Aspisec::Module::Location]
     def delete_mode(loc)
-      return unless loc.enabled? && loc.path.exist?
+      return unless loc.enabled? && loc.exist?
 
       if @autoclean
         delete_location(loc.path)

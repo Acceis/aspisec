@@ -33,8 +33,10 @@ More modules:
 - [ ] 🟥 ~/.rdbg_history
 - [ ] 🟥 ~/.rediscli_history
 - [ ] 🟥 ~/.semgrep
+  - last.log, contains project path
+  - semgrep.log, contains project path
 - [ ] 🟥 ~/.whatwaf
-- [ ] 🟥 ~/.weevely
+  - whatwaf.sqlite, contaisn cached payloads and URLs
 - [ ] 🟥 ~/.bash_history
 - [ ] 🟥 ~/.zsh_history
 

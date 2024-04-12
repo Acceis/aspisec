@@ -109,6 +109,28 @@ module Aspisec
       def enabled?
         @enabled
       end
+
+      # Check if the location exist (weither it's a file, directory or a path contaning globbing so
+      # multiple files / directories)
+      # @return [true|false]
+      def exist?
+        return true if path.exist?
+
+        # this case is needed to support globbing
+        candidates = Dir[path].map { |path| Pathname.new(path).exist? }
+        # rubocop:disable Lint/DuplicateBranch
+        # false positive in rubocop rule
+        if candidates.empty? # necessary because [].all? always return true whatever the condition is
+          # this is preventing doing a simple one-liner like
+          # self.path.exist? || Dir[self.path].map { |path| Pathname.new(path).exist? }.all? { |bool| bool == true }
+          false
+        elsif candidates.all? { |bool| bool == true }
+          true
+        else
+          false
+        end
+        # rubocop:enable Lint/DuplicateBranch
+      end
     end
   end
 end
