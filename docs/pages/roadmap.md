@@ -15,6 +15,7 @@ More modules:
   - semgrep.log, contains project path
 - [ ] 🟥 ~/.whatwaf
   - whatwaf.sqlite, contains cached payloads and URLs
+- [ ] 🟥 ~/.config/lsassy
 - [ ] 🟥 ~/.bash_history
 - [ ] 🟥 ~/.zsh_history
 
