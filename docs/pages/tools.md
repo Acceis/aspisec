@@ -6,6 +6,7 @@ The tools handled by Aspisec are (in alphabetical order):
 - [Hashcat](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Hashcat)
 - [John](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/John)
 - [jwt_tool](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/JwtTool)
+- [lsassy](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Lsassy)
 - [MANSPIDER](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Manspider)
 - [Metasploit](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Metasploit)
 - [MobSF](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Mobsf)

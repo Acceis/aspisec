@@ -62,7 +62,8 @@ module Aspisec
         'remmina' => Configs::REMMINA,
         'mobsf' => Configs::MOBSF,
         'mongodb-compass' => Configs::MONGODB_COMPASS,
-        'mongodb-mongosh' => Configs::MONGODB_MONGOSH
+        'mongodb-mongosh' => Configs::MONGODB_MONGOSH,
+        'lsassy' => Configs::LSASSY
       },
       'audit' => {
         'enabled' => false,

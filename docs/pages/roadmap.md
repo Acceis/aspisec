@@ -2,22 +2,25 @@
 
 More modules:
 
-- [ ] 🟥 ~/.dbgate
+- [ ] 🟥 ~/.dbgate + ~/.config/dbgate
   - false by default
   - connections.jsonl, target domain or IP
-- [ ] 🟥 ~/.python_history
-- [ ] 🟥 ~/.psql_history
-- [ ] 🟥 ~/.irb_history
-- [ ] 🟥 ~/.rdbg_history
-- [ ] 🟥 ~/.rediscli_history
+- [ ] 🟨 ~/.python_history
+- [ ] 🟨 ~/.psql_history
+- [ ] 🟨 ~/.irb_history
+- [ ] 🟨 ~/.rdbg_history
+- [ ] 🟨 ~/.rediscli_history
 - [ ] 🟥 ~/.semgrep
   - last.log, contains project path
   - semgrep.log, contains project path
 - [ ] 🟥 ~/.whatwaf
   - whatwaf.sqlite, contains cached payloads and URLs
-- [ ] 🟥 ~/.config/lsassy
-- [ ] 🟥 ~/.bash_history
-- [ ] 🟥 ~/.zsh_history
+- [ ] 🟥 ~/.config/amass
+- [ ] 🟥 ~/.config/bloodhound
+- [ ] 🟥 ~/.config/Recaf
+- [ ] 🟥 ~/.config/ffuf
+- [ ] 🟨 ~/.bash_history
+- [ ] 🟨 ~/.zsh_history
 
 Features:
 
