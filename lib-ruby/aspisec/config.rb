@@ -65,7 +65,8 @@ module Aspisec
         'mongodb-mongosh' => Configs::MONGODB_MONGOSH,
         'lsassy' => Configs::LSASSY,
         'semgrep' => Configs::SEMGREP,
-        'whatwaf' => Configs::WHATWAF
+        'whatwaf' => Configs::WHATWAF,
+        'amass' => Configs::AMASS
       },
       'audit' => {
         'enabled' => false,

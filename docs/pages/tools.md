@@ -2,6 +2,7 @@
 
 The tools handled by Aspisec are (in alphabetical order):
 
+- [Amass](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Amass)
 - [Crackmapexec](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Crackmapexec)
 - [Hashcat](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Hashcat)
 - [John](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/John)
