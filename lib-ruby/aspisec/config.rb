@@ -66,7 +66,8 @@ module Aspisec
         'lsassy' => Configs::LSASSY,
         'semgrep' => Configs::SEMGREP,
         'whatwaf' => Configs::WHATWAF,
-        'amass' => Configs::AMASS
+        'amass' => Configs::AMASS,
+        'bloodhound' => Configs::BLOODHOUND
       },
       'audit' => {
         'enabled' => false,

@@ -10,7 +10,6 @@ More modules:
 - [ ] 🟨 ~/.irb_history
 - [ ] 🟨 ~/.rdbg_history
 - [ ] 🟨 ~/.rediscli_history
-- [ ] 🟥 ~/.config/bloodhound
 - [ ] 🟥 ~/.config/Recaf
 - [ ] 🟥 ~/.config/ffuf
 - [ ] 🟨 ~/.bash_history
