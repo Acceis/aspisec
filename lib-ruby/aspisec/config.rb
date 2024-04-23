@@ -64,7 +64,8 @@ module Aspisec
         'mongodb-compass' => Configs::MONGODB_COMPASS,
         'mongodb-mongosh' => Configs::MONGODB_MONGOSH,
         'lsassy' => Configs::LSASSY,
-        'semgrep' => Configs::SEMGREP
+        'semgrep' => Configs::SEMGREP,
+        'whatwaf' => Configs::WHATWAF
       },
       'audit' => {
         'enabled' => false,

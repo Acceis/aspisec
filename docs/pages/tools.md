@@ -20,5 +20,6 @@ The tools handled by Aspisec are (in alphabetical order):
 - [Sqlmap](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Sqlmap)
 - [Theharvester](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Theharvester)
 - [Weevely](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Weevely)
+- [WhatWaf](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Whatwaf)
 
 More will be added in the future, some are already planning in the [Roadmap](pages/roadmap.md).

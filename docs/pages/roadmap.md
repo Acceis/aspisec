@@ -10,8 +10,6 @@ More modules:
 - [ ] 🟨 ~/.irb_history
 - [ ] 🟨 ~/.rdbg_history
 - [ ] 🟨 ~/.rediscli_history
-- [ ] 🟥 ~/.whatwaf
-  - whatwaf.sqlite, contains cached payloads and URLs
 - [ ] 🟥 ~/.config/amass
 - [ ] 🟥 ~/.config/bloodhound
 - [ ] 🟥 ~/.config/Recaf
