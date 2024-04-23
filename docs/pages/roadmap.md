@@ -10,9 +10,6 @@ More modules:
 - [ ] 🟨 ~/.irb_history
 - [ ] 🟨 ~/.rdbg_history
 - [ ] 🟨 ~/.rediscli_history
-- [ ] 🟥 ~/.semgrep
-  - last.log, contains project path
-  - semgrep.log, contains project path
 - [ ] 🟥 ~/.whatwaf
   - whatwaf.sqlite, contains cached payloads and URLs
 - [ ] 🟥 ~/.config/amass
