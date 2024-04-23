@@ -50,12 +50,12 @@ begin
   elsif args['list']
     Aspisec::Modules.modules.each do |mod|
       enabled = mod.enabled? ? '✅' : '❌'
-      print "#{enabled} "
-      puts paint.decorate(mod.name, :red, :on_black)
-      mod.locations.each do |loc|
+      print "#{enabled} : #{paint.decorate(mod.name, :red, :on_black)}".ljust(42)
+      last_index = mod.locations.size - 1
+      mod.locations.each_with_index do |loc, i|
         enabled = loc.enabled? ? '✅' : '❌'
-        print "  #{enabled} "
-        puts paint.decorate(loc.name, :white, :on_black)
+        print "  #{enabled} #{paint.decorate(loc.name, :white, :on_black)}".ljust(27)
+        puts if i == last_index
       end
     end
   end
