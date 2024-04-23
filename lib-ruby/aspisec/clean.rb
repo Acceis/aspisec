@@ -110,6 +110,7 @@ module Aspisec
     # @param path [Pathname]
     # @return [nil]
     def type_delete(path)
+      @logger.warn("The current user doesn't have permission to remove #{path}") unless path.writable?
       if path.directory?
         path.rmtree
       elsif path.file?
