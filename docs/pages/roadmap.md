@@ -11,7 +11,6 @@ More modules:
 - [ ] 🟨 ~/.rdbg_history
 - [ ] 🟨 ~/.rediscli_history
 - [ ] 🟥 ~/.config/Recaf
-- [ ] 🟥 ~/.config/ffuf
 - [ ] 🟨 ~/.bash_history
 - [ ] 🟨 ~/.zsh_history
 

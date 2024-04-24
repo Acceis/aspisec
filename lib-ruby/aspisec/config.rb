@@ -67,7 +67,8 @@ module Aspisec
         'semgrep' => Configs::SEMGREP,
         'whatwaf' => Configs::WHATWAF,
         'amass' => Configs::AMASS,
-        'bloodhound' => Configs::BLOODHOUND
+        'bloodhound' => Configs::BLOODHOUND,
+        'ffuf' => Configs::FFUF
       },
       'audit' => {
         'enabled' => false,
