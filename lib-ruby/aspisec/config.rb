@@ -68,7 +68,8 @@ module Aspisec
         'whatwaf' => Configs::WHATWAF,
         'amass' => Configs::AMASS,
         'bloodhound' => Configs::BLOODHOUND,
-        'ffuf' => Configs::FFUF
+        'ffuf' => Configs::FFUF,
+        'recaf' => Configs::RECAF
       },
       'audit' => {
         'enabled' => false,

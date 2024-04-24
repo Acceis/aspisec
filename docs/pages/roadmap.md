@@ -13,6 +13,7 @@ More modules:
 - [ ] 🟥 ~/.config/Recaf
 - [ ] 🟨 ~/.bash_history
 - [ ] 🟨 ~/.zsh_history
+- [ ] 🟨 ~/.histfile
 
 Features:
 

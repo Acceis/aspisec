@@ -17,6 +17,7 @@ The tools handled by Aspisec are (in alphabetical order):
 - [MongoDB Shell (mongosh)](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/MongodbMongosh)
 - [ncrack](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Ncrack)
 - [Netexec](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Netexec)
+- [Recaf](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Recaf)
 - [Remmina](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Remmina)
 - [Semgrep](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Semgrep)
 - [Spiderfoot](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Spiderfoot)
