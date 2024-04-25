@@ -2,15 +2,11 @@
 
 More modules:
 
-- [ ] 🟥 ~/.dbgate + ~/.config/dbgate
-  - false by default
-  - connections.jsonl, target domain or IP
 - [ ] 🟨 ~/.python_history
 - [ ] 🟨 ~/.psql_history
 - [ ] 🟨 ~/.irb_history
 - [ ] 🟨 ~/.rdbg_history
 - [ ] 🟨 ~/.rediscli_history
-- [ ] 🟥 ~/.config/Recaf
 - [ ] 🟨 ~/.bash_history
 - [ ] 🟨 ~/.zsh_history
 - [ ] 🟨 ~/.histfile

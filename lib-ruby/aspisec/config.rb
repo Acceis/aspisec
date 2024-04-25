@@ -69,7 +69,8 @@ module Aspisec
         'amass' => Configs::AMASS,
         'bloodhound' => Configs::BLOODHOUND,
         'ffuf' => Configs::FFUF,
-        'recaf' => Configs::RECAF
+        'recaf' => Configs::RECAF,
+        'dbgate' => Configs::DBGATE
       },
       'audit' => {
         'enabled' => false,
