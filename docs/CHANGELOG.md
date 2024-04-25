@@ -18,6 +18,7 @@
   - ffuf
   - Recaf
   - dbgate
+  - Home history files
 - **New features**
   - Locations now support [globbing](https://ruby-doc.org/3.3.0/Dir.html#method-c-glob), useful when needing to remove several files in a directory while not removing the whole directory (e.g. log files with rotation in the same directory as the configuration file)
 - **Quality**

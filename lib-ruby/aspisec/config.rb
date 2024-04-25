@@ -70,7 +70,8 @@ module Aspisec
         'bloodhound' => Configs::BLOODHOUND,
         'ffuf' => Configs::FFUF,
         'recaf' => Configs::RECAF,
-        'dbgate' => Configs::DBGATE
+        'dbgate' => Configs::DBGATE,
+        'home-history-files' => Configs::HOME_HISTORY_FILES
       },
       'audit' => {
         'enabled' => false,

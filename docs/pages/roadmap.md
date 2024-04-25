@@ -1,16 +1,5 @@
 # Roadmap
 
-More modules:
-
-- [ ] 🟨 ~/.python_history
-- [ ] 🟨 ~/.psql_history
-- [ ] 🟨 ~/.irb_history
-- [ ] 🟨 ~/.rdbg_history
-- [ ] 🟨 ~/.rediscli_history
-- [ ] 🟨 ~/.bash_history
-- [ ] 🟨 ~/.zsh_history
-- [ ] 🟨 ~/.histfile
-
 Features:
 
 - CLI

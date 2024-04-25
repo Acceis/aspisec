@@ -27,4 +27,8 @@ The tools handled by Aspisec are (in alphabetical order):
 - [Weevely](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Weevely)
 - [WhatWaf](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/Whatwaf)
 
-More will be added in the future, some are already planning in the [Roadmap](pages/roadmap.md).
+Special features:
+
+- [Home history files](https://acceis.github.io/aspisec/ruby/Aspisec/Modules/HomeHistoryFiles)
+
+More may be added in the future, some may be already planned in the [Roadmap](pages/roadmap.md).
