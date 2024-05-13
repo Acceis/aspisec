@@ -18,7 +18,7 @@
 - Modularité : le fichier de configuration complet vous permet d'affiner le comportement de chaque module
 - Extensible : la conception du cadriciel facilite l'ajout d'un nouveau module
 - Correct par défaut : les valeurs par défaut ont été soigneusement choisies pour refléter le comportement le plus attendu et le plus courant.
-- Outil et bibliothèque ILC
+- Outil ILC et bibliothèque
 
 ## Installation
 
