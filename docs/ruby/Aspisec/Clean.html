@@ -382,7 +382,30 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#type_size-instance_method" title="#type_size (instance method)">#<strong>type_size</strong>(path)  &#x21d2; String </a>
+      <a href="#type_size-instance_method" title="#type_size (instance method)">#<strong>type_size</strong>(path)  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Displays the size regardless of whether it is a file or a directory or path containing globbing.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#type_size_human-instance_method" title="#type_size_human (instance method)">#<strong>type_size_human</strong>(path)  &#x21d2; String </a>
     
 
     
@@ -440,7 +463,7 @@
       
       
         &mdash;
-        <div class='inline'><p>an instance of the global configuration
+        <div class='inline'><p>an instance of the global configuration<br />
 If none is provided, the default config is loaded.</p>
 </div>
       
@@ -458,8 +481,8 @@ If none is provided, the default config is loaded.</p>
       
       
         &mdash;
-        <div class='inline'><p>logger instance. See <span class='object_link'><a href="Logger.html" title="Aspisec::Logger (class)">Logger</a></span>.
-If none is provided, a default logger with log level 2 is created.
+        <div class='inline'><p>logger instance. See <span class='object_link'><a href="Logger.html" title="Aspisec::Logger (class)">Logger</a></span>.<br />
+If none is provided, a default logger with log level 2 is created.<br />
 See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="Aspisec::Logger::LOG_LEVEL (constant)">Logger::LOG_LEVEL</a></span>.</p>
 </div>
       
@@ -519,8 +542,8 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>Main method, handling the cleaning.
-Only enabled modules and locations will be removed.
+    <p>Main method, handling the cleaning.<br />
+Only enabled modules and locations will be removed.<br />
 Works either with auto-cleaning or ask for manual confirmation.</p>
 
 
@@ -548,20 +571,20 @@ Works either with auto-cleaning or ask for manual confirmation.</p>
       <pre class="lines">
 
 
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150</pre>
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/clean.rb', line 140</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/clean.rb', line 160</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">clean</span>
   <span style="color:#33B">@modules</span>.each <span style="color:#080;font-weight:bold">do</span> |mod|
@@ -632,14 +655,14 @@ Works either with auto-cleaning or ask for manual confirmation.</p>
       <pre class="lines">
 
 
-107
-108
-109
-110
-111</pre>
+127
+128
+129
+130
+131</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/clean.rb', line 107</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/clean.rb', line 127</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">delete_location</span>(path)
   type_delete(path)
@@ -691,21 +714,21 @@ Works either with auto-cleaning or ask for manual confirmation.</p>
       <pre class="lines">
 
 
-115
-116
-117
-118
-119
-120
-121
-122
-123</pre>
+135
+136
+137
+138
+139
+140
+141
+142
+143</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/clean.rb', line 115</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/clean.rb', line 135</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">delete_mode</span>(loc)
-  <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">unless</span> loc.enabled? &amp;&amp; loc.path.exist?
+  <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">unless</span> loc.enabled? &amp;&amp; loc.exist?
 
   <span style="color:#080;font-weight:bold">if</span> <span style="color:#33B">@autoclean</span>
     delete_location(loc.path)
@@ -729,9 +752,9 @@ Works either with auto-cleaning or ask for manual confirmation.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>Calculate directory size (size of all files stored in it).
-It will be the real size of files not the size on disk.
-It ignores anything else than files so it could be wrong for symlinks, mounts, etc.
+    <p>Calculate directory size (size of all files stored in it).<br />
+It will be the real size of files not the size on disk.<br />
+It ignores anything else than files so it could be wrong for symlinks, mounts, etc.<br />
 It also don't take into consideration the size of the directory itself.</p>
 
 
@@ -1000,17 +1023,17 @@ It also don't take into consideration the size of the directory itself.</p>
       <pre class="lines">
 
 
-127
-128
-129
-130
-131
-132
-133
-134</pre>
+147
+148
+149
+150
+151
+152
+153
+154</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/clean.rb', line 127</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/clean.rb', line 147</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">manual_delete</span>(loc)
   remove = prompt_removal(<span style="color:#606">location</span>: loc)
@@ -1036,7 +1059,7 @@ It also don't take into consideration the size of the directory itself.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>Display location (file or directory) information and prompt user for deletion
+    <p>Display location (file or directory) information and prompt user for deletion<br />
 It will follow the configuration wether it has to display the description or not.</p>
 
 
@@ -1095,7 +1118,7 @@ It will follow the configuration wether it has to display the description or not
   puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">——— </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span><span style="color:#33B">@painter</span>.decorate(location.name, <span style="color:#A60">:cyan</span>, <span style="color:#A60">:bold</span>)<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> ———</span><span style="color:#710">&quot;</span></span>
   puts_decorated(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Path</span><span style="color:#710">'</span></span>, location.path.to_s)
   puts_decorated(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Type</span><span style="color:#710">'</span></span>, file_type(location.path))
-  puts_decorated(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Size</span><span style="color:#710">'</span></span>, type_size(location.path))
+  puts_decorated(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Size</span><span style="color:#710">'</span></span>, type_size_human(location.path))
   puts_decorated(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Description</span><span style="color:#710">'</span></span>, location.description) <span style="color:#080;font-weight:bold">if</span> <span style="color:#33B">@describe</span>
   <span style="color:#33B">@prompt</span>.yes?(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Do you want to remove </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>location.name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">?</span><span style="color:#710">&quot;</span></span>)
 <span style="color:#080;font-weight:bold">end</span></pre>
@@ -1236,23 +1259,29 @@ It will follow the configuration wether it has to display the description or not
       <pre class="lines">
 
 
-95
-96
-97
-98
-99
-100
-101
-102</pre>
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/clean.rb', line 95</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/clean.rb', line 112</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">type_delete</span>(path)
+  <span style="color:#33B">@logger</span>.warn(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">The current user doesn't have permission to remove </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>path<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>) <span style="color:#080;font-weight:bold">unless</span> path.writable?
   <span style="color:#080;font-weight:bold">if</span> path.directory?
     path.rmtree
-  <span style="color:#080;font-weight:bold">else</span>
+  <span style="color:#080;font-weight:bold">elsif</span> path.file?
     path.delete
+  <span style="color:#080;font-weight:bold">else</span> <span style="color:#777"># for example when the location contains glogging representing multiple files</span>
+    <span style="color:#036;font-weight:bold">Dir</span>[path].map { |path| <span style="color:#036;font-weight:bold">Pathname</span>.new(path).delete }
   <span style="color:#080;font-weight:bold">end</span>
   <span style="color:#069">nil</span>
 <span style="color:#080;font-weight:bold">end</span></pre>
@@ -1264,7 +1293,91 @@ It will follow the configuration wether it has to display the description or not
       <div class="method_details ">
   <h3 class="signature " id="type_size-instance_method">
   
-    #<strong>type_size</strong>(path)  &#x21d2; <tt>String</tt> 
+    #<strong>type_size</strong>(path)  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Displays the size regardless of whether it is a file or a directory or path containing globbing.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'>(<tt>Pathname</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>size in bytes or -1 if it's a path with globbing</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+83
+84
+85
+86
+87
+88
+89
+90
+91</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/clean.rb', line 83</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">type_size</span>(path)
+  <span style="color:#080;font-weight:bold">if</span> path.directory?
+    directory_size(path)
+  <span style="color:#080;font-weight:bold">elsif</span> path.file?
+    path.size
+  <span style="color:#080;font-weight:bold">else</span> <span style="color:#777"># for example when the location contains glogging representing multiple files</span>
+    <span style="color:#00D">-1</span>
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type_size_human-instance_method">
+  
+    #<strong>type_size_human</strong>(path)  &#x21d2; <tt>String</tt> 
   
 
   
@@ -1305,7 +1418,8 @@ It will follow the configuration wether it has to display the description or not
       
       
         &mdash;
-        <div class='inline'><p>human-friendly size with the most suitable unit, or <code>empty</code> is the size is zero</p>
+        <div class='inline'><p>human-friendly size with the most suitable unit, <code>empty</code> is the size is zero or <code>unknown</code><br />
+for any other cases</p>
 </div>
       
     </li>
@@ -1318,25 +1432,31 @@ It will follow the configuration wether it has to display the description or not
       <pre class="lines">
 
 
-83
-84
-85
-86
-87
-88
-89
-90</pre>
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/clean.rb', line 83</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/clean.rb', line 97</span>
 
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">type_size</span>(path)
-  size = <span style="color:#080;font-weight:bold">if</span> path.directory?
-           directory_size(path)
-         <span style="color:#080;font-weight:bold">else</span>
-           path.size
-         <span style="color:#080;font-weight:bold">end</span>
-  size.zero? ? <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">empty</span><span style="color:#710">'</span></span> : human_size(size)
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">type_size_human</span>(path)
+  size = type_size(path)
+  <span style="color:#080;font-weight:bold">case</span> size
+  <span style="color:#080;font-weight:bold">when</span> <span style="color:#00D">0</span>
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">empty</span><span style="color:#710">'</span></span>
+  <span style="color:#080;font-weight:bold">when</span> <span style="color:#00D">-1</span>
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">unknown</span><span style="color:#710">'</span></span>
+  <span style="color:#080;font-weight:bold">else</span>
+    human_size(size)
+  <span style="color:#080;font-weight:bold">end</span>
 <span style="color:#080;font-weight:bold">end</span></pre>
     </td>
   </tr>
@@ -1348,7 +1468,7 @@ It will follow the configuration wether it has to display the description or not
 </div>
 
       <div id="footer">
-  Generated on Thu Apr 11 16:52:11 2024 by
+  Generated on Mon May 13 11:29:37 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.36 (ruby-3.3.0).
 </div>

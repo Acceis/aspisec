@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Class: Aspisec::Modules::Netexec
+  Class: Aspisec::Modules::MongodbCompass
   
     &mdash; Documentation by YARD 0.9.36
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../../css/common.css" type="text/css" />
 
 <script type="text/javascript">
-  pathId = "Aspisec::Modules::Netexec";
+  pathId = "Aspisec::Modules::MongodbCompass";
   relpath = '../../';
 </script>
 
@@ -36,10 +36,10 @@
       <div id="header">
         <div id="menu">
   
-    <a href="../../_index.html">Index (N)</a> &raquo;
+    <a href="../../_index.html">Index (M)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../../Aspisec.html" title="Aspisec (module)">Aspisec</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Modules.html" title="Aspisec::Modules (module)">Modules</a></span></span>
      &raquo; 
-    <span class="title">Netexec</span>
+    <span class="title">MongodbCompass</span>
   
 </div>
 
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: Aspisec::Modules::Netexec
+      <div id="content"><h1>Class: Aspisec::Modules::MongodbCompass
   
   
   
@@ -76,7 +76,7 @@
           
             <li class="next"><span class='object_link'><a href="../Module.html" title="Aspisec::Module (class)">Aspisec::Module</a></span></li>
           
-            <li class="next">Aspisec::Modules::Netexec</li>
+            <li class="next">Aspisec::Modules::MongodbCompass</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -96,14 +96,14 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib-ruby/aspisec/modules/netexec.rb</dd>
+    <dd>lib-ruby/aspisec/modules/mongodb_compass.rb</dd>
   </dl>
   
 </div>
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    <p>NetExec module.<br />
+    <p>MongoDB Compass module.<br />
 Inherits <span class='object_link'><a href="../Module.html" title="Aspisec::Module (class)">Aspisec::Module</a></span>.<br />
 For more examples of methods, see <span class='object_link'><a href="Sqlmap.html" title="Aspisec::Modules::Sqlmap (class)">Sqlmap</a></span>.</p>
 
@@ -118,10 +118,10 @@ For more examples of methods, see <span class='object_link'><a href="Sqlmap.html
       
       <pre class="example code"><code><span style="color:#777"># Get the global config</span>
 conf = <span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">Config</span>.new.conf
-<span style="color:#777"># Create a Netexec module instance</span>
-nxc = <span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">Modules</span>::<span style="color:#036;font-weight:bold">Netexec</span>.new(conf)
+<span style="color:#777"># Create a MongodbCompass module instance</span>
+mdc = <span style="color:#036;font-weight:bold">Aspisec</span>::<span style="color:#036;font-weight:bold">Modules</span>::<span style="color:#036;font-weight:bold">MongodbCompass</span>.new(conf)
 <span style="color:#777"># Locations available</span>
-nxc.locations_list <span style="color:#777"># =&gt; [&quot;logs&quot;, &quot;screenshots&quot;, &quot;workspaces&quot;]</span></code></pre>
+mdc.locations_list <span style="color:#777"># =&gt; [&quot;logs&quot;]</span></code></pre>
     
   </div>
 
@@ -129,7 +129,7 @@ nxc.locations_list <span style="color:#777"># =&gt; [&quot;logs&quot;, &quot;scr
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
-      <li><a href="https://github.com/Pennyw0rth/NetExec" target="_parent" title="https://github.com/Pennyw0rth/NetExec">https://github.com/Pennyw0rth/NetExec</a></li>
+      <li><a href="https://www.mongodb.com/products/tools/compass" target="_parent" title="https://www.mongodb.com/products/tools/compass">https://www.mongodb.com/products/tools/compass</a></li>
     
   </ul>
 
@@ -144,62 +144,6 @@ nxc.locations_list <span style="color:#777"># =&gt; [&quot;logs&quot;, &quot;scr
   <span class="summary_signature">
     
       <a href="#logs-instance_method" title="#logs (instance method)">#<strong>logs</strong>  &#x21d2; Location </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'><p>see <span class='object_link'><a href="../Config.html#DEFAULT_CONFIG-constant" title="Aspisec::Config::DEFAULT_CONFIG (constant)">Config::DEFAULT_CONFIG</a></span> or call <span class='object_link'><a href="../Module/Location.html#description-instance_method" title="Aspisec::Module::Location#description (method)">Aspisec::Module::Location#description</a></span>.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#screenshots-instance_method" title="#screenshots (instance method)">#<strong>screenshots</strong>  &#x21d2; Location </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'><p>see <span class='object_link'><a href="../Config.html#DEFAULT_CONFIG-constant" title="Aspisec::Config::DEFAULT_CONFIG (constant)">Config::DEFAULT_CONFIG</a></span> or call <span class='object_link'><a href="../Module/Location.html#description-instance_method" title="Aspisec::Module::Location#description (method)">Aspisec::Module::Location#description</a></span>.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#workspaces-instance_method" title="#workspaces (instance method)">#<strong>workspaces</strong>  &#x21d2; Location </a>
     
 
     
@@ -245,7 +189,7 @@ nxc.locations_list <span style="color:#777"># =&gt; [&quot;logs&quot;, &quot;scr
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(conf, logger: nil)  &#x21d2; Netexec </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(conf, logger: nil)  &#x21d2; MongodbCompass </a>
     
 
     
@@ -287,7 +231,7 @@ nxc.locations_list <span style="color:#777"># =&gt; [&quot;logs&quot;, &quot;scr
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    #<strong>initialize</strong>(conf, logger: nil)  &#x21d2; <tt><span class='object_link'><a href="" title="Aspisec::Modules::Netexec (class)">Netexec</a></span></tt> 
+    #<strong>initialize</strong>(conf, logger: nil)  &#x21d2; <tt><span class='object_link'><a href="" title="Aspisec::Modules::MongodbCompass (class)">MongodbCompass</a></span></tt> 
   
 
   
@@ -329,23 +273,19 @@ nxc.locations_list <span style="color:#777"># =&gt; [&quot;logs&quot;, &quot;scr
       <pre class="lines">
 
 
-34
-35
-36
-37
-38
-39
-40</pre>
+26
+27
+28
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/modules/netexec.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/modules/mongodb_compass.rb', line 26</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(conf, <span style="color:#606">logger</span>: <span style="color:#069">nil</span>)
-  <span style="color:#080;font-weight:bold">super</span>(conf, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">netexec</span><span style="color:#710">'</span></span>, <span style="color:#606">logger</span>:)
+  <span style="color:#080;font-weight:bold">super</span>(conf, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">mongodb-compass</span><span style="color:#710">'</span></span>, <span style="color:#606">logger</span>:)
   <span style="color:#33B">@logs</span> = <span style="color:#036;font-weight:bold">Location</span>.new(<span style="color:#33B">@conf</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">logs</span><span style="color:#710">'</span></span>)
-  <span style="color:#33B">@screenshots</span> = <span style="color:#036;font-weight:bold">Location</span>.new(<span style="color:#33B">@conf</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">screenshots</span><span style="color:#710">'</span></span>)
-  <span style="color:#33B">@workspaces</span> = <span style="color:#036;font-weight:bold">Location</span>.new(<span style="color:#33B">@conf</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">workspaces</span><span style="color:#710">'</span></span>)
-  <span style="color:#33B">@locations_list</span> = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">%w[</span><span style="color:#D20">logs screenshots workspaces</span><span style="color:#710">]</span></span>
+  <span style="color:#33B">@locations_list</span> = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">%w[</span><span style="color:#D20">logs</span><span style="color:#710">]</span></span>
 <span style="color:#080;font-weight:bold">end</span></pre>
     </td>
   </tr>
@@ -402,120 +342,10 @@ nxc.locations_list <span style="color:#777"># =&gt; [&quot;logs&quot;, &quot;scr
 23</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/modules/netexec.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/modules/mongodb_compass.rb', line 21</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">logs</span>
   <span style="color:#33B">@logs</span>
-<span style="color:#080;font-weight:bold">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id=""></span>
-      <div class="method_details ">
-  <h3 class="signature " id="screenshots-instance_method">
-  
-    #<strong>screenshots</strong>  &#x21d2; <tt><span class='object_link'><a href="../Module/Location.html" title="Aspisec::Module::Location (class)">Location</a></span></tt>  <span class="extras">(readonly)</span>
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>see <span class='object_link'><a href="../Config.html#DEFAULT_CONFIG-constant" title="Aspisec::Config::DEFAULT_CONFIG (constant)">Config::DEFAULT_CONFIG</a></span> or call <span class='object_link'><a href="../Module/Location.html#description-instance_method" title="Aspisec::Module::Location#description (method)">Aspisec::Module::Location#description</a></span>.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Module/Location.html" title="Aspisec::Module::Location (class)">Location</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-25
-26
-27</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/modules/netexec.rb', line 25</span>
-
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">screenshots</span>
-  <span style="color:#33B">@screenshots</span>
-<span style="color:#080;font-weight:bold">end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id=""></span>
-      <div class="method_details ">
-  <h3 class="signature " id="workspaces-instance_method">
-  
-    #<strong>workspaces</strong>  &#x21d2; <tt><span class='object_link'><a href="../Module/Location.html" title="Aspisec::Module::Location (class)">Location</a></span></tt>  <span class="extras">(readonly)</span>
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>see <span class='object_link'><a href="../Config.html#DEFAULT_CONFIG-constant" title="Aspisec::Config::DEFAULT_CONFIG (constant)">Config::DEFAULT_CONFIG</a></span> or call <span class='object_link'><a href="../Module/Location.html#description-instance_method" title="Aspisec::Module::Location#description (method)">Aspisec::Module::Location#description</a></span>.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Module/Location.html" title="Aspisec::Module::Location (class)">Location</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-29
-30
-31</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/modules/netexec.rb', line 29</span>
-
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">workspaces</span>
-  <span style="color:#33B">@workspaces</span>
 <span style="color:#080;font-weight:bold">end</span></pre>
     </td>
   </tr>

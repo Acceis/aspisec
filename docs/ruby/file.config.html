@@ -57,31 +57,31 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'><h1>Config</h1>
+      <div id="content"><div id='filecontents'><h1><a href="#config" aria-hidden="true" class="anchor" id="config"></a>Config</h1>
 <p>When no configuration file exists, Aspisec will automatically create a default one under <code>$XDG_CONFIG_HOME/aspisec/aspisec.config.yaml</code> (which will typically be <code>~/.config/aspisec/aspisec.config.yaml</code>).</p>
 <p>The default values are documented in <a href="https://acceis.github.io/aspisec/ruby/Aspisec/Config#DEFAULT_CONFIG-constant">the library documentation (DEFAULT_CONFIG)</a> but anything should be self-explanatory enough so you don't need to read it.</p>
-<h2>Autoclean</h2>
+<h2><a href="#autoclean" aria-hidden="true" class="anchor" id="autoclean"></a>Autoclean</h2>
 <p><code>aspisec.autoclean.enabled</code> allows you to choose between:</p>
 <ul>
 <li><em>interactive mode</em>: (<code>false</code>, default) ask confirmation (<code>Y/n</code>) before removing each location</li>
 <li><em>automatic mode</em>: (<code>true</code>) auto clean, remove files without asking confirmation</li>
 </ul>
-<h2>Description</h2>
+<h2><a href="#description" aria-hidden="true" class="anchor" id="description"></a>Description</h2>
 <p><code>aspisec.describe.enabled</code> controls if the description for each location is displayed or not. If you already know what everything is doing, disabling it allows having a lighter output.</p>
-<h2>Modules</h2>
-<h3>Disabling</h3>
+<h2><a href="#modules" aria-hidden="true" class="anchor" id="modules"></a>Modules</h2>
+<h3><a href="#disabling" aria-hidden="true" class="anchor" id="disabling"></a>Disabling</h3>
 <p>Each module can be separately disabled, e.g. <code>&lt;tool&gt;.enabled</code> so it will not be taken into consideration while cleaning.</p>
-<h3>Locations</h3>
-<p>Each module will look for the files from a default location which is the most common.
+<h3><a href="#locations" aria-hidden="true" class="anchor" id="locations"></a>Locations</h3>
+<p>Each module will look for the files from a default location which is the most common.<br />
 But if you have deployed the tool in an uncommon location (exotic distribution, <code>git clone</code> in random places) or a custom location (under <code>/opt</code>), you can change the location where Aspisec will look for, e.g. <code>&lt;tool&gt;.location.base</code>.</p>
 <p>Aspisec is using standard <a href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html">XDG Base Directory</a> variables like <code>$XDG_DATA_HOME</code> to be more cross-platform. But you could use an absolute path if you don't need your config to be portable, e.g. <code>/home/noraj/.local/share/sqlmap</code> instead of <code>$XDG_DATA_HOME/sqlmap</code>.</p>
 <p>For each location (feature, file, directory) you can configure the path too (<code>&lt;tool&gt;.location.&lt;lcoation&gt;.path</code>) but it's very unlikely you would need to. <code>&lt;base&gt;</code> is a keyword resolved by Aspisec refering to <code>&lt;tool&gt;.location.base</code>. You could change the location description too if you want it to be shorter or to add emojis.</p>
-<h3>Audit</h3>
+<h3><a href="#audit" aria-hidden="true" class="anchor" id="audit"></a>Audit</h3>
 <p>The <code>audit</code> section is unused and is just a placeholder for future features.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Thu Apr 11 16:52:11 2024 by
+  Generated on Mon May 13 11:29:37 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.36 (ruby-3.3.0).
 </div>

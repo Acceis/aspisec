@@ -94,7 +94,9 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib-ruby/aspisec/config.rb</dd>
+    <dd>lib-ruby/aspisec/config.rb<span class="defines">,<br />
+  lib-ruby/aspisec/configs/ffuf.rb,<br /> lib-ruby/aspisec/configs/john.rb,<br /> lib-ruby/aspisec/configs/amass.rb,<br /> lib-ruby/aspisec/configs/mobsf.rb,<br /> lib-ruby/aspisec/configs/recaf.rb,<br /> lib-ruby/aspisec/configs/dbgate.rb,<br /> lib-ruby/aspisec/configs/lsassy.rb,<br /> lib-ruby/aspisec/configs/ncrack.rb,<br /> lib-ruby/aspisec/configs/sqlmap.rb,<br /> lib-ruby/aspisec/configs/hashcat.rb,<br /> lib-ruby/aspisec/configs/netexec.rb,<br /> lib-ruby/aspisec/configs/remmina.rb,<br /> lib-ruby/aspisec/configs/semgrep.rb,<br /> lib-ruby/aspisec/configs/weevely.rb,<br /> lib-ruby/aspisec/configs/whatwaf.rb,<br /> lib-ruby/aspisec/configs/jwt_tool.rb,<br /> lib-ruby/aspisec/configs/manspider.rb,<br /> lib-ruby/aspisec/configs/bloodhound.rb,<br /> lib-ruby/aspisec/configs/metasploit.rb,<br /> lib-ruby/aspisec/configs/spiderfoot.rb,<br /> lib-ruby/aspisec/configs/crackmapexec.rb,<br /> lib-ruby/aspisec/configs/theharvester.rb,<br /> lib-ruby/aspisec/configs/mongodb_compass.rb,<br /> lib-ruby/aspisec/configs/mongodb_mongosh.rb,<br /> lib-ruby/aspisec/configs/home_history_files.rb</span>
+</dd>
   </dl>
   
 </div>
@@ -109,7 +111,17 @@
 <div class="tags">
   
 
-</div>
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Config/Configs.html" title="Aspisec::Config::Configs (module)">Configs</a></span>
+    
+  
+    
+  
+</p>
+
   
     <h2>
       Constant Summary
@@ -161,177 +173,31 @@
         }
       }
     },
-    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">sqlmap</span><span style="color:#710">'</span></span> =&gt; {
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$XDG_DATA_HOME/sqlmap</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.local/share/sqlmap</span>
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">history</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/history</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Directory containing history files.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">os.hst stores system commands entered when using --os-pwn option.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">sql.hst stores SQL quries entered when using --os-shell option.</span><span style="color:#710">'</span></span>
-        },
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">logs</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/output</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Directory containing a folder per target.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">&lt;target&gt;/log contains all successful injection vectors.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">&lt;target&gt;/session.sqlite contains retrieved data.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;target&gt;/target.txt contains target URL + command used.</span><span style="color:#710">'</span></span>
-        }
-      }
-    },
-    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">crackmapexec</span><span style="color:#710">'</span></span> =&gt; {
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$HOME/.cme</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.cme</span>
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">logs</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/logs</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Directory containing log files, secrets, hashes, cleartext passwords etc.</span><span style="color:#710">'</span></span>
-        },
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">screenshots</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/screenshots</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Directory where are stored all screenshots taken with the --screenshot option.</span><span style="color:#710">'</span></span>
-        },
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">workspaces</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/workspaces</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Directory containing workspaces.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Workspaces contain SQLite databases including users (domain, usernames, password), </span><span style="color:#710">'</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">shares, hosts, dpapi secrets, etc.</span><span style="color:#710">'</span></span>
-        }
-      }
-    },
-    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">netexec</span><span style="color:#710">'</span></span> =&gt; {
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$HOME/.nxc</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.nxc</span>
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">logs</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/logs</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Directory containing log files, secrets, hashes, cleartext password etc.</span><span style="color:#710">'</span></span>
-        },
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">screenshots</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/screenshots</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Directory where are stored all screenshots taken with the --screenshot option.</span><span style="color:#710">'</span></span>
-        },
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">workspaces</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/workspaces</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Directory containing workspaces.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Workspaces contain SQLite databases including users (domain, usernames, password), </span><span style="color:#710">'</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">shares, hosts, dpapi secrets, etc.</span><span style="color:#710">'</span></span>
-        }
-      }
-    },
-    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">hashcat</span><span style="color:#710">'</span></span> =&gt; {
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$XDG_DATA_HOME/hashcat</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.local/share/hashcat</span>
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">sessions</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/sessions</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enaled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">false</span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Directory containing session related data.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">hashcat.log should not contain any sensible data unless the file name </span><span style="color:#710">'</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">of a target file is sensible.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">show.log should not contain any sensible data unless the folder name is sensible.</span><span style="color:#710">'</span></span>
-        },
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">potfile</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/hashcat.potfile</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">File containing all cracked hashes.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Passwords may include enterprize related content or may be easily recognizable.</span><span style="color:#710">'</span></span>
-        },
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">dict_cache</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/hashcat.dictstat2</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">false</span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">File is a cache for dictionaries.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">It should not be sensible unless dict. contain confidential data.</span><span style="color:#710">'</span></span>
-        }
-      }
-    },
-    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">theharvester</span><span style="color:#710">'</span></span> =&gt; {
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$XDG_DATA_HOME/theHarvester</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.local/share/theHarvester</span>
-        <span style="color:#777">#</span>
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">stash</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/stash.sqlite</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">File (SQLite DB) containing all the harvested addresses.</span><span style="color:#710">'</span></span>
-        }
-      }
-    },
-    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">john</span><span style="color:#710">'</span></span> =&gt; {
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$HOME/.john</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.john</span>
-        <span style="color:#777">#</span>
-        <span style="color:#777">#</span>
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">logs</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/john.log</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">File containing the logs of the commands launched.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Does not contain hashes or passwords but usernames and whole command lines.</span><span style="color:#710">'</span></span>
-        },
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">potfile</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/john.pot</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">File containing all cracked hashes.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Passwords may include enterprize related content or may be easily recognizable.</span><span style="color:#710">'</span></span>
-        }
-      }
-    },
-    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">metasploit</span><span style="color:#710">'</span></span> =&gt; {
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$HOME/.msf4</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.msf4</span>
-        <span style="color:#777">#</span>
-        <span style="color:#777">#</span>
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">history</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/history</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">File containing the history of commands used in msf shell.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">It certainly contains username, passwords, hostnames, etc.</span><span style="color:#710">'</span></span>
-        },
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">logs</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/logs</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Directory containing log files.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">framework.log may contain stacktraces that contain payloads.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">production.log and sessions/ ? (I don't know, empty for me)</span><span style="color:#710">&quot;</span></span>
-        },
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">loot</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/loot</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Directory containing looted files.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Those are retrieved clients files.</span><span style="color:#710">'</span></span>
-        },
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">meterpreter</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/meterpreter_history</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">File containing the history of commands used in meterpreter sessions.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Less sensible than msf shell history but could still contains some file paths, </span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">for example.</span><span style="color:#710">'</span></span>
-        }
-      }
-    },
-    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">jwt_tool</span><span style="color:#710">'</span></span> =&gt; {
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$HOME/.jwt_tool</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.jwt_tool</span>
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">logs</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/logs.txt</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">File containing the logs of the commands launched.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Contains the JWT for all injections and tamper attemps.</span><span style="color:#710">'</span></span>
-        }
-      }
-    },
-    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">manspider</span><span style="color:#710">'</span></span> =&gt; {
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">true</span>,
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">location</span><span style="color:#710">'</span></span> =&gt; {
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">base</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$HOME/.manspider</span><span style="color:#710">'</span></span>, <span style="color:#777"># ~/.manspider</span>
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">logs</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/logs</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Directory containing log files.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Log files contains commands with the password not redacted and the path of all </span><span style="color:#710">'</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">extracted files.</span><span style="color:#710">'</span></span>
-        },
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">loot</span><span style="color:#710">'</span></span> =&gt; {
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">path</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;base&gt;/loot</span><span style="color:#710">'</span></span>,
-          <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">description</span><span style="color:#710">'</span></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Directory containing looted files.</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> \
-                           <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Those are retrieved clients files.</span><span style="color:#710">'</span></span>
-        }
-      }
-    }
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">sqlmap</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">SQLMAP</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">crackmapexec</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">CRACKMAPEXEC</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">netexec</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">NETEXEC</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">hashcat</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">HASHCAT</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">theharvester</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">THEHARVESTER</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">john</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">JOHN</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">metasploit</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">METASPLOIT</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">jwt_tool</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">JWT_TOOL</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">manspider</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">MANSPIDER</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">ncrack</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">NCRACK</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">weevely</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">WEEVELY</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">spiderfoot</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">SPIDERFOOT</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">remmina</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">REMMINA</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">mobsf</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">MOBSF</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">mongodb-compass</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">MONGODB_COMPASS</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">mongodb-mongosh</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">MONGODB_MONGOSH</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">lsassy</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">LSASSY</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">semgrep</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">SEMGREP</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">whatwaf</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">WHATWAF</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">amass</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">AMASS</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">bloodhound</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">BLOODHOUND</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">ffuf</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">FFUF</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">recaf</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">RECAF</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">dbgate</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">DBGATE</span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">home-history-files</span><span style="color:#710">'</span></span> =&gt; <span style="color:#036;font-weight:bold">Configs</span>::<span style="color:#036;font-weight:bold">HOME_HISTORY_FILES</span>
   },
   <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">audit</span><span style="color:#710">'</span></span> =&gt; {
     <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">enabled</span><span style="color:#710">'</span></span> =&gt; <span style="color:#069">false</span>,
@@ -625,7 +491,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>Load config. or create a default config. file if not existing.
+    <p>Load config. or create a default config. file if not existing.<br />
 Also parse and interprete custom values.</p>
 
 
@@ -661,8 +527,8 @@ cnf.conf</code></pre>
       
       
         &mdash;
-        <div class='inline'><p>logger instance. See <span class='object_link'><a href="Logger.html" title="Aspisec::Logger (class)">Logger</a></span>.
-If none is provided, a default logger with log level 2 is created.
+        <div class='inline'><p>logger instance. See <span class='object_link'><a href="Logger.html" title="Aspisec::Logger (class)">Logger</a></span>.<br />
+If none is provided, a default logger with log level 2 is created.<br />
 See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="Aspisec::Logger::LOG_LEVEL (constant)">Logger::LOG_LEVEL</a></span>.</p>
 </div>
       
@@ -677,21 +543,21 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
       <pre class="lines">
 
 
-245
-246
-247
-248
-249
-250
-251
-252
-253
-254
-255
-256</pre>
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 245</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 101</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(logger = <span style="color:#069">nil</span>)
   <span style="color:#777"># Set log level</span>
@@ -759,12 +625,12 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
       <pre class="lines">
 
 
-230
-231
-232</pre>
+86
+87
+88</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 230</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 86</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">conf</span>
   <span style="color:#33B">@conf</span>
@@ -858,22 +724,22 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
       <pre class="lines">
 
 
-336
-337
-338
-339
-340
-341
-342
-343
-344
-345
-346
-347
-348</pre>
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 336</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 192</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">expand_path_variables</span>(path)
   <span style="color:#080;font-weight:bold">return</span> path <span style="color:#080;font-weight:bold">unless</span> path.is_a?(<span style="color:#036;font-weight:bold">String</span>) <span style="color:#777"># not a path, let untouched</span>
@@ -941,31 +807,31 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
       <pre class="lines">
 
 
-260
-261
-262
-263
-264
-265
-266
-267
-268
-269
-270
-271
-272
-273
-274
-275
-276
-277
-278
-279
-280
-281</pre>
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 260</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 116</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">check_version</span>
   version = <span style="color:#33B">@conf</span>.dig(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">aspisec</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">version</span><span style="color:#710">'</span></span>)
@@ -1032,17 +898,17 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
       <pre class="lines">
 
 
-315
-316
-317
-318
-319
-320
-321
-322</pre>
+171
+172
+173
+174
+175
+176
+177
+178</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 315</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 171</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">config_exist?</span>
   <span style="color:#777"># Logging this floods debug info and is not meaningful</span>
@@ -1099,12 +965,12 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
       <pre class="lines">
 
 
-309
-310
-311</pre>
+165
+166
+167</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 309</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 165</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">config_filepath</span>
   <span style="color:#036;font-weight:bold">File</span>.join(<span style="color:#036;font-weight:bold">SXDG</span>::<span style="color:#036;font-weight:bold">XDG_CONFIG_HOME</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">aspisec</span><span style="color:#710">'</span></span>, <span style="color:#036;font-weight:bold">CONFIG_FILENAME</span>) <span style="color:#777"># /home/noraj/.config/aspisec/aspisec.config.yaml</span>
@@ -1139,18 +1005,18 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
       <pre class="lines">
 
 
-297
-298
-299
-300
-301
-302
-303
-304
-305</pre>
+153
+154
+155
+156
+157
+158
+159
+160
+161</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 297</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 153</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">create_config</span>
   <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">if</span> config_exist?
@@ -1194,23 +1060,23 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
       <pre class="lines">
 
 
-352
-353
-354
-355
-356
-357
-358
-359
-360
-361
-362
-363
-364
-365</pre>
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 352</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 208</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">expand_path_conf!</span>
   <span style="color:#33B">@conf</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">tools</span><span style="color:#710">'</span></span>].each_key <span style="color:#080;font-weight:bold">do</span> |tool|
@@ -1262,12 +1128,12 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
       <pre class="lines">
 
 
-325
-326
-327</pre>
+181
+182
+183</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 325</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 181</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">expand_path_variables</span>(path)
   <span style="color:#036;font-weight:bold">Config</span>.expand_path_variables(path)
@@ -1306,7 +1172,7 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
       
       
         &mdash;
-        <div class='inline'><p>the corresponding Ruby object parsed from the YAML file
+        <div class='inline'><p>the corresponding Ruby object parsed from the YAML file<br />
 or <code>nil</code> if the configuration file doesn't exist</p>
 </div>
       
@@ -1320,18 +1186,18 @@ or <code>nil</code> if the configuration file doesn't exist</p>
       <pre class="lines">
 
 
-286
-287
-288
-289
-290
-291
-292
-293
-294</pre>
+142
+143
+144
+145
+146
+147
+148
+149
+150</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 286</span>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/config.rb', line 142</span>
 
 <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">load_config</span>
   <span style="color:#080;font-weight:bold">if</span> config_exist?
@@ -1352,7 +1218,7 @@ or <code>nil</code> if the configuration file doesn't exist</p>
 </div>
 
       <div id="footer">
-  Generated on Thu Apr 11 16:52:11 2024 by
+  Generated on Mon May 13 11:29:37 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.36 (ruby-3.3.0).
 </div>

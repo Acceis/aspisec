@@ -57,22 +57,48 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'><h2>[0.1.0 - unreleased]</h2>
+      <div id="content"><div id='filecontents'><h2><a href="#010---unreleased" aria-hidden="true" class="anchor" id="010---unreleased"></a>[0.1.0 - unreleased]</h2>
 <ul>
-<li>
-<p><strong>New modules</strong></p>
+<li><strong>New modules</strong>
 <ul>
 <li>jwt_tool</li>
+<li>MANSPIDER</li>
+<li>ncrack</li>
+<li>weevely</li>
+<li>spiderfoot</li>
+<li>Remmina</li>
+<li>MobSF</li>
+<li>MongoDB Compass</li>
+<li>MongoDB Shell (mongosh)</li>
+<li>lsassy</li>
+<li>Semgrep</li>
+<li>WhatWaf</li>
+<li>amass</li>
+<li>Bloodhound</li>
+<li>ffuf</li>
+<li>Recaf</li>
+<li>dbgate</li>
+<li>Home history files</li>
 </ul>
 </li>
-<li>
-<p><strong>Quality</strong></p>
+<li><strong>New features</strong>
+<ul>
+<li>Locations now support <a href="https://ruby-doc.org/3.3.0/Dir.html#method-c-glob">globbing</a>, useful when needing to remove several files in a directory while not removing the whole directory (e.g. log files with rotation in the same directory as the configuration file)</li>
+</ul>
+</li>
+<li><strong>Quality</strong>
 <ul>
 <li>The configuration now has a version and there are several checks to detected mismatch between the configuration version and the tool version. This prevents the user performing complex debugging after an update.</li>
+<li>Warns the user when a location is not deletable (lack of permissions).</li>
+</ul>
+</li>
+<li><strong>UX</strong>
+<ul>
+<li>More compact display of <code>aspisec list</code>. As the list of modules is growing, the output is longer, displayed on several screens, requiring to scroll while being a very thin column. That was really a waste of space. The new compact display better optimizes the usage of space. Now there is one module per line and all locations are displayed horizontally (2D) rather than vertically under the module (1D).</li>
 </ul>
 </li>
 </ul>
-<h2>[0.0.2]</h2>
+<h2><a href="#002" aria-hidden="true" class="anchor" id="002"></a>[0.0.2]</h2>
 <ul>
 <li>Change from <code>xdg</code> dependency to <code>sxdg</code>, allowing support for Ruby 3.1 and 3.2 as well as 3.3.
 <ul>
@@ -80,14 +106,14 @@
 </ul>
 </li>
 </ul>
-<h2>[0.0.1]</h2>
+<h2><a href="#001" aria-hidden="true" class="anchor" id="001"></a>[0.0.1]</h2>
 <ul>
 <li>Initial version</li>
 </ul>
 </div></div>
 
       <div id="footer">
-  Generated on Thu Apr 11 16:52:11 2024 by
+  Generated on Mon May 13 11:29:37 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.36 (ruby-3.3.0).
 </div>

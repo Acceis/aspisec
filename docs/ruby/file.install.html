@@ -57,15 +57,15 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'><h1>Installation</h1>
-<h2>Production</h2>
+      <div id="content"><div id='filecontents'><h1><a href="#installation" aria-hidden="true" class="anchor" id="installation"></a>Installation</h1>
+<h2><a href="#production" aria-hidden="true" class="anchor" id="production"></a>Production</h2>
 <!-- raw HTML omitted -->
-<h3><strong>rubygems.org (universal)</strong></h3>
+<h3><a href="#rubygemsorg-universal" aria-hidden="true" class="anchor" id="rubygemsorg-universal"></a><strong>rubygems.org (universal)</strong></h3>
 <p>!&gt; <strong>Warning</strong>: Currently <a href="https://github.com/Acceis/aspisec/issues/3">supports only Ruby 3.3 because of a dependency</a>, this may change in the future to accept more versions.</p>
 <pre class="code ruby"><code class="ruby"><span style="color:#F00;background-color:#FAA">$</span> gem install aspisec
 </code></pre>
 <p>Gem: <a href="https://rubygems.org/gems/aspisec">aspisec</a></p>
-<h3><strong>BlackArch</strong></h3>
+<h3><a href="#blackarch" aria-hidden="true" class="anchor" id="blackarch"></a><strong>BlackArch</strong></h3>
 <p>!&gt; <strong>Warning</strong>: TODO: not published yet</p>
 <p>From the repository:</p>
 <pre class="code ruby"><code class="ruby"><span style="color:#777"># pacman -S aspisec</span>
@@ -74,7 +74,7 @@
 <pre class="code ruby"><code class="ruby"><span style="color:#777"># blackman -i aspisec</span>
 </code></pre>
 <p>PKGBUILD: <a href="https://github.com/BlackArch/blackarch/blob/master/packages/aspisec/PKGBUILD">aspisec</a></p>
-<h3><strong>ArchLinux</strong></h3>
+<h3><a href="#archlinux" aria-hidden="true" class="anchor" id="archlinux"></a><strong>ArchLinux</strong></h3>
 <p>!&gt; <strong>Warning</strong>: not published yet</p>
 <p>Manually:</p>
 <pre class="code ruby"><code class="ruby"><span style="color:#F00;background-color:#FAA">$</span> git clone <span style="color:#606">https</span>:<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#404">/</span></span>aur.archlinux.org/aspisec.git
@@ -86,13 +86,13 @@
 </code></pre>
 <p>AUR: <a href="https://aur.archlinux.org/packages/aspisec/">aspisec</a></p>
 <!-- raw HTML omitted -->
-<h2>Development</h2>
+<h2><a href="#development" aria-hidden="true" class="anchor" id="development"></a>Development</h2>
 <p>It's better to use <a href="https://asdf-vm.com/">ASDM-VM</a> to have the latest version of ruby and to avoid trashing your system ruby.</p>
 <!-- raw HTML omitted -->
-<h3><strong>rubygems.org</strong></h3>
+<h3><a href="#rubygemsorg" aria-hidden="true" class="anchor" id="rubygemsorg"></a><strong>rubygems.org</strong></h3>
 <pre class="code ruby"><code class="ruby"><span style="color:#F00;background-color:#FAA">$</span> gem install --development aspisec
 </code></pre>
-<h3><strong>git</strong></h3>
+<h3><a href="#git" aria-hidden="true" class="anchor" id="git"></a><strong>git</strong></h3>
 <p>Just replace <code>x.x.x</code> with the gem version you see after <code>gem build</code>.</p>
 <pre class="code ruby"><code class="ruby"><span style="color:#F00;background-color:#FAA">$</span> git clone <span style="color:#606">https</span>:<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#404">/</span></span>github.com/acceis/aspisec.git aspisec
 <span style="color:#F00;background-color:#FAA">$</span> cd aspisec
@@ -102,7 +102,7 @@
 <span style="color:#F00;background-color:#FAA">$</span> gem install aspisec-x.x.x.gem
 </code></pre>
 <p>Note: if an automatic install is needed you can get the version with <code>$ gem build aspisec.gemspec | grep Version | cut -d' ' -f4</code>.</p>
-<h3><strong>No install</strong></h3>
+<h3><a href="#no-install" aria-hidden="true" class="anchor" id="no-install"></a><strong>No install</strong></h3>
 <p>Run the library in irb without installing the gem.</p>
 <p>From local file:</p>
 <pre class="code ruby"><code class="ruby"><span style="color:#F00;background-color:#FAA">$</span> irb -<span style="color:#036;font-weight:bold">Ilib</span>-ruby -raspisec
@@ -114,7 +114,7 @@
 </div></div>
 
       <div id="footer">
-  Generated on Thu Apr 11 16:52:11 2024 by
+  Generated on Mon May 13 11:29:37 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.36 (ruby-3.3.0).
 </div>

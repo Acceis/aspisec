@@ -57,11 +57,11 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'><h1>Usage</h1>
-<h2>CLI</h2>
-<h3>General help</h3>
+      <div id="content"><div id='filecontents'><h1><a href="#usage" aria-hidden="true" class="anchor" id="usage"></a>Usage</h1>
+<h2><a href="#cli" aria-hidden="true" class="anchor" id="cli"></a>CLI</h2>
+<h3><a href="#general-help" aria-hidden="true" class="anchor" id="general-help"></a>General help</h3>
 <pre class="code ruby"><code class="ruby"><span style="color:#F00;background-color:#FAA">$</span> aspisec -h
-<span style="color:#036;font-weight:bold">AspiSec</span> v0.<span style="color:#F00;background-color:#FAA">0.1</span>
+<span style="color:#036;font-weight:bold">AspiSec</span> v0.<span style="color:#F00;background-color:#FAA">1.0</span>
 
 <span style="color:#606">Usage</span>:
   aspisec [options] clean
@@ -87,40 +87,40 @@
   documentation (<span style="color:#606">https</span>:<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#404">/</span></span>acceis.github.io/aspisec)
 </code></pre>
 <p>?&gt; <strong>Note</strong>: You can check log / verbosity levels <a href="https://acceis.github.io/aspisec/ruby/Aspisec/Logger#LOG_LEVEL-constant">here</a>.</p>
-<h3>Cleaning</h3>
+<h3><a href="#cleaning" aria-hidden="true" class="anchor" id="cleaning"></a>Cleaning</h3>
 <p>Starting the cleaning is as easy as that:</p>
 <pre class="code ruby"><code class="ruby"><span style="color:#F00;background-color:#FAA">$</span> aspisec clean
 </code></pre>
 <p>By default, it will be interactive, the description of each file / directory will be displayed, etc. If you want to change the default behavior, see <a href="pages/config.md">config</a>.</p>
-<h3>List</h3>
+<h3><a href="#list" aria-hidden="true" class="anchor" id="list"></a>List</h3>
 <pre class="code ruby"><code class="ruby"><span style="color:#F00;background-color:#FAA">$</span> aspisec list
-✅ netexec
-  ✅ logs
-  ✅ screenshots
-  ✅ workspaces
-✅ sqlmap
-  ✅ history
-  ✅ logs
-✅ hashcat
-  ✅ sessions
-  ✅ potfile
-  ❌ dict_cache
-✅ theharvester
-  ✅ stash
-✅ crackmapexec
-  ✅ logs
-  ✅ screenshots
-  ✅ workspaces
-✅ john
-  ✅ logs
-  ✅ potfile
-✅ metasploit
-  ✅ history
-  ✅ logs
-  ✅ loot
-  ✅ meterpreter
+✅ : amass                       ✅ logs         ✅ database   
+✅ : mongodb-compass             ✅ logs       
+✅ : mongodb-mongosh             ✅ logs         ✅ history    
+✅ : ncrack                      ✅ restore    
+✅ : netexec                     ✅ logs         ✅ screenshots  ✅ workspaces 
+✅ : recaf                       ✅ classpath    ✅ logs       
+✅ : remmina                     ❌ configs    
+❌ : bloodhound                  ✅ database     ✅ transactions
+✅ : semgrep                     ✅ logs1        ✅ logs2      
+✅ : crackmapexec                ✅ logs         ✅ screenshots  ✅ workspaces 
+✅ : spiderfoot                  ✅ database     ✅ logs       
+✅ : sqlmap                      ✅ history      ✅ logs       
+✅ : theharvester                ✅ stash      
+✅ : dbgate                      ❌ connections  ✅ logs       
+✅ : weevely                     ✅ history      ✅ sessions     ✅ logs       
+✅ : ffuf                        ✅ history    
+✅ : whatwaf                     ✅ database   
+✅ : hashcat                     ✅ sessions     ✅ potfile      ❌ dict_cache 
+✅ : home-history-files          ✅ python       ✅ postgresql   ✅ ruby-irb     ✅ ruby-rdbg    ✅ redis-cli    ❌ bash         ❌ zsh          ❌ zsh-alt    
+✅ : john                        ✅ logs         ✅ potfile    
+✅ : jwt_tool                    ✅ logs       
+✅ : lsassy                      ✅ masterkeys   ✅ tickets    
+✅ : manspider                   ✅ logs         ✅ loot       
+✅ : metasploit                  ✅ history      ✅ logs         ✅ loot         ✅ meterpreter
+✅ : mobsf                       ✅ logs         ✅ downloads    ✅ uploads      ✅ database 
 </code></pre>
-<h2>Library</h2>
+<h2><a href="#library" aria-hidden="true" class="anchor" id="library"></a>Library</h2>
 <p>The main class that <strong>does the job</strong> is <a href="https://acceis.github.io/aspisec/ruby/Aspisec/Clean">Aspisec::Clean</a>.</p>
 <p>Of course, <a href="https://acceis.github.io/aspisec/ruby/Aspisec/Config">Aspisec::Config</a> manages the configuration and <a href="https://acceis.github.io/aspisec/ruby/Aspisec/Logger">Aspisec::Logger</a> the logger (level of additional information displayed).</p>
 <p><a href="https://acceis.github.io/aspisec/ruby/Aspisec/Module">Aspisec::Module</a> is a generic module class with core methods and properties. <a href="https://acceis.github.io/aspisec/ruby/Aspisec/Module/Location">Aspisec::Module::Location</a> is a generic location subclass. A <em>location</em> is either a file or directory handled by modules.</p>
@@ -128,7 +128,7 @@
 </div></div>
 
       <div id="footer">
-  Generated on Thu Apr 11 16:52:11 2024 by
+  Generated on Mon May 13 11:29:37 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.36 (ruby-3.3.0).
 </div>

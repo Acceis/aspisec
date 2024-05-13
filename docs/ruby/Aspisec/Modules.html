@@ -79,7 +79,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib-ruby/aspisec/modules.rb<span class="defines">,<br />
-  lib-ruby/aspisec/modules/john.rb,<br /> lib-ruby/aspisec/modules/sqlmap.rb,<br /> lib-ruby/aspisec/modules/hashcat.rb,<br /> lib-ruby/aspisec/modules/netexec.rb,<br /> lib-ruby/aspisec/modules/jwt_tool.rb,<br /> lib-ruby/aspisec/modules/manspider.rb,<br /> lib-ruby/aspisec/modules/metasploit.rb,<br /> lib-ruby/aspisec/modules/crackmapexec.rb,<br /> lib-ruby/aspisec/modules/theharvester.rb</span>
+  lib-ruby/aspisec/modules/ffuf.rb,<br /> lib-ruby/aspisec/modules/john.rb,<br /> lib-ruby/aspisec/modules/amass.rb,<br /> lib-ruby/aspisec/modules/mobsf.rb,<br /> lib-ruby/aspisec/modules/recaf.rb,<br /> lib-ruby/aspisec/modules/dbgate.rb,<br /> lib-ruby/aspisec/modules/lsassy.rb,<br /> lib-ruby/aspisec/modules/ncrack.rb,<br /> lib-ruby/aspisec/modules/sqlmap.rb,<br /> lib-ruby/aspisec/modules/hashcat.rb,<br /> lib-ruby/aspisec/modules/netexec.rb,<br /> lib-ruby/aspisec/modules/remmina.rb,<br /> lib-ruby/aspisec/modules/semgrep.rb,<br /> lib-ruby/aspisec/modules/weevely.rb,<br /> lib-ruby/aspisec/modules/whatwaf.rb,<br /> lib-ruby/aspisec/modules/jwt_tool.rb,<br /> lib-ruby/aspisec/modules/manspider.rb,<br /> lib-ruby/aspisec/modules/bloodhound.rb,<br /> lib-ruby/aspisec/modules/metasploit.rb,<br /> lib-ruby/aspisec/modules/spiderfoot.rb,<br /> lib-ruby/aspisec/modules/crackmapexec.rb,<br /> lib-ruby/aspisec/modules/theharvester.rb,<br /> lib-ruby/aspisec/modules/mongodb_compass.rb,<br /> lib-ruby/aspisec/modules/mongodb_mongosh.rb,<br /> lib-ruby/aspisec/modules/home_history_files.rb</span>
 </dd>
   </dl>
   
@@ -87,8 +87,8 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    <p>This Ruby module contains all Aspisec modules.
-Each Aspisec module is a Ruby class inherinting the Aspisec::Module base class.
+    <p>This Ruby module contains all Aspisec modules.<br />
+Each Aspisec module is a Ruby class inherinting the Aspisec::Module base class.<br />
 The &quot;Modules&quot; module also contains methods to manage all Aspisec modules.</p>
 
 
@@ -103,7 +103,7 @@ The &quot;Modules&quot; module also contains methods to manage all Aspisec modul
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Modules/Crackmapexec.html" title="Aspisec::Modules::Crackmapexec (class)">Crackmapexec</a></span>, <span class='object_link'><a href="Modules/Hashcat.html" title="Aspisec::Modules::Hashcat (class)">Hashcat</a></span>, <span class='object_link'><a href="Modules/John.html" title="Aspisec::Modules::John (class)">John</a></span>, <span class='object_link'><a href="Modules/JwtTool.html" title="Aspisec::Modules::JwtTool (class)">JwtTool</a></span>, <span class='object_link'><a href="Modules/Manspider.html" title="Aspisec::Modules::Manspider (class)">Manspider</a></span>, <span class='object_link'><a href="Modules/Metasploit.html" title="Aspisec::Modules::Metasploit (class)">Metasploit</a></span>, <span class='object_link'><a href="Modules/Netexec.html" title="Aspisec::Modules::Netexec (class)">Netexec</a></span>, <span class='object_link'><a href="Modules/Sqlmap.html" title="Aspisec::Modules::Sqlmap (class)">Sqlmap</a></span>, <span class='object_link'><a href="Modules/Theharvester.html" title="Aspisec::Modules::Theharvester (class)">Theharvester</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Modules/Amass.html" title="Aspisec::Modules::Amass (class)">Amass</a></span>, <span class='object_link'><a href="Modules/Bloodhound.html" title="Aspisec::Modules::Bloodhound (class)">Bloodhound</a></span>, <span class='object_link'><a href="Modules/Crackmapexec.html" title="Aspisec::Modules::Crackmapexec (class)">Crackmapexec</a></span>, <span class='object_link'><a href="Modules/Dbgate.html" title="Aspisec::Modules::Dbgate (class)">Dbgate</a></span>, <span class='object_link'><a href="Modules/Ffuf.html" title="Aspisec::Modules::Ffuf (class)">Ffuf</a></span>, <span class='object_link'><a href="Modules/Hashcat.html" title="Aspisec::Modules::Hashcat (class)">Hashcat</a></span>, <span class='object_link'><a href="Modules/HomeHistoryFiles.html" title="Aspisec::Modules::HomeHistoryFiles (class)">HomeHistoryFiles</a></span>, <span class='object_link'><a href="Modules/John.html" title="Aspisec::Modules::John (class)">John</a></span>, <span class='object_link'><a href="Modules/JwtTool.html" title="Aspisec::Modules::JwtTool (class)">JwtTool</a></span>, <span class='object_link'><a href="Modules/Lsassy.html" title="Aspisec::Modules::Lsassy (class)">Lsassy</a></span>, <span class='object_link'><a href="Modules/Manspider.html" title="Aspisec::Modules::Manspider (class)">Manspider</a></span>, <span class='object_link'><a href="Modules/Metasploit.html" title="Aspisec::Modules::Metasploit (class)">Metasploit</a></span>, <span class='object_link'><a href="Modules/Mobsf.html" title="Aspisec::Modules::Mobsf (class)">Mobsf</a></span>, <span class='object_link'><a href="Modules/MongodbCompass.html" title="Aspisec::Modules::MongodbCompass (class)">MongodbCompass</a></span>, <span class='object_link'><a href="Modules/MongodbMongosh.html" title="Aspisec::Modules::MongodbMongosh (class)">MongodbMongosh</a></span>, <span class='object_link'><a href="Modules/Ncrack.html" title="Aspisec::Modules::Ncrack (class)">Ncrack</a></span>, <span class='object_link'><a href="Modules/Netexec.html" title="Aspisec::Modules::Netexec (class)">Netexec</a></span>, <span class='object_link'><a href="Modules/Recaf.html" title="Aspisec::Modules::Recaf (class)">Recaf</a></span>, <span class='object_link'><a href="Modules/Remmina.html" title="Aspisec::Modules::Remmina (class)">Remmina</a></span>, <span class='object_link'><a href="Modules/Semgrep.html" title="Aspisec::Modules::Semgrep (class)">Semgrep</a></span>, <span class='object_link'><a href="Modules/Spiderfoot.html" title="Aspisec::Modules::Spiderfoot (class)">Spiderfoot</a></span>, <span class='object_link'><a href="Modules/Sqlmap.html" title="Aspisec::Modules::Sqlmap (class)">Sqlmap</a></span>, <span class='object_link'><a href="Modules/Theharvester.html" title="Aspisec::Modules::Theharvester (class)">Theharvester</a></span>, <span class='object_link'><a href="Modules/Weevely.html" title="Aspisec::Modules::Weevely (class)">Weevely</a></span>, <span class='object_link'><a href="Modules/Whatwaf.html" title="Aspisec::Modules::Whatwaf (class)">Whatwaf</a></span>
     
   
 </p>
@@ -275,7 +275,7 @@ The &quot;Modules&quot; module also contains methods to manage all Aspisec modul
       
       
         &mdash;
-        <div class='inline'><p>an instance of the global configuration
+        <div class='inline'><p>an instance of the global configuration<br />
 If none is provided, the default config is loaded.</p>
 </div>
       
@@ -293,8 +293,8 @@ If none is provided, the default config is loaded.</p>
       
       
         &mdash;
-        <div class='inline'><p>logger instance. See <span class='object_link'><a href="Logger.html" title="Aspisec::Logger (class)">Logger</a></span>.
-If none is provided, a default logger with log level 2 is created.
+        <div class='inline'><p>logger instance. See <span class='object_link'><a href="Logger.html" title="Aspisec::Logger (class)">Logger</a></span>.<br />
+If none is provided, a default logger with log level 2 is created.<br />
 See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="Aspisec::Logger::LOG_LEVEL (constant)">Logger::LOG_LEVEL</a></span>.</p>
 </div>
       
@@ -344,7 +344,7 @@ See <span class='object_link'><a href="Logger.html#LOG_LEVEL-constant" title="As
 </div>
 
       <div id="footer">
-  Generated on Thu Apr 11 16:52:11 2024 by
+  Generated on Mon May 13 11:29:37 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.36 (ruby-3.3.0).
 </div>

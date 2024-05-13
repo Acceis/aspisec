@@ -101,7 +101,7 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    <p>Object easing the manipulation of locations.
+    <p>Object easing the manipulation of locations.<br />
 Helpers to get the path, check if this feature/file/directory is enabled, etc.</p>
 
 
@@ -240,6 +240,29 @@ Helpers to get the path, check if this feature/file/directory is enabled, etc.</
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#exist%3F-instance_method" title="#exist? (instance method)">#<strong>exist?</strong>  &#x21d2; true|false </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Check if the location exist (weither it's a file, directory or a path contaning globbing so multiple files / directories).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(tool_conf, feature_name)  &#x21d2; Location </a>
     
 
@@ -313,7 +336,7 @@ Helpers to get the path, check if this feature/file/directory is enabled, etc.</
       
       
         &mdash;
-        <div class='inline'><p>Name of the feature/file/directory to clean.
+        <div class='inline'><p>Name of the feature/file/directory to clean.<br />
 Must be equal to the configuration key.</p>
 </div>
       
@@ -587,12 +610,98 @@ Must be equal to the configuration key.</p>
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="exist?-instance_method">
+  
+    #<strong>exist?</strong>  &#x21d2; <tt>true|false</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Check if the location exist (weither it's a file, directory or a path contaning globbing so<br />
+multiple files / directories).<br />
+loc.path.exist? will return false when a path contains globbing as it's not expended,<br />
+that's the main reason for creating the loc.exist? helper.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true|false</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib-ruby/aspisec/module.rb', line 118</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">exist?</span>
+  <span style="color:#080;font-weight:bold">return</span> <span style="color:#069">true</span> <span style="color:#080;font-weight:bold">if</span> path.exist?
+
+  <span style="color:#777"># this case is needed to support globbing</span>
+  candidates = <span style="color:#036;font-weight:bold">Dir</span>[path].map { |path| <span style="color:#036;font-weight:bold">Pathname</span>.new(path).exist? }
+  <span style="color:#777"># rubocop:disable Lint/DuplicateBranch</span>
+  <span style="color:#777"># false positive in rubocop rule</span>
+  <span style="color:#080;font-weight:bold">if</span> candidates.empty? <span style="color:#777"># necessary because [].all? always return true whatever the condition is</span>
+    <span style="color:#777"># this is preventing doing a simple one-liner like</span>
+    <span style="color:#777"># self.path.exist? || Dir[self.path].map { |path| Pathname.new(path).exist? }.all? { |bool| bool == true }</span>
+    <span style="color:#069">false</span>
+  <span style="color:#080;font-weight:bold">elsif</span> candidates.all? { |bool| bool == <span style="color:#069">true</span> }
+    <span style="color:#069">true</span>
+  <span style="color:#080;font-weight:bold">else</span>
+    <span style="color:#069">false</span>
+  <span style="color:#080;font-weight:bold">end</span>
+  <span style="color:#777"># rubocop:enable Lint/DuplicateBranch</span>
+<span style="color:#080;font-weight:bold">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Thu Apr 11 16:52:11 2024 by
+  Generated on Mon May 13 11:29:37 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.36 (ruby-3.3.0).
 </div>
