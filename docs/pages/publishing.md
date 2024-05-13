@@ -36,8 +36,6 @@ Build the **gem**:
 
 ```
 $ gem build aspisec.gemspec
-# or
-$ bundle exec rake build
 ```
 
 Push the new gem release on **RubyGems** See https://guides.rubygems.org/publishing/.

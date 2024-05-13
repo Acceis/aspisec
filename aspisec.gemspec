@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
     'yard.run' => 'yard',
     'bug_tracker_uri' => 'https://github.com/acceis/aspisec/issues',
     'changelog_uri' => 'https://github.com/acceis/aspisec/blob/master/docs/CHANGELOG.md',
-    'documentation_uri' => 'https://acceis.github.io/aspisec/',
+    'documentation_uri' => 'https://acceis.github.io/aspisec/ruby/Aspisec',
     'homepage_uri' => 'https://acceis.github.io/aspisec/',
     'source_code_uri' => 'https://github.com/acceis/aspisec/',
     'rubygems_mfa_required' => 'true'
