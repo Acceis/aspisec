@@ -6,8 +6,6 @@
 
 ### **rubygems.org (universal)**
 
-!> **Warning**: Currently [supports only Ruby 3.3 because of a dependency](https://github.com/Acceis/aspisec/issues/3), this may change in the future to accept more versions.
-
 ```
 $ gem install aspisec
 ```
