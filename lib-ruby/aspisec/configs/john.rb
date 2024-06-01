@@ -7,8 +7,6 @@ module Aspisec
         'enabled' => true,
         'location' => {
           'base' => '$HOME/.john', # ~/.john
-          #
-          #
           'logs' => {
             'path' => '<base>/john.log',
             'description' => "File containing the logs of the commands launched.\n" \

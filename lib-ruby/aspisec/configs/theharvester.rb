@@ -7,7 +7,6 @@ module Aspisec
         'enabled' => true,
         'location' => {
           'base' => '$XDG_DATA_HOME/theHarvester', # ~/.local/share/theHarvester
-          #
           'stash' => {
             'path' => '<base>/stash.sqlite',
             'description' => 'File (SQLite DB) containing all the harvested addresses.'

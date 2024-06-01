@@ -7,8 +7,6 @@ module Aspisec
         'enabled' => true,
         'location' => {
           'base' => '$HOME/.msf4', # ~/.msf4
-          #
-          #
           'history' => {
             'path' => '<base>/history',
             'description' => "File containing the history of commands used in msf shell.\n" \
