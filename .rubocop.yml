@@ -14,3 +14,5 @@ Metrics/ClassLength:
 Metrics/MethodLength:
   Exclude:
     - lib-ruby/aspisec/config.rb
+Gemspec/AddRuntimeDependency:
+  Enabled: false # https://github.com/rubocop/rubocop/pull/13030#discussion_r1674791776
